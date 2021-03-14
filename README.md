@@ -1,5 +1,10 @@
 # pokemon-web
 
+## Design
+画面イメージなどのデザインは figma を用いています。
+
+[ポケモン図鑑画面イメージ](https://www.figma.com/file/Mm8w7OLq3FZPKWYK4LlZ3N/%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E5%9B%B3%E9%91%91?node-id=0%3A1)
+
 ## Project setup
 ```
 npm install
