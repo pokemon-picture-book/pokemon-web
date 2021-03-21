@@ -5,6 +5,8 @@ node_modules
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
+# pokemon images
+src/assets/pokemon-img
 
 # local env files
 .env.local
