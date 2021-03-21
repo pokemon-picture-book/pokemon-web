@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "pokemon-font": "1.8.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "register-service-worker": "^1.7.1",
