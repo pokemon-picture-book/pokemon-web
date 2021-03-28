@@ -5,6 +5,9 @@ node_modules
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
+# unit test coverage
+coverage
+
 # pokemon images
 src/assets/pokemon-img
 
@@ -28,3 +31,6 @@ pnpm-debug.log*
 
 # storybook
 storybook-static
+
+# ESLint
+lint-report.json
