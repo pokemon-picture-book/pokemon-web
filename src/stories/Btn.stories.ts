@@ -1,15 +1,15 @@
 import Button from '@/components/Button.vue';
 
 export default {
-  title: 'Button',
+    title: 'Button'
 };
 
 export const BasicButton = () => ({
-  components: { Button },
-  template: '<Button/>',
+    components: { Button },
+    template: '<Button/>'
 });
 
 export const SampleButton = () => ({
-  components: { Button },
-  template: '<Button :msg="\'Sample Button\'" />',
+    components: { Button },
+    template: '<Button :msg="\'Sample Button\'" />'
 });
