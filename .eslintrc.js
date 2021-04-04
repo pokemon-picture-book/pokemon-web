@@ -11,6 +11,7 @@ module.exports = {
         // 'plugin:@intlify/vue-i18n/recommended',
         '@vue/airbnb',
         '@vue/typescript',
+        'plugin:@typescript-eslint/eslint-recommended',
         'prettier',
         'prettier/vue'
     ],
