@@ -4,18 +4,13 @@ module.exports = {
         node: true
     },
     extends: [
-        'eslint:recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
-        'plugin:vue/essential',
+        'plugin:vue/vue3-essential',
         // 'plugin:@intlify/vue-i18n/recommended',
-        '@vue/airbnb',
         '@vue/typescript',
         'plugin:@typescript-eslint/eslint-recommended',
         'prettier',
         'prettier/vue'
     ],
-    plugins: ['import'],
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
