@@ -8,7 +8,7 @@
 
 <style lang="scss">
 body {
-    font-size: 10px;
+    font-size: 16px;
     font-smooth: never;
     -webkit-font-smoothing: none;
     font-family: 'pokemon-font', monospace;
