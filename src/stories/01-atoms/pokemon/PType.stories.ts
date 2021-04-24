@@ -1,4 +1,5 @@
 import PType from '@/components/01-atoms/pokemon/PType.vue';
+import { PTypeItem } from 'types/pokemon/type';
 
 export default {
     title: 'Atoms/p-type'
@@ -27,7 +28,7 @@ export const Simple = () => ({
                 { code: 'dragon' },
                 { code: 'dark' },
                 { code: 'fairy' }
-            ]
+            ] as PTypeItem[]
         }
     },
     template: '<p-type :items="items" />',
@@ -56,7 +57,7 @@ export const JapaneseLabel = () => ({
                 { code: 'dragon', label: 'ドラゴン' },
                 { code: 'dark', label: 'あく' },
                 { code: 'fairy', label: 'フェアリー' }
-            ]
+            ] as PTypeItem[]
         }
     },
     template: '<p-type :items="items" />',
@@ -85,7 +86,7 @@ export const EnglishLabel = () => ({
                 { code: 'dragon', label: 'Dragon' },
                 { code: 'dark', label: 'Dark' },
                 { code: 'fairy', label: 'Fairy' }
-            ]
+            ] as PTypeItem[]
         }
     },
     template: '<p-type :items="items" />',

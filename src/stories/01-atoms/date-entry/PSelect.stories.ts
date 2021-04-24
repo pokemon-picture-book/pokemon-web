@@ -7,16 +7,14 @@ export default {
     decorators: [withKnobs],
 };
 
-const items: PSelectItem[] = [
-    { id: 1, label: '日本語', value: 'ja' },
-    { id: 2, label: 'English', value: 'en' }
-]
-
 export const Knobs = () => ({
     components: { PSelect },
     data: () => {
         return {
-            items
+            items: [
+                { id: 1, label: '日本語', value: 'ja' },
+                { id: 2, label: 'English', value: 'en' }
+            ] as PSelectItem[]
         }
     },
     props: {
@@ -55,6 +53,10 @@ export const Simple = () => ({
 export const Source = () => ({
     components: { PSelect },
     data: () => {
+        const items: PSelectItem[] = [
+            { id: 1, label: '日本語', value: 'ja' },
+            { id: 2, label: 'English', value: 'en' }
+        ]
         return {
             items,
             source: items[0]
@@ -69,6 +71,10 @@ export const Source = () => ({
 export const DefaultValue = () => ({
     components: { PSelect },
     data: () => {
+        const items: PSelectItem[] = [
+            { id: 1, label: '日本語', value: 'ja' },
+            { id: 2, label: 'English', value: 'en' }
+        ]
         return {
             items,
             defaultValue: items[0]
