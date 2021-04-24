@@ -1,12 +1,12 @@
-import PType from '@/components/01-atoms/pokemon/PType.vue';
-import { PTypeItem } from 'types/pokemon/type';
+import AType from '@/components/01-atoms/pokemon/AType.vue';
+import { ATypeItem } from 'types/pokemon/type';
 
 export default {
-    title: 'Atoms/p-type'
+    title: 'Atoms/a-type'
 };
 
 export const Simple = () => ({
-    components: { PType },
+    components: { AType },
     data: () => {
         return {
             items: [
@@ -28,14 +28,14 @@ export const Simple = () => ({
                 { code: 'dragon' },
                 { code: 'dark' },
                 { code: 'fairy' }
-            ] as PTypeItem[]
+            ] as ATypeItem[]
         }
     },
-    template: '<p-type :items="items" />',
+    template: '<a-type :items="items" />',
 });
 
 export const JapaneseLabel = () => ({
-    components: { PType },
+    components: { AType },
     data: () => {
         return {
             items: [
@@ -57,14 +57,14 @@ export const JapaneseLabel = () => ({
                 { code: 'dragon', label: 'ドラゴン' },
                 { code: 'dark', label: 'あく' },
                 { code: 'fairy', label: 'フェアリー' }
-            ] as PTypeItem[]
+            ] as ATypeItem[]
         }
     },
-    template: '<p-type :items="items" />',
+    template: '<a-type :items="items" />',
 });
 
 export const EnglishLabel = () => ({
-    components: { PType },
+    components: { AType },
     data: () => {
         return {
             items: [
@@ -86,8 +86,8 @@ export const EnglishLabel = () => ({
                 { code: 'dragon', label: 'Dragon' },
                 { code: 'dark', label: 'Dark' },
                 { code: 'fairy', label: 'Fairy' }
-            ] as PTypeItem[]
+            ] as ATypeItem[]
         }
     },
-    template: '<p-type :items="items" />',
+    template: '<a-type :items="items" />',
 });

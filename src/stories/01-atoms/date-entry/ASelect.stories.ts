@@ -1,20 +1,20 @@
 import { withKnobs, select } from '@storybook/addon-knobs'
-import PSelect from '@/components/01-atoms/data-entry/PSelect.vue';
-import { PSelectItem } from 'types/date-entry/select';
+import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
+import { ASelectItem } from 'types/date-entry/select';
 
 export default {
-    title: 'Atoms/p-select',
+    title: 'Atoms/a-select',
     decorators: [withKnobs],
 };
 
 export const Knobs = () => ({
-    components: { PSelect },
+    components: { ASelect },
     data: () => {
         return {
             items: [
                 { id: 1, label: '日本語', value: 'ja' },
                 { id: 2, label: 'English', value: 'en' }
-            ] as PSelectItem[]
+            ] as ASelectItem[]
         }
     },
     props: {
@@ -42,18 +42,18 @@ export const Knobs = () => ({
             ),
         },
     },
-    template: '<p-select :items="items" :size="size" :color="color" />',
+    template: '<a-select :items="items" :size="size" :color="color" />',
 });
 
 export const Simple = () => ({
-    components: { PSelect },
-    template: '<p-select />'
+    components: { ASelect },
+    template: '<a-select />'
 });
 
 export const Source = () => ({
-    components: { PSelect },
+    components: { ASelect },
     data: () => {
-        const items: PSelectItem[] = [
+        const items: ASelectItem[] = [
             { id: 1, label: '日本語', value: 'ja' },
             { id: 2, label: 'English', value: 'en' }
         ]
@@ -63,15 +63,15 @@ export const Source = () => ({
         }
     },
     methods: {
-        updateSource: (newSource: PSelectItem) => newSource
+        updateSource: (newSource: ASelectItem) => newSource
     },
-    template: '<p-select :items="items" v-model:source="source" @select="updateSource" />'
+    template: '<a-select :items="items" v-model:source="source" @select="updateSource" />'
 });
 
 export const DefaultValue = () => ({
-    components: { PSelect },
+    components: { ASelect },
     data: () => {
-        const items: PSelectItem[] = [
+        const items: ASelectItem[] = [
             { id: 1, label: '日本語', value: 'ja' },
             { id: 2, label: 'English', value: 'en' }
         ]
@@ -80,5 +80,5 @@ export const DefaultValue = () => ({
             defaultValue: items[0]
         }
     },
-    template: '<p-select :items="items" :defaultValue="defaultValue" />'
+    template: '<a-select :items="items" :defaultValue="defaultValue" />'
 });

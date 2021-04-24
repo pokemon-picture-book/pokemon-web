@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { PTypeItem } from 'types/pokemon/type';
+import { ATypeItem } from 'types/pokemon/type';
 
 /**
  * ポケモンタイプ.
@@ -24,7 +24,7 @@ import { PTypeItem } from 'types/pokemon/type';
 export default defineComponent({
     props: {
         items: {
-            type: Array as PropType<PTypeItem[]>,
+            type: Array as PropType<ATypeItem[]>,
             require: true,
             default: []
         }

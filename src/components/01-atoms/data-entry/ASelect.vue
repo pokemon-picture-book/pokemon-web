@@ -19,10 +19,10 @@
 
 <script lang="ts">
 import { defineComponent, PropType, SetupContext, toRefs, computed, reactive } from 'vue';
-import { PSelectItem, PSelectProps } from 'types/date-entry/select';
+import { ASelectItem, ASelectProps } from 'types/date-entry/select';
 import { Color, Size } from '@/types/common/index.d';
 
-const defaultValue: PSelectItem = { id: 0, label: 'Not Item', value: 'not-item' };
+const defaultValue: ASelectItem = { id: 0, label: 'Not Item', value: 'not-item' };
 
 /**
  * セレクトボックス.
@@ -34,15 +34,15 @@ const defaultValue: PSelectItem = { id: 0, label: 'Not Item', value: 'not-item' 
 export default defineComponent({
     props: {
         items: {
-            type: Array as PropType<PSelectItem[]>,
+            type: Array as PropType<ASelectItem[]>,
             require: true,
             default: []
         },
         source: {
-            type: Object as PropType<PSelectItem>
+            type: Object as PropType<ASelectItem>
         },
         defaultValue: {
-            type: Object as PropType<PSelectItem>
+            type: Object as PropType<ASelectItem>
         },
         color: {
             type: String as PropType<Color>,
@@ -53,8 +53,8 @@ export default defineComponent({
             default: 'default'
         }
     },
-    setup(props: PSelectProps, { emit }: SetupContext) {
-        const propToRef = toRefs<PSelectProps>(props);
+    setup(props: ASelectProps, { emit }: SetupContext) {
+        const propToRef = toRefs<ASelectProps>(props);
 
         const state = reactive({
             isOpened: false,
@@ -88,7 +88,7 @@ export default defineComponent({
                 state.isOpened = !state.isOpened;
                 e.stopPropagation();
             },
-            onClickItem: (item: PSelectItem) => {
+            onClickItem: (item: ASelectItem) => {
                 state.source = item;
                 emit('update:source', item);
                 state.isOpened = false;
