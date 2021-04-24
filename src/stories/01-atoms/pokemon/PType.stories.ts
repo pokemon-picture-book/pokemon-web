@@ -1,7 +1,7 @@
 import PType from '@/components/01-atoms/pokemon/PType.vue';
 
 export default {
-    title: 'p-type'
+    title: 'Atoms/p-type'
 };
 
 export const Simple = () => ({

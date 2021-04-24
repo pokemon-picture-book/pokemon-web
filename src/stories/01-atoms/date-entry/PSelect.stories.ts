@@ -3,7 +3,7 @@ import PSelect from '@/components/01-atoms/data-entry/PSelect.vue';
 import { PSelectItem } from 'types/date-entry/select';
 
 export default {
-    title: 'p-select',
+    title: 'Atoms/p-select',
     decorators: [withKnobs],
 };
 
