@@ -1,13 +1,13 @@
 <template>
-    <div class="p-select" :class="{ opened: state.isOpened }">
-        <span class="p-select__trigger" :class="classes" @click="onClickTrigger">
+    <div class="a-select" :class="{ opened: state.isOpened }">
+        <span class="a-select__trigger" :class="classes" @click="onClickTrigger">
             {{ state.source.label }}
         </span>
-        <div class="p-select__list">
+        <div class="a-select__list">
             <span
                 v-for="item in state.items"
                 :key="item.id"
-                class="p-select__list--item"
+                class="a-select__list--item"
                 :class="{ selection: state.source.value === item.value }"
                 @click="onClickItem(item)"
             >
@@ -110,7 +110,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/color.scss';
 
-.p-select {
+.a-select {
     position: relative;
     display: inline-block;
 

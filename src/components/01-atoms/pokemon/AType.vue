@@ -1,12 +1,12 @@
 <template>
-    <div class="p-type">
+    <div class="a-type">
         <span
-            class="p-type__label"
+            class="a-type__label"
             v-for="(item, index) in items"
             :key="index"
             :class="[
-                { 'p-type__label-not-found': !item.label },
-                `p-type__label-color--${item.code}`
+                { 'a-type__label-not-found': !item.label },
+                `a-type__label-color--${item.code}`
             ]"
         >
             {{ item.label }}
@@ -35,7 +35,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/color.scss';
 
-.p-type {
+.a-type {
     display: flex;
     flex-wrap: wrap;
 
