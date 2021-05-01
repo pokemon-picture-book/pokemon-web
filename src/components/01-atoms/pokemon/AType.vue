@@ -38,12 +38,13 @@ export default defineComponent({
 .a-type {
     display: flex;
     flex-wrap: wrap;
+    margin: 8px;
 
     &__label {
         min-height: 16px;
         min-width: 16px;
         border-radius: 16px;
-        margin: 8px 8px 8px 0;
+        margin-right: 8px;
         padding: 8px;
         color: $p-white-color;
         font-size: 8px;
@@ -51,8 +52,8 @@ export default defineComponent({
         justify-content: center;
         align-items: center;
 
-        :last-child {
-            margin-right: 8px 0;
+        &:last-child {
+            margin-right: 0;
         }
 
         &-not-found {
