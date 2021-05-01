@@ -14,16 +14,12 @@ body {
     font-family: 'pokemon-font', monospace;
 }
 
-#nav {
-    padding: 30px;
+a {
+    text-decoration: none;
+    color: #0bd;
 
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-
-        &.router-link-exact-active {
-            color: #42b983;
-        }
+    &:hover {
+        color: #0090aa;
     }
 }
 </style>
