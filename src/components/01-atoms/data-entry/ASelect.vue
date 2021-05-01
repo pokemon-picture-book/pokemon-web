@@ -240,7 +240,7 @@ export default defineComponent({
 
         &--item:hover,
         .selection {
-            background: $p-light-shadow-color;
+            background: $p-select-hover-color;
             color: $p-shadow-color;
         }
     }
