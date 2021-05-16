@@ -115,23 +115,25 @@ export default defineComponent({
     display: inline-block;
 
     .color {
-        &--default {
-            background-color: $p-white-color;
-            color: $p-shadow-color;
+        @mixin select-color(
+            $color: $p-shadow-color,
+            $background-color: $p-white-color,
+            $after-color: $p-black-color
+        ) {
+            color: $color;
+            background-color: $background-color;
 
             &:after {
-                border-bottom: 1px solid $p-black-color;
-                border-right: 1px solid $p-black-color;
+                border-bottom: 1px solid $after-color;
+                border-right: 1px solid $after-color;
             }
         }
-        &--primary {
-            background-color: $p-primary-color;
-            color: $p-white-color;
 
-            &:after {
-                border-bottom: 1px solid $p-white-color;
-                border-right: 1px solid $p-white-color;
-            }
+        &--default {
+            @include select-color;
+        }
+        &--primary {
+            @include select-color($p-white-color, $p-primary-color, $p-white-color);
         }
     }
 
@@ -155,11 +157,12 @@ export default defineComponent({
 
     &__trigger {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 0 16px;
         font-size: 16px;
         font-weight: 300;
-        line-height: 48px;
+        height: 32px;
         border-radius: 4px;
         cursor: pointer;
         border: solid 1px;
@@ -219,12 +222,13 @@ export default defineComponent({
 
         &--item {
             position: relative;
-            display: block;
+            display: flex;
+            align-items: center;
             padding: 0 16px;
             border-bottom: 1px solid $p-shadow-color;
             font-weight: 600;
             color: $p-shadow-color;
-            line-height: 48px;
+            height: 32px;
             cursor: pointer;
             transition: all 0.4s ease-in-out;
 
