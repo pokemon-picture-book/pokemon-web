@@ -18,6 +18,7 @@
         "sonar": "run-s test:unit:sonar lint:sonar sonar:scan"
     },
     "dependencies": {
+        "axios": "0.21.1",
         "core-js": "^3.6.5",
         "icon-blender": "1.0.0-beta.3",
         "pokemon-font": "1.8.1",
@@ -35,6 +36,7 @@
         "@storybook/addon-knobs": "6.2.9",
         "@storybook/addon-links": "6.3.0-alpha.16",
         "@storybook/vue3": "6.3.0-alpha.16",
+        "@types/axios": "0.14.0",
         "@types/eslint": "7.2.7",
         "@types/jest": "^24.0.19",
         "@types/prettier": "2.2.3",
