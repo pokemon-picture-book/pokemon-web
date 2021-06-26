@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import AType from '@/components/01-atoms/pokemon/AType.vue';
-import { ATypeItem } from 'types/pokemon/type';
+import { ATypeItem } from '@/types/01-atoms/pokemon/AType';
 
 /**
  * ポケモン名称.
