@@ -1,14 +1,14 @@
 <template>
     <div class="a-select" :class="{ opened: state.isOpened }">
         <span class="a-select__trigger" :class="classes" @click="onClickTrigger">
-            {{ state.source.label }}
+            {{ source.label }}
         </span>
         <div class="a-select__list">
             <span
-                v-for="item in state.items"
+                v-for="item in items.length ? items : [notItemValue]"
                 :key="item.id"
                 class="a-select__list--item"
-                :class="{ selection: state.source.value === item.value }"
+                :class="{ selection: source.value === item.value }"
                 @click="onClickItem(item)"
             >
                 {{ item.label }}
@@ -18,30 +18,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, SetupContext, toRefs, computed, reactive } from 'vue';
-import { ASelectItem, ASelectProps } from 'types/date-entry/select';
+import { defineComponent, PropType, SetupContext, toRefs, computed, reactive, watch } from 'vue';
+import { ASelectItem, ASelectProps } from '@/types/01-atoms/data-entry/ASelect';
 import { Color, Size } from '@/types/common/index.d';
 
-const defaultValue: ASelectItem = { id: 0, label: 'Not Item', value: 'not-item' };
+const notItemValue: ASelectItem = { id: 0, label: 'Not Item', value: 'not-item' };
 
 /**
  * セレクトボックス.
- *
- * セレクトボックスにおける値の優先順位
- * - source
- * - defaultValue
  */
 export default defineComponent({
     props: {
         items: {
             type: Array as PropType<ASelectItem[]>,
             require: true,
-            default: []
+            default: () => []
         },
         source: {
-            type: Object as PropType<ASelectItem>
-        },
-        defaultValue: {
             type: Object as PropType<ASelectItem>
         },
         color: {
@@ -57,27 +50,23 @@ export default defineComponent({
         const propToRef = toRefs<ASelectProps>(props);
 
         const state = reactive({
-            isOpened: false,
-            items: propToRef.items.value.length ? propToRef.items.value : [defaultValue],
-            source: (() => {
-                if (propToRef.source && propToRef.source.value) {
-                    return propToRef.source.value;
-                }
-                if (propToRef.defaultValue && propToRef.defaultValue.value) {
-                    return propToRef.defaultValue.value;
-                }
-                if (propToRef.items.value.length) {
-                    return propToRef.items.value[0];
-                }
-                return defaultValue;
-            })()
+            isOpened: false
         });
 
         const computedMethod = {
             classes: computed(() => [
                 `color--${propToRef.color.value}`,
                 `size--${propToRef.size.value}`
-            ])
+            ]),
+            source: computed(() => {
+                if (propToRef.source && propToRef.source.value) {
+                    return propToRef.source.value;
+                }
+                if (propToRef.items.value.length) {
+                    return propToRef.items.value[0];
+                }
+                return notItemValue;
+            })
         };
 
         const method = {
@@ -89,13 +78,13 @@ export default defineComponent({
                 e.stopPropagation();
             },
             onClickItem: (item: ASelectItem) => {
-                state.source = item;
                 emit('update:source', item);
                 state.isOpened = false;
             }
         };
 
         return {
+            notItemValue,
             state,
             ...computedMethod,
             ...method

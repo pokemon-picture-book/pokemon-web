@@ -1,6 +1,6 @@
 import { withKnobs, select } from '@storybook/addon-knobs'
 import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
-import { ASelectItem } from 'types/date-entry/select';
+import { ASelectItem } from '@/types/01-atoms/data-entry/ASelect';
 
 export default {
     title: 'Atoms/a-select',
@@ -66,19 +66,4 @@ export const Source = () => ({
         updateSource: (newSource: ASelectItem) => newSource
     },
     template: '<a-select :items="items" v-model:source="source" @select="updateSource" />'
-});
-
-export const DefaultValue = () => ({
-    components: { ASelect },
-    data: () => {
-        const items: ASelectItem[] = [
-            { id: 1, label: '日本語', value: 'ja' },
-            { id: 2, label: 'English', value: 'en' }
-        ]
-        return {
-            items,
-            defaultValue: items[0]
-        }
-    },
-    template: '<a-select :items="items" :defaultValue="defaultValue" />'
 });
