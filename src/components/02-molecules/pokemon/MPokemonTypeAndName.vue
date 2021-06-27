@@ -20,7 +20,7 @@ export default defineComponent({
     props: {
         typeItems: {
             type: Array as PropType<ATypeItem[]>,
-            default: []
+            default: () => []
         },
         name: {
             type: String,

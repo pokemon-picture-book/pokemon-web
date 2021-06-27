@@ -26,7 +26,7 @@ export default defineComponent({
         items: {
             type: Array as PropType<ATypeItem[]>,
             require: true,
-            default: []
+            default: () => []
         }
     }
 });

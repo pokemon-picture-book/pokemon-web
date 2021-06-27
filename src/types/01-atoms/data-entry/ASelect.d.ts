@@ -1,4 +1,4 @@
-import { Color, Size } from "@/types/common/index.d";
+import { Color, Size } from '@/types/common/index.d';
 
 export declare type ASelectItem = {
     id: number;
@@ -14,6 +14,6 @@ export declare type ASelectProps = {
 };
 
 export declare type ASelectState = {
-    isOpened: boolean,
-    selectedSource: ASelectItem | null
+    isOpened: boolean;
+    selectedSource: ASelectItem | null;
 };

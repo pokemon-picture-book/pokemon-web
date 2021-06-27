@@ -1,10 +1,10 @@
-import { withKnobs, select } from '@storybook/addon-knobs'
+import { withKnobs, select } from '@storybook/addon-knobs';
 import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
 import { ASelectItem } from '@/types/01-atoms/data-entry/ASelect';
 
 export default {
     title: 'Atoms/a-select',
-    decorators: [withKnobs],
+    decorators: [withKnobs]
 };
 
 export const Knobs = () => ({
@@ -15,7 +15,7 @@ export const Knobs = () => ({
                 { id: 1, label: '日本語', value: 'ja' },
                 { id: 2, label: 'English', value: 'en' }
             ] as ASelectItem[]
-        }
+        };
     },
     props: {
         color: {
@@ -26,7 +26,7 @@ export const Knobs = () => ({
                     Default: 'default'
                 },
                 'default'
-            ),
+            )
         },
         size: {
             default: select(
@@ -36,13 +36,13 @@ export const Knobs = () => ({
                     Small: 'small',
                     Default: 'default',
                     Large: 'large',
-                    'X-Large': 'x-large',
+                    'X-Large': 'x-large'
                 },
                 'default'
-            ),
-        },
+            )
+        }
     },
-    template: '<a-select :items="items" :size="size" :color="color" />',
+    template: '<a-select :items="items" :size="size" :color="color" />'
 });
 
 export const Simple = () => ({
@@ -56,11 +56,11 @@ export const Source = () => ({
         const items: ASelectItem[] = [
             { id: 1, label: '日本語', value: 'ja' },
             { id: 2, label: 'English', value: 'en' }
-        ]
+        ];
         return {
             items,
             source: items[0]
-        }
+        };
     },
     methods: {
         updateSource: (newSource: ASelectItem) => newSource

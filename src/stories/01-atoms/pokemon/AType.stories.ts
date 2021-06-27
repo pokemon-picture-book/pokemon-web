@@ -29,9 +29,9 @@ export const Simple = () => ({
                 { code: 'dark' },
                 { code: 'fairy' }
             ] as ATypeItem[]
-        }
+        };
     },
-    template: '<a-type :items="items" />',
+    template: '<a-type :items="items" />'
 });
 
 export const JapaneseLabel = () => ({
@@ -58,9 +58,9 @@ export const JapaneseLabel = () => ({
                 { code: 'dark', label: 'あく' },
                 { code: 'fairy', label: 'フェアリー' }
             ] as ATypeItem[]
-        }
+        };
     },
-    template: '<a-type :items="items" />',
+    template: '<a-type :items="items" />'
 });
 
 export const EnglishLabel = () => ({
@@ -87,7 +87,7 @@ export const EnglishLabel = () => ({
                 { code: 'dark', label: 'Dark' },
                 { code: 'fairy', label: 'Fairy' }
             ] as ATypeItem[]
-        }
+        };
     },
-    template: '<a-type :items="items" />',
+    template: '<a-type :items="items" />'
 });

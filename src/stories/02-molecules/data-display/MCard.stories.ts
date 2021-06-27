@@ -1,7 +1,7 @@
 import MCard from '@/components/02-molecules/data-display/MCard.vue';
 
 export default {
-    title: 'Molecules/m-card',
+    title: 'Molecules/m-card'
 };
 
 export const Simple = () => ({

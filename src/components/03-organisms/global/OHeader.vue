@@ -44,7 +44,7 @@ export default defineComponent({
             onOpenFilter: () => {
                 console.log('Open filter modal!!');
             }
-        }
+        };
 
         return {
             store,

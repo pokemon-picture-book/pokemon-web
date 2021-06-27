@@ -9,13 +9,10 @@ export const TypeAndName = () => ({
     components: { MPokemonTypeAndName },
     data: () => {
         return {
-            typeItems: [
-                { code: 'poison' },
-                { code: 'grass' }
-            ] as ATypeItem[]
-        }
+            typeItems: [{ code: 'poison' }, { code: 'grass' }] as ATypeItem[]
+        };
     },
-    template: '<m-pokemon-type-and-name name="フシギダネ" :type-items="typeItems" />',
+    template: '<m-pokemon-type-and-name name="フシギダネ" :type-items="typeItems" />'
 });
 
 export const TypeNameAndName = () => ({
@@ -26,7 +23,7 @@ export const TypeNameAndName = () => ({
                 { code: 'poison', label: 'どく' },
                 { code: 'grass', label: 'くさ' }
             ] as ATypeItem[]
-        }
+        };
     },
-    template: '<m-pokemon-type-and-name name="フシギダネ" :type-items="typeItems" />',
+    template: '<m-pokemon-type-and-name name="フシギダネ" :type-items="typeItems" />'
 });
