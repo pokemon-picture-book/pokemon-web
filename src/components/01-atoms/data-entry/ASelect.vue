@@ -117,7 +117,7 @@ export default defineComponent({
             color: $color;
             background-color: $background-color;
 
-            &:after {
+            &::after {
                 border-bottom: 1px solid $after-color;
                 border-right: 1px solid $after-color;
             }
@@ -126,6 +126,7 @@ export default defineComponent({
         &--default {
             @include select-color;
         }
+
         &--primary {
             @include select-color($p-white-color, $p-primary-color, $p-white-color);
         }
@@ -135,15 +136,19 @@ export default defineComponent({
         &--x-small {
             width: 120px;
         }
+
         &--small {
             width: 136px;
         }
+
         &--default {
             width: 160px;
         }
+
         &--large {
             width: 184px;
         }
+
         &--x-large {
             width: 200px;
         }
@@ -162,7 +167,7 @@ export default defineComponent({
         border: solid 1px;
         outline: none;
 
-        &:after {
+        &::after {
             position: absolute;
             display: block;
             content: '';
@@ -198,7 +203,7 @@ export default defineComponent({
         pointer-events: none;
         transform: translateY(-15px);
 
-        &:before {
+        &::before {
             position: absolute;
             display: block;
             content: '';
@@ -243,7 +248,7 @@ export default defineComponent({
         }
     }
 
-    .opened &__trigger:after {
+    .opened &__trigger::after {
         margin-top: 3px;
         transform: rotate(-135deg) translateY(-50%);
     }

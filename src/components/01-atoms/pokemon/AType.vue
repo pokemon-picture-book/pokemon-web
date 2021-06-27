@@ -65,54 +65,71 @@ export default defineComponent({
             &--normal {
                 background-color: $p-type-normal;
             }
+
             &--fighting {
                 background-color: $p-type-fighting;
             }
+
             &--flying {
                 background-color: $p-type-flying;
             }
+
             &--poison {
                 background-color: $p-type-poison;
             }
+
             &--ground {
                 background-color: $p-type-ground;
             }
+
             &--rock {
                 background-color: $p-type-rock;
             }
+
             &--bug {
                 background-color: $p-type-bug;
             }
+
             &--ghost {
                 background-color: $p-type-ghost;
             }
+
             &--steel {
                 background-color: $p-type-steel;
             }
+
             &--fire {
                 background-color: $p-type-fire;
             }
+
             &--water {
                 background-color: $p-type-water;
             }
+
             &--grass {
                 background-color: $p-type-grass;
             }
+
             &--electric {
                 background-color: $p-type-electric;
             }
+
             &--psychic {
                 background-color: $p-type-psychic;
             }
+
             &--ice {
                 background-color: $p-type-ice;
             }
+
             &--dragon {
                 background-color: $p-type-dragon;
             }
+
             &--dark {
                 background-color: $p-type-dark;
             }
+
             &--fairy {
                 background-color: $p-type-fairy;
             }

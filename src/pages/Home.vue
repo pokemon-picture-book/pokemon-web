@@ -40,6 +40,7 @@ $baseColor: #1967d3;
 
 .contentsBox {
     @extend .box;
+
     background-color: #eee;
 }
 </style>

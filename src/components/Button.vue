@@ -17,8 +17,8 @@ export default defineComponent({
 
 <style scoped lang="scss">
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
