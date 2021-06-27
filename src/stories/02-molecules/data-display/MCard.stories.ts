@@ -18,7 +18,7 @@ export const ImageSample = () => ({
     template: `
     <m-card style="width: 350px;">
         <template #img>
-            <img src="/img/pokemon.png" alt="pokemon" >
+            <img src="/img/pokemon.jpg" alt="pokemon" >
         </template>
         <span>Pokemon</span>
     </m-card>
@@ -30,7 +30,7 @@ export const FooterSample = () => ({
     template: `
     <m-card style="width: 350px;">
         <template #img>
-            <img src="/img/pokemon.png" alt="pokemon" >
+            <img src="/img/pokemon.jpg" alt="pokemon" >
         </template>
         <span>Pokemon</span>
         <template #footer>
