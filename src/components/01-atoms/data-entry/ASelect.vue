@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, SetupContext, toRefs, computed, reactive, watch } from 'vue';
-import { ASelectItem, ASelectProps } from '@/types/01-atoms/data-entry/ASelect';
+import { ASelectItem, ASelectProps, ASelectState } from '@/types/01-atoms/data-entry/ASelect';
 import { Color, Size } from '@/types/common/index.d';
 
 const notItemValue: ASelectItem = { id: 0, label: 'Not Item', value: 'not-item' };
@@ -49,8 +49,9 @@ export default defineComponent({
     setup(props: ASelectProps, { emit }: SetupContext) {
         const propToRef = toRefs<ASelectProps>(props);
 
-        const state = reactive({
-            isOpened: false
+        const state = reactive<ASelectState>({
+            isOpened: false,
+            selectedSource: null
         });
 
         const computedMethod = {
@@ -61,6 +62,9 @@ export default defineComponent({
             source: computed(() => {
                 if (propToRef.source && propToRef.source.value) {
                     return propToRef.source.value;
+                }
+                if (state.selectedSource) {
+                    return state.selectedSource;
                 }
                 if (propToRef.items.value.length) {
                     return propToRef.items.value[0];
@@ -78,6 +82,7 @@ export default defineComponent({
                 e.stopPropagation();
             },
             onClickItem: (item: ASelectItem) => {
+                state.selectedSource = item;
                 emit('update:source', item);
                 state.isOpened = false;
             }

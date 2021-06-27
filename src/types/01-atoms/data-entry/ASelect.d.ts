@@ -12,3 +12,8 @@ export declare type ASelectProps = {
     color: Color;
     size: Size;
 };
+
+export declare type ASelectState = {
+    isOpened: boolean,
+    selectedSource: ASelectItem | null
+};
