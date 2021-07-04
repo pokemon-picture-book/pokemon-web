@@ -1,6 +1,6 @@
 import { withKnobs, select } from '@storybook/addon-knobs';
 import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
-import { ASelectItem } from '@/types/01-atoms/data-entry/ASelect';
+import { ASelectItem } from '@/types/components/01-atoms/data-entry/ASelect';
 
 export default {
     title: 'Atoms/a-select',

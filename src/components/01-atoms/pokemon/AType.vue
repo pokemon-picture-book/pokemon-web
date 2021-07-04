@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ATypeItem } from '@/types/01-atoms/pokemon/AType';
+import { ATypeItem } from '@/types/components/01-atoms/pokemon/AType';
 
 /**
  * ポケモンタイプ.

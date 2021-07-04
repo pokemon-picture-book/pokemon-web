@@ -1,5 +1,5 @@
 import AType from '@/components/01-atoms/pokemon/AType.vue';
-import { ATypeItem } from '@/types/01-atoms/pokemon/AType';
+import { ATypeItem } from '@/types/components/01-atoms/pokemon/AType';
 
 export default {
     title: 'Atoms/a-type'

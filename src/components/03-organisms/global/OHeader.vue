@@ -15,7 +15,7 @@
 import { computed, defineComponent, provide } from 'vue';
 import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
 import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/master/language';
-import { ASelectItem } from '@/types/01-atoms/data-entry/ASelect';
+import { ASelectItem } from '@/types/components/01-atoms/data-entry/ASelect';
 
 export default defineComponent({
     components: {

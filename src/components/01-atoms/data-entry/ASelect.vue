@@ -18,8 +18,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, SetupContext, toRefs, computed, reactive, watch } from 'vue';
-import { ASelectItem, ASelectProps, ASelectState } from '@/types/01-atoms/data-entry/ASelect';
+import { defineComponent, PropType, SetupContext, toRefs, computed, reactive } from 'vue';
+import {
+    ASelectItem,
+    ASelectProps,
+    ASelectState
+} from '@/types/components/01-atoms/data-entry/ASelect';
 import { Color, Size } from '@/types/common/index.d';
 
 const notItemValue: ASelectItem = { id: 0, label: 'Not Item', value: 'not-item' };
