@@ -1,10 +1,10 @@
 <template>
-    <div class="header">
-        <div class="header__title">
+    <div class="o-header">
+        <div class="o-header__title">
             <i class="ib ib-whh-pokemon ib-3x"></i>
-            <h2 class="header__title--text">ポケモン図鑑</h2>
+            <h2 class="o-header__title--text">ポケモン図鑑</h2>
         </div>
-        <div class="header__operation">
+        <div class="o-header__operation">
             <a-select :items="languageItems" @select="updateLanguageItem" />
             <i class="ib ib-ri-search-eye-line ib-2x" @click="onOpenFilter"></i>
         </div>
@@ -58,7 +58,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/index.scss';
 
-.header {
+.o-header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid $p-black-color;
