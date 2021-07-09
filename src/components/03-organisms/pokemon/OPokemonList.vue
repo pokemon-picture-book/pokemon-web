@@ -1,6 +1,5 @@
 <template>
     <section class="o-pokemon-list">
-        <pre>{{ env }}</pre>
         <div v-for="item in state.items" :key="item.id" class="o-pokemon-list__card">
             <m-card class="o-pokemon-list__card--main">
                 <template #img>
@@ -33,7 +32,7 @@ import MPokemonTypeAndName from '@/components/02-molecules/pokemon/MPokemonTypeA
 
 // TODO: props から取得するよう修正すること
 const LANGUAGE = 'ja-Hrkt';
-const GAME = 'rse';
+const GAME = 'rgby';
 const REGIONS = ['johto'];
 
 export default defineComponent({
@@ -81,11 +80,11 @@ export default defineComponent({
                         }))
                     };
                 });
+                console.log(state.items)
             }
         );
 
         return {
-            env: process.env.NODE_ENV,
             state,
             ...computedMethod,
             ...method
