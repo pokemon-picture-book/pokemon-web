@@ -9,5 +9,5 @@ export declare type OPokemonItem = {
 
 export declare type OPokemonState = {
     items: OPokemonItem[];
-    gameImagePathIndex: { [key: string]: number }
+    gameImagePathIndex: { [key: string]: number };
 };

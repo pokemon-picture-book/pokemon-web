@@ -10,13 +10,11 @@
                     >
                         <img
                             v-if="index === state.gameImagePathIndex[item.id]"
-                            :src="
-                                require(`@/assets/img/pokemon${path}`)
-                            "
+                            :src="require(`@/assets/img/pokemon${path}`)"
                             @click="incrementGameImagePathIndex(item)"
                             alt="pokemon"
                             class="pokemon-card__image"
-                        >
+                        />
                     </div>
                 </template>
                 <m-pokemon-type-and-name :name="item.name" :type-items="item.types" />
@@ -52,7 +50,7 @@ export default defineComponent({
         const state = reactive<OPokemonState>({
             items: [],
             gameImagePathIndex: {}
-        })
+        });
 
         const computedMethod = {};
 
@@ -70,20 +68,20 @@ export default defineComponent({
         watch(
             () => store.getter.pokemons.value,
             () => {
-                state.items = store.getter.pokemons.value.map(pokemon => {
+                state.items = store.getter.pokemons.value.map((pokemon) => {
                     if (!state.gameImagePathIndex[pokemon.id]) {
                         state.gameImagePathIndex[pokemon.id] = 0;
                     }
                     return {
                         ...pokemon,
-                        gameImagePaths: pokemon.gameImagePaths.filter(path => pathReg.test(path)),
-                        types: pokemon.types.map(type => ({
+                        gameImagePaths: pokemon.gameImagePaths.filter((path) => pathReg.test(path)),
+                        types: pokemon.types.map((type) => ({
                             code: type.code
                         }))
-                    }
-                })
+                    };
+                });
             }
-        )
+        );
 
         return {
             state,
