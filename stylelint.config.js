@@ -1,8 +1,6 @@
 module.exports = {
     extends: 'stylelint-config-standard',
-    plugins: [
-        'stylelint-scss'
-    ],
+    plugins: ['stylelint-scss'],
     rules: {
         indentation: 4,
         'at-rule-no-unknown': null,
@@ -10,7 +8,7 @@ module.exports = {
         'selector-pseudo-element-no-unknown': [
             true,
             {
-                ignorePseudoElements: ['/^v-/', 'pseudo-element'],
+                ignorePseudoElements: ['/^v-/', 'pseudo-element']
             }
         ]
     }
