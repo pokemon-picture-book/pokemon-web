@@ -1,5 +1,6 @@
 <template>
     <section class="o-pokemon-list">
+        <pre>{{ env }}</pre>
         <div v-for="item in state.items" :key="item.id" class="o-pokemon-list__card">
             <m-card class="o-pokemon-list__card--main">
                 <template #img>
@@ -84,6 +85,7 @@ export default defineComponent({
         );
 
         return {
+            env: process.env.NODE_ENV,
             state,
             ...computedMethod,
             ...method
