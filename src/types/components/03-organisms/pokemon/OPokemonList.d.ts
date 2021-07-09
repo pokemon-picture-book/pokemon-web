@@ -6,3 +6,8 @@ export declare type OPokemonItem = {
     imagePaths: string[];
     types: { code: string }[];
 };
+
+export declare type OPokemonState = {
+    items: OPokemonItem[];
+    gameImagePathIndex: { [key: string]: number }
+};

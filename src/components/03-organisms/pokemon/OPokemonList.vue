@@ -1,15 +1,23 @@
 <template>
     <section class="o-pokemon-list">
-        <div v-for="(item, index) in items" :key="index" class="o-pokemon-list__card">
+        <div v-for="item in state.items" :key="item.id" class="o-pokemon-list__card">
             <m-card class="o-pokemon-list__card--main">
                 <template #img>
-                    <img
-                        :src="
-                            require(`@/assets/img/pokemon${item.gameImagePaths[2]}`)
-                        "
-                        alt="pokemon"
-                        class="o-pokemon-list__card--image"
+                    <div
+                        v-for="(path, index) in item.gameImagePaths"
+                        :key="path"
+                        class="pokemon-card"
                     >
+                        <img
+                            v-if="index === state.gameImagePathIndex[item.id]"
+                            :src="
+                                require(`@/assets/img/pokemon${path}`)
+                            "
+                            @click="incrementGameImagePathIndex(item)"
+                            alt="pokemon"
+                            class="pokemon-card__image"
+                        >
+                    </div>
                 </template>
                 <m-pokemon-type-and-name :name="item.name" :type-items="item.types" />
             </m-card>
@@ -18,11 +26,16 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, provide } from 'vue';
+import { defineComponent, provide, reactive, watch } from 'vue';
 import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
-import { OPokemonItem } from '@/types/components/03-organisms/pokemon/OPokemonList';
+import { OPokemonItem, OPokemonState } from '@/types/components/03-organisms/pokemon/OPokemonList';
 import MCard from '@/components/02-molecules/data-display/MCard.vue';
 import MPokemonTypeAndName from '@/components/02-molecules/pokemon/MPokemonTypeAndName.vue';
+
+// TODO: props から取得するよう修正すること
+const LANGUAGE = 'ja-Hrkt';
+const GAME = 'rse';
+const REGIONS = ['johto'];
 
 export default defineComponent({
     components: {
@@ -33,23 +46,47 @@ export default defineComponent({
         const store = pokemonState();
         provide<PokemonStateType>(PokemonStateKey, store);
 
-        store.action.fetchAll('ja-Hrkt', 'rgby', ['kanto']);
+        store.action.fetchAll(LANGUAGE, GAME, REGIONS);
 
-        const computedMethod = {
-            items: computed<OPokemonItem[]>(() => {
-                return store.getter.pokemons.value.map(pokemon => ({
-                    ...pokemon,
-                    types: pokemon.types.map(type => ({
-                        code: type.code
-                    }))
-                }))
-            })
+        const pathReg = new RegExp(`.*(/${GAME}/).*`, 'i');
+        const state = reactive<OPokemonState>({
+            items: [],
+            gameImagePathIndex: {}
+        })
+
+        const computedMethod = {};
+
+        const method = {
+            incrementGameImagePathIndex({ id, gameImagePaths }: OPokemonItem) {
+                const increment = state.gameImagePathIndex[id] + 1;
+                if (increment >= gameImagePaths.length) {
+                    state.gameImagePathIndex[id] = 0;
+                    return;
+                }
+                state.gameImagePathIndex[id] = increment;
+            }
         };
 
-        const method = {};
+        watch(
+            () => store.getter.pokemons.value,
+            () => {
+                state.items = store.getter.pokemons.value.map(pokemon => {
+                    if (!state.gameImagePathIndex[pokemon.id]) {
+                        state.gameImagePathIndex[pokemon.id] = 0;
+                    }
+                    return {
+                        ...pokemon,
+                        gameImagePaths: pokemon.gameImagePaths.filter(path => pathReg.test(path)),
+                        types: pokemon.types.map(type => ({
+                            code: type.code
+                        }))
+                    }
+                })
+            }
+        )
 
         return {
-            store,
+            state,
             ...computedMethod,
             ...method
         };
@@ -69,8 +106,15 @@ export default defineComponent({
             width: 200px;
         }
 
-        &--image {
-            width: 100%;
+        .pokemon-card {
+            display: flex;
+            justify-content: center;
+
+            &__image {
+                padding: 16px;
+                height: 168px;
+                max-width: 168px;
+            }
         }
     }
 }
