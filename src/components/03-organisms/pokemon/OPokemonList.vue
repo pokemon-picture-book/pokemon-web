@@ -43,11 +43,9 @@ export default defineComponent({
         MCard,
         MPokemonTypeAndName
     },
-    setup() {
+    async setup() {
         const store = pokemonState();
         provide<PokemonStateType>(PokemonStateKey, store);
-
-        store.action.fetchAll(LANGUAGE, GAME, REGIONS);
 
         const pathReg = new RegExp(`.*(/${GAME}/).*`, 'i');
         const state = reactive<OPokemonState>({
@@ -85,6 +83,9 @@ export default defineComponent({
                 });
             }
         );
+
+        // fetch data
+        await store.action.fetchAll(LANGUAGE, GAME, REGIONS);
 
         return {
             state,
