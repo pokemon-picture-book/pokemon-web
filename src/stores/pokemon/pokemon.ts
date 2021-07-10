@@ -14,7 +14,7 @@ export const pokemonState = () => {
     const action: Action = {
         fetchAll: async (lang: string, game: string, regions: string[]) => {
             const { data } = await repository.findAllByLangAndGameAndRegions(lang, game, regions);
-            state.pokemons = data;
+            state.pokemons = data || [];
         }
     };
 
