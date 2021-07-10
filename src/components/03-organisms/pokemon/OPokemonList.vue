@@ -1,6 +1,9 @@
 <template>
     <section class="o-pokemon-list">
-        <div v-for="item in state.items" :key="item.id" class="o-pokemon-list__card">
+        <div v-if="!state.items.length" class="o-pokemon-list__empty">
+            <span>No data...</span>
+        </div>
+        <div v-else v-for="item in state.items" :key="item.id" class="o-pokemon-list__card">
             <m-card class="o-pokemon-list__card--main">
                 <template #img>
                     <div
@@ -33,7 +36,7 @@ import MPokemonTypeAndName from '@/components/02-molecules/pokemon/MPokemonTypeA
 // TODO: props から取得するよう修正すること
 const LANGUAGE = 'ja-Hrkt';
 const GAME = 'rgby';
-const REGIONS = ['johto'];
+const REGIONS = ['kanto'];
 
 export default defineComponent({
     components: {
@@ -67,8 +70,8 @@ export default defineComponent({
 
         watch(
             () => store.getter.pokemons.value,
-            () => {
-                state.items = store.getter.pokemons.value.map((pokemon) => {
+            (newPokemons) => {
+                state.items = newPokemons.map((pokemon) => {
                     if (!state.gameImagePathIndex[pokemon.id]) {
                         state.gameImagePathIndex[pokemon.id] = 0;
                     }
@@ -96,6 +99,11 @@ export default defineComponent({
 .o-pokemon-list {
     display: flex;
     flex-wrap: wrap;
+
+    &__empty {
+        margin: auto;
+        padding: 24px;
+    }
 
     &__card {
         margin: 0 16px;
