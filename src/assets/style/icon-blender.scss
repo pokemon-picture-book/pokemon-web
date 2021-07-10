@@ -1,0 +1,106 @@
+/* SCSS requires mixins and core styles from the icon-builder repo
+ * https://github.com/icon-blender/icon-blender
+ * https://www.npmjs.com/package/icon-blender
+ */
+@import 'icon-blender/scss/icon-blender.scss';
+@import 'icon-blender/scss/icons/ri.scss';
+@import 'icon-blender/scss/icons/gg.scss';
+@import 'icon-blender/scss/icons/whh.scss';
+@import 'icon-blender/scss/icons/mdi.scss';
+@import 'icon-blender/scss/icons/simple-icons.scss';
+@import 'icon-blender/scss/icons/ic.scss';
+@import 'icon-blender/scss/icons/fe.scss';
+@import 'icon-blender/scss/icons/icomoon-free.scss';
+
+/*
+ * custom style
+ */
+.ib {
+    &::before {
+        vertical-align: 0;
+    }
+}
+
+/* Icon: ri-search-eye-line
+ * License: Apache 2.0
+ * Html: <i class="ib ib-ri-search-eye-line"></i>
+ */
+.ib-ri-search-eye-line {
+    @include iconUrl($icons-ri, 'search-eye-line');
+}
+
+/* Icon: gg-pokemon
+ * License: MIT
+ * Html: <i class="ib ib-gg-pokemon"></i>
+ */
+.ib-gg-pokemon {
+    color: $p-monster-ball;
+
+    @include iconUrl($icons-gg, 'pokemon');
+}
+
+/* Icon: whh-pokemon
+ * License: Open Font License
+ * Html: <i class="ib ib-whh-pokemon"></i>
+ */
+.ib-whh-pokemon {
+    color: $p-monster-ball;
+
+    @include iconUrl($icons-whh, 'pokemon');
+}
+
+/* Icon: mdi-pokemon-go
+ * License: Open Font License
+ * Html: <i class="ib ib-mdi-pokemon-go"></i>
+ */
+.ib-mdi-pokemon-go {
+    color: $p-monster-ball;
+
+    @include iconUrl($icons-mdi, 'pokemon-go');
+}
+
+/* Icon: simple-icons-pokemon
+ * License: CC0 1.0
+ * Html: <i class="ib ib-simple-icons-pokemon"></i>
+ */
+.ib-simple-icons-pokemon {
+    color: $p-blue-color;
+
+    @include iconUrl($icons-simple-icons, 'pokemon');
+}
+
+/* Icon: ic-baseline-catching-pokemon
+ * License: Apache 2.0
+ * Html: <i class="ib ib-ic-baseline-catching-pokemon"></i>
+ */
+.ib-ic-baseline-catching-pokemon {
+    color: $p-monster-ball;
+
+    @include iconUrl($icons-ic, 'baseline-catching-pokemon');
+}
+
+/* Icon: ic-twotone-catching-pokemon
+ * License: Apache 2.0
+ * Html: <i class="ib ib-ic-twotone-catching-pokemon"></i>
+ */
+.ib-ic-twotone-catching-pokemon {
+    color: $p-monster-ball;
+
+    @include iconUrl($icons-ic, 'twotone-catching-pokemon');
+}
+
+/* Icon: fe-book
+ * License: MIT
+ * Html: <i class="ib ib-fe-book"></i>
+ */
+.ib-fe-book {
+    @include iconUrl($icons-fe, 'book');
+}
+
+/* Icon: icomoon-free-spinner5
+ * License: GPL
+ * Html: <i class="ib ib-icomoon-free-spinner5"></i>
+ */
+.ib-icomoon-free-spinner5 {
+    @include iconUrl($icons-icomoon-free, 'spinner5');
+}

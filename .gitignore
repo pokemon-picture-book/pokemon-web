@@ -9,11 +9,16 @@ node_modules
 coverage
 
 # pokemon images
-src/assets/pokemon-img
+src/assets/img/pokemon
 
 # local env files
+.env
 .env.local
 .env.*.local
+.env.development
+.env.*.development
+.env.production
+.env.*.production
 
 # Log files
 npm-debug.log*
