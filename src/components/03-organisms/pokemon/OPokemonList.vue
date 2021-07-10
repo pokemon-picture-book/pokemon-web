@@ -80,7 +80,6 @@ export default defineComponent({
                         }))
                     };
                 });
-                console.log(state.items)
             }
         );
 
