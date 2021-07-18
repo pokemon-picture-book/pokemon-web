@@ -3,11 +3,11 @@ import {
     ACheckboxValues
 } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
-export declare type ACheckboxGroupProps = {
+export declare type MCheckboxGroupProps = {
     options: ACheckboxOption[];
     modelValue: ACheckboxValues;
 };
 
-export declare type ACheckboxGroupState = {
+export declare type MCheckboxGroupState = {
     sources: ACheckboxValues;
 };

@@ -1,5 +1,5 @@
 <template>
-    <div class="a-checkbox-group">
+    <div class="m-checkbox-group">
         <template v-for="option in options" :key="option.value">
             <a-checkbox :option="option" v-model="state.sources" @change="onChange" />
         </template>
@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineComponent, PropType, reactive, SetupContext } from 'vue';
 import ACheckbox from '@/components/01-atoms/data-entry/ACheckbox.vue';
-import { ACheckboxGroupProps } from '@/types/components/01-atoms/data-entry/ACheckboxGroup';
+import { MCheckboxGroupProps } from '@/types/components/02-molecules/data-entry/MCheckboxGroup';
 import { ACheckboxOption, ACheckboxValues } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default defineComponent({
@@ -26,7 +26,7 @@ export default defineComponent({
             default: () => []
         }
     },
-    setup(props: ACheckboxGroupProps, { emit }: SetupContext) {
+    setup(props: MCheckboxGroupProps, { emit }: SetupContext) {
         const state = reactive({
             sources: [...props.modelValue]
         });
@@ -47,7 +47,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.a-checkbox-group {
+.m-checkbox-group {
     display: flex;
     flex-wrap: wrap;
 }

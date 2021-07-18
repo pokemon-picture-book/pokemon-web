@@ -1,16 +1,16 @@
 import { action } from '@storybook/addon-actions';
-import ACheckboxGroup from '@/components/01-atoms/data-entry/ACheckboxGroup.vue';
+import MCheckboxGroup from '@/components/02-molecules/data-entry/MCheckboxGroup.vue';
 import {
     ACheckboxOption,
     ACheckboxValues
 } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default {
-    title: 'Atoms/a-checkbox-group'
+    title: 'Molecules/m-checkbox-group'
 };
 
 export const Simple = () => ({
-    components: { ACheckboxGroup },
+    components: { MCheckboxGroup },
     data: () => {
         return {
             options: [
@@ -28,11 +28,11 @@ export const Simple = () => ({
     methods: {
         onChange: action('change')
     },
-    template: '<a-checkbox-group v-model="sources" :options="options" @change="onChange" />'
+    template: '<m-checkbox-group v-model="sources" :options="options" @change="onChange" />'
 });
 
 export const Disabled = () => ({
-    components: { ACheckboxGroup },
+    components: { MCheckboxGroup },
     data: () => {
         return {
             options: [
@@ -50,11 +50,11 @@ export const Disabled = () => ({
     methods: {
         onChange: action('change')
     },
-    template: '<a-checkbox-group v-model="sources" :options="options" @change="onChange" />'
+    template: '<m-checkbox-group v-model="sources" :options="options" @change="onChange" />'
 });
 
 export const InValue = () => ({
-    components: { ACheckboxGroup },
+    components: { MCheckboxGroup },
     data: () => {
         return {
             options: [
@@ -73,7 +73,7 @@ export const InValue = () => ({
         onChange: action('change')
     },
     template: `
-    <a-checkbox-group
+    <m-checkbox-group
         :options="options"
         v-model="sources"
         @change="onChange"
