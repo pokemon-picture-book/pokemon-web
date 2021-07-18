@@ -1,9 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import ACheckbox from '@/components/01-atoms/data-entry/ACheckbox.vue';
-import {
-    ACheckboxOption,
-    ACheckboxValues
-} from '@/types/components/01-atoms/data-entry/ACheckbox';
+import { ACheckboxOption, ACheckboxValues } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default {
     title: 'Atoms/a-checkbox'
@@ -27,7 +24,11 @@ export const Disabled = () => ({
     components: { ACheckbox },
     data: () => {
         return {
-            option: { label: '赤/緑/ピカチュウ', value: 'rgby-disabled', disabled: true } as ACheckboxOption,
+            option: {
+                label: '赤/緑/ピカチュウ',
+                value: 'rgby-disabled',
+                disabled: true
+            } as ACheckboxOption,
             sources: [] as ACheckboxValues
         };
     },

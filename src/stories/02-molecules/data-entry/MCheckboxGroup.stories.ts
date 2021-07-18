@@ -1,9 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import MCheckboxGroup from '@/components/02-molecules/data-entry/MCheckboxGroup.vue';
-import {
-    ACheckboxOption,
-    ACheckboxValues
-} from '@/types/components/01-atoms/data-entry/ACheckbox';
+import { ACheckboxOption, ACheckboxValues } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default {
     title: 'Molecules/m-checkbox-group'
