@@ -1,14 +1,11 @@
-export declare type ACheckboxValues = unknown[];
-
-export declare type ACheckboxOption = {
-    label: string;
-    value: Value;
-    disabled?: boolean;
-};
+import {
+    ACheckboxOption,
+    ACheckboxValues
+} from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export declare type ACheckboxGroupProps = {
-    options: Option[];
-    values: Value[];
+    options: ACheckboxOption[];
+    modelValue: ACheckboxValues;
 };
 
 export declare type ACheckboxGroupState = {

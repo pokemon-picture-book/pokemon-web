@@ -3,7 +3,7 @@ import ACheckboxGroup from '@/components/01-atoms/data-entry/ACheckboxGroup.vue'
 import {
     ACheckboxOption,
     ACheckboxValues
-} from '@/types/components/01-atoms/data-entry/ACheckboxGroup';
+} from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default {
     title: 'Atoms/a-checkbox-group'
@@ -14,20 +14,21 @@ export const Simple = () => ({
     data: () => {
         return {
             options: [
-                { label: '赤/緑/ピカチュウ', value: 'rgby' },
-                { label: '金/銀/クリスタル', value: 'gsc' },
-                { label: 'ルビー/サファイア/エメラルド', value: 'rse' },
-                { label: 'ファイアレッド/リーフグリーン', value: 'frlg' },
-                { label: 'ダイヤモンド/パール', value: 'dp' },
-                { label: 'プラチナ', value: 'pt' },
-                { label: 'ハートゴールド/ソウルシルバー', value: 'hgss' }
-            ] as ACheckboxOption[]
+                { label: '赤/緑/ピカチュウ', value: 'rgby-simple' },
+                { label: '金/銀/クリスタル', value: 'gsc-simple' },
+                { label: 'ルビー/サファイア/エメラルド', value: 'rse-simple' },
+                { label: 'ファイアレッド/リーフグリーン', value: 'frlg-simple' },
+                { label: 'ダイヤモンド/パール', value: 'dp-simple' },
+                { label: 'プラチナ', value: 'pt-simple' },
+                { label: 'ハートゴールド/ソウルシルバー', value: 'hgss-simple' }
+            ] as ACheckboxOption[],
+            sources: []
         };
     },
     methods: {
         onChange: action('change')
     },
-    template: '<a-checkbox-group :options="options" @change="onChange" />'
+    template: '<a-checkbox-group v-model="sources" :options="options" @change="onChange" />'
 });
 
 export const Disabled = () => ({
@@ -35,20 +36,21 @@ export const Disabled = () => ({
     data: () => {
         return {
             options: [
-                { label: '赤/緑/ピカチュウ', value: 'rgby', disabled: true },
-                { label: '金/銀/クリスタル', value: 'gsc', disabled: true },
-                { label: 'ルビー/サファイア/エメラルド', value: 'rse' },
-                { label: 'ファイアレッド/リーフグリーン', value: 'frlg' },
-                { label: 'ダイヤモンド/パール', value: 'dp' },
-                { label: 'プラチナ', value: 'pt' },
-                { label: 'ハートゴールド/ソウルシルバー', value: 'hgss' }
-            ] as ACheckboxOption[]
+                { label: '赤/緑/ピカチュウ', value: 'rgby-disabled', disabled: true },
+                { label: '金/銀/クリスタル', value: 'gsc-disabled', disabled: true },
+                { label: 'ルビー/サファイア/エメラルド', value: 'rse-disabled' },
+                { label: 'ファイアレッド/リーフグリーン', value: 'frlg-disabled' },
+                { label: 'ダイヤモンド/パール', value: 'dp-disabled' },
+                { label: 'プラチナ', value: 'pt-disabled' },
+                { label: 'ハートゴールド/ソウルシルバー', value: 'hgss-disabled' }
+            ] as ACheckboxOption[],
+            sources: []
         };
     },
     methods: {
         onChange: action('change')
     },
-    template: '<a-checkbox-group :options="options" @change="onChange" />'
+    template: '<a-checkbox-group v-model="sources" :options="options" @change="onChange" />'
 });
 
 export const InValue = () => ({
@@ -56,15 +58,15 @@ export const InValue = () => ({
     data: () => {
         return {
             options: [
-                { label: '赤/緑/ピカチュウ', value: 'rgby' },
-                { label: '金/銀/クリスタル', value: 'gsc' },
-                { label: 'ルビー/サファイア/エメラルド', value: 'rse' },
-                { label: 'ファイアレッド/リーフグリーン', value: 'frlg' },
-                { label: 'ダイヤモンド/パール', value: 'dp' },
-                { label: 'プラチナ', value: 'pt' },
-                { label: 'ハートゴールド/ソウルシルバー', value: 'hgss' }
+                { label: '赤/緑/ピカチュウ', value: 'rgby-in-value' },
+                { label: '金/銀/クリスタル', value: 'gsc-in-value' },
+                { label: 'ルビー/サファイア/エメラルド', value: 'rse-in-value' },
+                { label: 'ファイアレッド/リーフグリーン', value: 'frlg-in-value' },
+                { label: 'ダイヤモンド/パール', value: 'dp-in-value' },
+                { label: 'プラチナ', value: 'pt-in-value' },
+                { label: 'ハートゴールド/ソウルシルバー', value: 'hgss-in-value' }
             ] as ACheckboxOption[],
-            values: ['rgby', 'gsc'] as ACheckboxValues
+            sources: ['rgby-in-value', 'gsc-in-value'] as ACheckboxValues
         };
     },
     methods: {
@@ -73,7 +75,7 @@ export const InValue = () => ({
     template: `
     <a-checkbox-group
         :options="options"
-        :values="values"
+        v-model="sources"
         @change="onChange"
     />
     `
