@@ -33,3 +33,13 @@ $p-type-ice: #64c5b3; // こおり
 $p-type-dragon: #0f56b7; // ドラゴン
 $p-type-dark: #484053; // あく
 $p-type-fairy: #e575df; // フェアリー
+
+@mixin label-color(
+    $color: $p-gray-color,
+    $border-color: $p-gray-color,
+    $background-color: $p-white-color
+) {
+    color: $color;
+    border: 3px solid $border-color;
+    background-color: $background-color;
+}

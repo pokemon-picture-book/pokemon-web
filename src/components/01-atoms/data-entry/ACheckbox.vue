@@ -71,16 +71,6 @@ export default defineComponent({
     box-shadow: 0 0 20px $color;
 }
 
-@mixin label-color(
-    $color: $p-shadow-color,
-    $border-color: $p-shadow-color,
-    $background-color: $p-white-color
-) {
-    color: $color;
-    border: 3px solid $border-color;
-    background-color: $background-color;
-}
-
 .a-checkbox {
     width: 40%;
 
@@ -116,7 +106,7 @@ export default defineComponent({
             bottom: 10px;
             left: 10px;
             width: 32px;
-            border: 3px solid $p-shadow-color;
+            border: 3px solid $p-gray-color;
             border-radius: 100px;
             transition: background-color 0.2s;
         }
