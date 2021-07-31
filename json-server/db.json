@@ -3,89 +3,420 @@
         {
             "id": 1,
             "alias": "rgby",
-            "name": "赤/緑/ピカチュウ"
+            "name": "Red/Blue/Yellow",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                }
+            ]
         },
         {
             "id": 2,
             "alias": "gsc",
-            "name": "金/銀/クリスタル"
+            "name": "Gold/Silver/Crystal",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                }
+            ]
         },
         {
             "id": 3,
             "alias": "rse",
-            "name": "ルビー/サファイア/エメラルド"
+            "name": "Ruby/Sapphire/Emerald",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                }
+            ]
         },
         {
             "id": 4,
             "alias": "frlg",
-            "name": "ファイアレッド/リーフグリーン"
+            "name": "FireRed/LeafGreen",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                }
+            ]
         },
         {
             "id": 5,
             "alias": "dp",
-            "name": "ダイヤモンド/パール"
+            "name": "Diamond/Pearl",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                }
+            ]
         },
         {
             "id": 6,
             "alias": "pt",
-            "name": "プラチナ"
+            "name": "Platinum",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                }
+            ]
         },
         {
             "id": 7,
             "alias": "hgss",
-            "name": "ハートゴールド/ソウルシルバー"
+            "name": "HeartGold/SoulSilver",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                }
+            ]
         },
         {
             "id": 8,
             "alias": "bw",
-            "name": "ブラック/ホワイト"
+            "name": "Black/White",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                },
+                {
+                    "id": 5,
+                    "name": "unova"
+                }
+            ]
         },
         {
             "id": 12,
             "alias": "xy",
-            "name": "X/Y"
+            "name": "X/Y",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                },
+                {
+                    "id": 5,
+                    "name": "unova"
+                },
+                {
+                    "id": 6,
+                    "name": "kalos"
+                }
+            ]
         },
         {
             "id": 13,
             "alias": "oras",
-            "name": "オメガルビー/アルファサファイア"
-        },
-        {
-            "id": 14,
-            "alias": "sm",
-            "name": "サン/ムーン"
+            "name": "Omega Ruby/Alpha Sapphire",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                },
+                {
+                    "id": 5,
+                    "name": "unova"
+                },
+                {
+                    "id": 6,
+                    "name": "kalos"
+                }
+            ]
         }
     ],
     "regions": [
         {
             "id": 1,
             "name": "kanto",
-            "displayName": "カントー地方"
+            "displayName": "Kanto",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 3,
+                    "alias": "rse"
+                },
+                {
+                    "id": 4,
+                    "alias": "frlg"
+                },
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 1,
+                    "alias": "rgby"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 2,
+                    "alias": "gsc"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                }
+            ]
         },
         {
             "id": 2,
             "name": "johto",
-            "displayName": "ジョウト地方"
+            "displayName": "Johto",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 2,
+                    "alias": "gsc"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                },
+                {
+                    "id": 3,
+                    "alias": "rse"
+                },
+                {
+                    "id": 4,
+                    "alias": "frlg"
+                },
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                }
+            ]
         },
         {
             "id": 3,
             "name": "hoenn",
-            "displayName": "ホウエン地方"
+            "displayName": "Hoenn",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 13,
+                    "alias": "oras"
+                },
+                {
+                    "id": 3,
+                    "alias": "rse"
+                },
+                {
+                    "id": 4,
+                    "alias": "frlg"
+                },
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                }
+            ]
         },
         {
             "id": 4,
             "name": "sinnoh",
-            "displayName": "シンオウ地方"
+            "displayName": "Sinnoh",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                }
+            ]
         },
         {
             "id": 5,
             "name": "unova",
-            "displayName": "イッシュ地方"
+            "displayName": "Unova",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                }
+            ]
         },
         {
             "id": 6,
             "name": "kalos",
-            "displayName": "カロス地方"
+            "displayName": "Kalos",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                }
+            ]
         }
     ],
     "languages": [
