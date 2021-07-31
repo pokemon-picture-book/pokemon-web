@@ -9,7 +9,10 @@
 <script lang="ts">
 import { defineComponent, PropType, reactive, SetupContext } from 'vue';
 import ACheckbox from '@/components/01-atoms/data-entry/ACheckbox.vue';
-import { MCheckboxGroupProps } from '@/types/components/02-molecules/data-entry/MCheckboxGroup';
+import {
+    MCheckboxGroupProps,
+    MCheckboxGroupState
+} from '@/types/components/02-molecules/data-entry/MCheckboxGroup';
 import { ACheckboxOption, ACheckboxValues } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default defineComponent({
@@ -27,7 +30,7 @@ export default defineComponent({
         }
     },
     setup(props: MCheckboxGroupProps, { emit }: SetupContext) {
-        const state = reactive({
+        const state = reactive<MCheckboxGroupState>({
             sources: [...props.modelValue]
         });
 
