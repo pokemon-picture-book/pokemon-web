@@ -1,9 +1,9 @@
 <template>
-    <div class="m-checkbox-group">
+    <fieldset class="m-checkbox-group">
         <template v-for="option in options" :key="option.value">
             <a-checkbox :option="option" v-model="state.sources" @change="onChange" />
         </template>
-    </div>
+    </fieldset>
 </template>
 
 <script lang="ts">
@@ -50,5 +50,6 @@ export default defineComponent({
 .m-checkbox-group {
     display: flex;
     flex-wrap: wrap;
+    border: none;
 }
 </style>
