@@ -28,7 +28,15 @@ export default defineComponent({});
     margin: 30px auto;
     background: $p-white-color;
     border-radius: 5px;
-    box-shadow: 0 2px 5px $p-shadow-color;
+    box-shadow: 2px 2px 5px $p-shadow-color;
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+    &:hover {
+        box-shadow: 8px 8px 5px $p-shadow-color;
+        transform: translateY(-5px);
+        transition-duration: 0.5s;
+    }
 
     &__img {
         border-bottom: 1px solid $p-light-gray-line-color;
