@@ -1,105 +1,118 @@
-<!-- https://v3.vuejs.org/examples/modal.html -->
 <template>
-    <div class="modal-mask">
-        <div class="modal-wrapper">
-            <div class="modal-container">
-                <div class="modal-header">
-                    <slot name="header"> default header </slot>
-                </div>
+    <transition name="m-modal">
+        <div v-if="isShow" class="m-modal-mask">
+            <div class="m-modal-wrapper">
+                <div class="m-modal-container">
+                    <div class="m-modal-container__header">
+                        <slot name="header"> default header </slot>
 
-                <div class="modal-body">
-                    <slot name="body"> default body </slot>
-                </div>
+                        <div
+                            class="m-modal-container__header--close-button"
+                            @click="$emit('close')"
+                        >
+                            <i class="ib fa-close"></i>
+                        </div>
+                    </div>
 
-                <div class="modal-footer">
-                    <slot name="footer">
-                        default footer
-                        <button class="modal-default-button" @click="$emit('close')">OK</button>
-                    </slot>
+                    <div class="m-modal-container__body">
+                        <slot name="body"></slot>
+                    </div>
+
+                    <div class="m-modal-container__footer">
+                        <slot name="footer"></slot>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
-import { defineComponent, reactive } from 'vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-    setup() {
-        const state = reactive({
-            showModal: false
-        });
-
-        return {
-            state
-        };
+    props: {
+        isShow: {
+            type: Boolean,
+            default: () => false
+        }
     }
 });
 </script>
 
 <style lang="scss" scoped>
-.modal-mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: table;
-    transition: opacity 0.3s ease;
-}
+@import '@/assets/style/index.scss';
 
-.modal-wrapper {
-    display: table-cell;
-    vertical-align: middle;
-}
+.m-modal {
+    &-mask {
+        position: fixed;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: table;
+        transition: opacity 0.3s ease;
+    }
 
-.modal-container {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px 30px;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-    transition: all 0.3s ease;
-}
+    &-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+    }
 
-.modal-header h3 {
-    margin-top: 0;
-    color: #42b983;
-}
+    &-container {
+        width: 50vw;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+        transition: all 0.3s ease;
 
-.modal-body {
-    margin: 20px 0;
-}
+        &__header,
+        &__body,
+        &__footer {
+            padding: 16px;
+        }
 
-.modal-default-button {
-    display: block;
-    margin-top: 1rem;
-}
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid;
+            font-weight: bold;
 
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
+            &--close-button {
+                cursor: pointer;
+            }
+        }
 
-.modal-enter {
-    opacity: 0;
-}
+        &__body {
+            max-height: calc(100vh - 15em);
+            overflow: auto;
+        }
 
-.modal-leave-active {
-    opacity: 0;
-}
+        &__footer {
+            border-top: 1px solid;
+        }
+    }
 
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    /*
+    * The following styles are auto-applied to elements with
+    * transition="modal" when their visibility is toggled
+    * by Vue.js.
+    *
+    * You can easily play with the modal transition by editing
+    * these styles.
+    */
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 0.3s ease;
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+    }
 }
 </style>
