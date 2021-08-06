@@ -39,7 +39,12 @@ export const Disabled = () => ({
                 { index: 14, label: 'ファイアレッド/リーフグリーン', value: 'frlg-disabled' },
                 { index: 15, label: 'ダイヤモンド/パール', value: 'dp-disabled' },
                 { index: 16, label: 'プラチナ', value: 'pt-disabled', disabled: true },
-                { index: 17, label: 'ハートゴールド/ソウルシルバー', value: 'hgss-disabled', disabled: true }
+                {
+                    index: 17,
+                    label: 'ハートゴールド/ソウルシルバー',
+                    value: 'hgss-disabled',
+                    disabled: true
+                }
             ] as ARadioOption[],
             source: ''
         };
