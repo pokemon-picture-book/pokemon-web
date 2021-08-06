@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, SetupContext } from 'vue';
+import { defineComponent, PropType, reactive, SetupContext, watch } from 'vue';
 import ARadio from '@/components/01-atoms/data-entry/ARadio.vue';
 import {
     MRadioGroupProps,
@@ -40,6 +40,11 @@ export default defineComponent({
                 emit('change', state.source);
             }
         };
+
+        watch(
+            () => props.modelValue,
+            (newValue: string) => (state.source = newValue)
+        );
 
         return {
             state,

@@ -67,12 +67,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/color.scss';
 
-@mixin focus-in($color: $p-shadow-color) {
-    box-shadow: 0 0 20px $color;
-}
-
 .a-checkbox {
-    width: 40%;
+    width: 50%;
 
     &__label {
         $this: & !global;
@@ -93,10 +89,6 @@ export default defineComponent({
         text-overflow: ellipsis;
         -webkit-text-overflow: ellipsis; /* Safari */
         -o-text-overflow: ellipsis; /* Opera */
-
-        &:hover {
-            @include focus-in;
-        }
 
         &::before {
             content: '';
@@ -131,15 +123,11 @@ export default defineComponent({
     &__input {
         display: none;
 
-        &:focus + #{$this} {
-            @include focus-in;
-        }
-
         &:checked + #{$this} {
-            @include label-color($p-white-color, $p-white-color, $p-primary-color);
+            @include label-color($p-black-color, $p-primary-color, $p-primary-right-color);
 
             &::before {
-                border: 3px solid $p-white-color;
+                border: 3px solid $p-primary-color;
                 background-color: $p-white-color;
             }
         }

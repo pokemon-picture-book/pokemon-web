@@ -68,7 +68,7 @@ export default defineComponent({
 @import '@/assets/style/color.scss';
 
 .a-radio {
-    width: 40%;
+    width: 50%;
 
     &__input {
         display: none;
@@ -100,7 +100,7 @@ export default defineComponent({
     }
 
     &__input:checked + &__label {
-        @include label-color($p-white-color, $p-white-color, $p-primary-color);
+        @include label-color($p-black-color, $p-primary-color, $p-primary-right-color);
 
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
     }

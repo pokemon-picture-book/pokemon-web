@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, SetupContext } from 'vue';
+import { defineComponent, PropType, reactive, SetupContext, watch } from 'vue';
 import ACheckbox from '@/components/01-atoms/data-entry/ACheckbox.vue';
 import {
     MCheckboxGroupProps,
@@ -40,6 +40,11 @@ export default defineComponent({
                 emit('change', state.sources);
             }
         };
+
+        watch(
+            () => props.modelValue,
+            (newValue: ACheckboxValues) => (state.sources = [...newValue])
+        );
 
         return {
             state,
