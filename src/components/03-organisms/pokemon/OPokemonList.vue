@@ -73,9 +73,13 @@ export default defineComponent({
                     if (!state.gameImagePathIndex[pokemon.id]) {
                         state.gameImagePathIndex[pokemon.id] = 0;
                     }
+                    const { mainPath, otherPaths } = pokemon.gameImagePath;
+                    const gameImagePaths = [mainPath].concat(
+                        otherPaths.filter((path) => pathReg.test(path))
+                    );
                     return {
                         ...pokemon,
-                        gameImagePaths: pokemon.gameImagePaths.filter((path) => pathReg.test(path)),
+                        gameImagePaths,
                         types: pokemon.types.map((type) => ({
                             code: type.code
                         }))
