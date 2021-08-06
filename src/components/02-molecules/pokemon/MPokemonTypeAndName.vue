@@ -1,7 +1,7 @@
 <template>
     <div class="m-pokemon-type-and-name">
         <a-type :items="typeItems" />
-        <span class="m-pokemon-type-and-name__name">{{ name }}</span>
+        <div class="m-pokemon-type-and-name__name">{{ name }}</div>
     </div>
 </template>
 
@@ -34,6 +34,7 @@ export default defineComponent({
 .m-pokemon-type-and-name {
     display: flex;
     align-items: center;
+    flex-direction: column;
 
     &__name {
         margin: 8px;
