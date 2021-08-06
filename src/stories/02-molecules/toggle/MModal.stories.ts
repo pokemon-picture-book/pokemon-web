@@ -14,10 +14,6 @@ export const TypeAndName = () => ({
     template: `
         <button @click="showModal = true">Show Modal</button>
         <!-- use the modal component, pass in the prop -->
-        <m-modal v-if="showModal" @close="showModal = false">
-            <template v-slot:header>
-            <h3>custom header</h3>
-            </template>
-        </m-modal>
+        <m-modal :is-show="showModal" @close="showModal = false"></m-modal>
     `
 });
