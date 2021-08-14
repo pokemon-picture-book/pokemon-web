@@ -5,7 +5,6 @@ type GameVersionGroup = GameVersionGroupResponse;
 
 export declare type State = {
     gameVersionGroups: GameVersionGroup[];
-    selectedAlias: GameVersionGroup['alias'];
 };
 
 export declare type Getter = {
@@ -14,5 +13,4 @@ export declare type Getter = {
 
 export declare type Action = {
     fetchAll: (lang: string, supported: boolean) => Promise<void>;
-    saveSelectedAlias: (selectedAlias: GameVersionGroup['alias']) => void;
 };

@@ -5,7 +5,6 @@ type Region = RegionResponse;
 
 export declare type State = {
     regions: Region[];
-    selectedNames: Region['name'][];
 };
 
 export declare type Getter = {
@@ -14,5 +13,4 @@ export declare type Getter = {
 
 export declare type Action = {
     fetchAll: (lang: string) => Promise<void>;
-    saveSelectedNames: (selectedNames: Region['name'][]) => void;
 };

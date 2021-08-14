@@ -4,8 +4,7 @@ import repository from '@/plugins/http/api/game-version-groups';
 
 export const gameVersionGroupState = () => {
     const state: State = reactive({
-        gameVersionGroups: [],
-        selectedAlias: ''
+        gameVersionGroups: []
     });
 
     const getter: Getter = {
@@ -16,9 +15,6 @@ export const gameVersionGroupState = () => {
         fetchAll: async (lang, supported) => {
             const { data } = await repository.findAll(lang, supported);
             state.gameVersionGroups = data || [];
-        },
-        saveSelectedAlias: (selectedAlias) => {
-            state.selectedAlias = selectedAlias;
         }
     };
 

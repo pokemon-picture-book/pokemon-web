@@ -50,6 +50,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, provide, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 import {
     GameVersionGroupStateKey,
     gameVersionGroupState,
@@ -77,6 +78,8 @@ export default defineComponent({
         AButton
     },
     setup() {
+        const router = useRouter();
+
         const state = reactive<State>({
             isShowModal: false,
             selectedGameVersionGroup: '',
@@ -85,7 +88,7 @@ export default defineComponent({
 
         const gameVersionGroupStore = gameVersionGroupState();
         provide<GameVersionGroupStateType>(GameVersionGroupStateKey, gameVersionGroupStore);
-        gameVersionGroupStore.action.fetchAll('ja', true).then(() => {
+        gameVersionGroupStore.action.fetchAll('ja-Hrkt', true).then(() => {
             // set first value
             state.selectedGameVersionGroup =
                 gameVersionGroupStore.getter.gameVersionGroups.value[0].alias;
@@ -93,7 +96,7 @@ export default defineComponent({
 
         const regionStore = regionState();
         provide<RegionStateType>(RegionStateKey, regionStore);
-        regionStore.action.fetchAll('ja').then(() => {
+        regionStore.action.fetchAll('ja-Hrkt').then(() => {
             // set first value
             state.selectedRegions = [regionStore.getter.regions.value[0].name];
         });
@@ -169,8 +172,13 @@ export default defineComponent({
                     state.selectedRegions = [regionStore.getter.regions.value[0].name];
                 }
 
-                gameVersionGroupStore.action.saveSelectedAlias(state.selectedGameVersionGroup);
-                regionStore.action.saveSelectedNames(state.selectedRegions);
+                router.push({
+                    path: '/home',
+                    query: {
+                        game: state.selectedGameVersionGroup,
+                        regions: state.selectedRegions
+                    }
+                });
 
                 state.isShowModal = false;
             }

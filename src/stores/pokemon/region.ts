@@ -4,8 +4,7 @@ import repository from '@/plugins/http/api/regions';
 
 export const regionState = () => {
     const state: State = reactive({
-        regions: [],
-        selectedNames: []
+        regions: []
     });
 
     const getter: Getter = {
@@ -16,9 +15,6 @@ export const regionState = () => {
         fetchAll: async (lang) => {
             const { data } = await repository.findAll(lang);
             state.regions = data || [];
-        },
-        saveSelectedNames: (selectedNames) => {
-            state.selectedNames = selectedNames;
         }
     };
 

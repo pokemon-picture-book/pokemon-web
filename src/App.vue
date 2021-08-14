@@ -15,6 +15,7 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: none;
     font-family: 'pokemon-font', monospace;
+    margin: 0;
 }
 
 a {
