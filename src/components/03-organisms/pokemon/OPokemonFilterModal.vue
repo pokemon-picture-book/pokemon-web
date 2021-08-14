@@ -4,7 +4,7 @@
         <m-modal :is-show="state.isShowModal" @close="modalClose">
             <template v-slot:header>
                 <div class="modal__title">
-                    <i class="ib ib-ri-search-eye-line ib-2x" @click="modalOpen"></i>
+                    <i class="ib ib-ri-search-eye-line ib-2x"></i>
                     <span class="modal__title--text">条件を入力</span>
                 </div>
             </template>
@@ -50,7 +50,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, provide, reactive } from 'vue';
-import { useRouter } from 'vue-router';
+import { LocationQueryValue, useRoute, useRouter } from 'vue-router';
 import {
     GameVersionGroupStateKey,
     gameVersionGroupState,
@@ -79,6 +79,7 @@ export default defineComponent({
     },
     setup() {
         const router = useRouter();
+        const route = useRoute();
 
         const state = reactive<State>({
             isShowModal: false,
@@ -89,7 +90,12 @@ export default defineComponent({
         const gameVersionGroupStore = gameVersionGroupState();
         provide<GameVersionGroupStateType>(GameVersionGroupStateKey, gameVersionGroupStore);
         gameVersionGroupStore.action.fetchAll('ja-Hrkt', true).then(() => {
+            const queryGame = route.query.game as LocationQueryValue;
             // set first value
+            if (queryGame) {
+                state.selectedGameVersionGroup = queryGame;
+                return;
+            }
             state.selectedGameVersionGroup =
                 gameVersionGroupStore.getter.gameVersionGroups.value[0].alias;
         });
@@ -97,7 +103,16 @@ export default defineComponent({
         const regionStore = regionState();
         provide<RegionStateType>(RegionStateKey, regionStore);
         regionStore.action.fetchAll('ja-Hrkt').then(() => {
+            const queryRegions = route.query.regions;
             // set first value
+            if (Array.isArray(queryRegions)) {
+                state.selectedRegions = queryRegions as string[];
+                return;
+            }
+            if (queryRegions) {
+                state.selectedRegions = [queryRegions];
+                return;
+            }
             state.selectedRegions = [regionStore.getter.regions.value[0].name];
         });
 
@@ -166,7 +181,7 @@ export default defineComponent({
                     relatedRegionNames.includes(selectedRegion)
                 );
             },
-            /** 選択された条件をコミットし、検索を実行して、モーダルを閉じる */
+            /** 選択された条件を query parameter にセットし、検索を実行して、モーダルを閉じる */
             onClick() {
                 if (!state.selectedRegions.length) {
                     state.selectedRegions = [regionStore.getter.regions.value[0].name];

@@ -70,30 +70,30 @@ export default defineComponent({
         const method = {};
 
         const privateMethod = {
-            fetch: async (lang: string, game: string, regions: string[]) => {
+            fetch: async () => {
                 state.isLoading = true;
-                await store.action.fetchAll(lang, game, regions);
-                state.isLoading = false;
-            }
-        };
 
-        watch(
-            () => route.query,
-            (newQuery) => {
-                const queryGame = newQuery.game as LocationQueryValue;
-                const queryRegions = newQuery.regions as LocationQueryValue[];
+                const queryGame = route.query.game as LocationQueryValue;
+                const queryRegions = route.query.regions as LocationQueryValue[];
 
                 const game = queryGame || GAME;
                 const regions = (queryRegions && queryRegions.length
                     ? queryRegions
                     : REGIONS) as string[];
 
-                privateMethod.fetch(LANGUAGE, game, regions);
+                await store.action.fetchAll(LANGUAGE, game, regions);
+
+                state.isLoading = false;
             }
+        };
+
+        watch(
+            () => route.query,
+            () => privateMethod.fetch()
         );
 
         // fetch data
-        privateMethod.fetch(LANGUAGE, GAME, REGIONS);
+        privateMethod.fetch();
 
         return {
             state,

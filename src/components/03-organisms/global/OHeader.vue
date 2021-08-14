@@ -6,7 +6,8 @@
         </div>
         <nav class="o-header__navigation gnav">
             <ul class="gnav__menu">
-                <li class="gnav__menu--item">
+                <!-- TODO: グローバル対応実施のタイミングで表示する -->
+                <li class="gnav__menu--item" style="display: none">
                     <a-select :items="languageItems" @select="updateLanguageItem" />
                 </li>
                 <li class="gnav__menu--item">
