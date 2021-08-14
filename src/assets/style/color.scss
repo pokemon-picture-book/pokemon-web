@@ -1,4 +1,6 @@
-$p-primary-color: #5c9cd8;
+$p-primary-right-color: #efacb5;
+$p-primary-color: #d90019;
+$p-primary-deep-color: #c10016;
 $p-white-color: #fff;
 $p-shadow-color: #b5b5b5;
 $p-select-hover-color: #f9f9f9;
@@ -8,10 +10,10 @@ $p-light-gray-color: #eee;
 $p-light-gray-line-color: #ddd;
 $p-blue-color: #2b4699;
 
-$p-monster-ball: #d90019;
-
 $p-link: #0bd;
 $p-link-hover: #0090aa;
+
+$p-disabled: #7f8385;
 
 $p-type-normal: #7e8790; // ノーマル
 $p-type-fighting: #c02956; // かくとう
@@ -31,3 +33,13 @@ $p-type-ice: #64c5b3; // こおり
 $p-type-dragon: #0f56b7; // ドラゴン
 $p-type-dark: #484053; // あく
 $p-type-fairy: #e575df; // フェアリー
+
+@mixin label-color(
+    $color: $p-gray-color,
+    $border-color: $p-gray-color,
+    $background-color: $p-white-color
+) {
+    color: $color;
+    border: 3px solid $border-color;
+    background-color: $background-color;
+}

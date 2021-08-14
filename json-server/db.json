@@ -3,89 +3,420 @@
         {
             "id": 1,
             "alias": "rgby",
-            "name": "赤/緑/ピカチュウ"
+            "name": "Red/Blue/Yellow",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                }
+            ]
         },
         {
             "id": 2,
             "alias": "gsc",
-            "name": "金/銀/クリスタル"
+            "name": "Gold/Silver/Crystal",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                }
+            ]
         },
         {
             "id": 3,
             "alias": "rse",
-            "name": "ルビー/サファイア/エメラルド"
+            "name": "Ruby/Sapphire/Emerald",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                }
+            ]
         },
         {
             "id": 4,
             "alias": "frlg",
-            "name": "ファイアレッド/リーフグリーン"
+            "name": "FireRed/LeafGreen",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                }
+            ]
         },
         {
             "id": 5,
             "alias": "dp",
-            "name": "ダイヤモンド/パール"
+            "name": "Diamond/Pearl",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                }
+            ]
         },
         {
             "id": 6,
             "alias": "pt",
-            "name": "プラチナ"
+            "name": "Platinum",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                }
+            ]
         },
         {
             "id": 7,
             "alias": "hgss",
-            "name": "ハートゴールド/ソウルシルバー"
+            "name": "HeartGold/SoulSilver",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                }
+            ]
         },
         {
             "id": 8,
             "alias": "bw",
-            "name": "ブラック/ホワイト"
+            "name": "Black/White",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                },
+                {
+                    "id": 5,
+                    "name": "unova"
+                }
+            ]
         },
         {
             "id": 12,
             "alias": "xy",
-            "name": "X/Y"
+            "name": "X/Y",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                },
+                {
+                    "id": 5,
+                    "name": "unova"
+                },
+                {
+                    "id": 6,
+                    "name": "kalos"
+                }
+            ]
         },
         {
             "id": 13,
             "alias": "oras",
-            "name": "オメガルビー/アルファサファイア"
-        },
-        {
-            "id": 14,
-            "alias": "sm",
-            "name": "サン/ムーン"
+            "name": "Omega Ruby/Alpha Sapphire",
+            "relatedRegions": [
+                {
+                    "id": 1,
+                    "name": "kanto"
+                },
+                {
+                    "id": 2,
+                    "name": "johto"
+                },
+                {
+                    "id": 3,
+                    "name": "hoenn"
+                },
+                {
+                    "id": 4,
+                    "name": "sinnoh"
+                },
+                {
+                    "id": 5,
+                    "name": "unova"
+                },
+                {
+                    "id": 6,
+                    "name": "kalos"
+                }
+            ]
         }
     ],
     "regions": [
         {
             "id": 1,
             "name": "kanto",
-            "displayName": "カントー地方"
+            "displayName": "Kanto",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 3,
+                    "alias": "rse"
+                },
+                {
+                    "id": 4,
+                    "alias": "frlg"
+                },
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 1,
+                    "alias": "rgby"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 2,
+                    "alias": "gsc"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                }
+            ]
         },
         {
             "id": 2,
             "name": "johto",
-            "displayName": "ジョウト地方"
+            "displayName": "Johto",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 2,
+                    "alias": "gsc"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                },
+                {
+                    "id": 3,
+                    "alias": "rse"
+                },
+                {
+                    "id": 4,
+                    "alias": "frlg"
+                },
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                }
+            ]
         },
         {
             "id": 3,
             "name": "hoenn",
-            "displayName": "ホウエン地方"
+            "displayName": "Hoenn",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 13,
+                    "alias": "oras"
+                },
+                {
+                    "id": 3,
+                    "alias": "rse"
+                },
+                {
+                    "id": 4,
+                    "alias": "frlg"
+                },
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                }
+            ]
         },
         {
             "id": 4,
             "name": "sinnoh",
-            "displayName": "シンオウ地方"
+            "displayName": "Sinnoh",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 5,
+                    "alias": "dp"
+                },
+                {
+                    "id": 6,
+                    "alias": "pt"
+                },
+                {
+                    "id": 7,
+                    "alias": "hgss"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                },
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                }
+            ]
         },
         {
             "id": 5,
             "name": "unova",
-            "displayName": "イッシュ地方"
+            "displayName": "Unova",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                },
+                {
+                    "id": 8,
+                    "alias": "bw"
+                }
+            ]
         },
         {
             "id": 6,
             "name": "kalos",
-            "displayName": "カロス地方"
+            "displayName": "Kalos",
+            "relatedGameVersionGroups": [
+                {
+                    "id": 12,
+                    "alias": "xy"
+                },
+                {
+                    "id": 13,
+                    "alias": "oras"
+                }
+            ]
         }
     ],
     "languages": [
@@ -104,14 +435,16 @@
         {
             "id": 1,
             "imageColor": "green",
-            "name": "フシギダネ",
-            "gameImagePaths": [
-                "/001/icon/1/3.gif",
-                "/001/rgby/001.png",
-                "/001/rgby/001_blue.png",
-                "/001/rgby/001_pika.png",
-                "/001/rgby/001_rg.png"
-            ],
+            "name": "Bulbasaur",
+            "gameImagePath": {
+                "mainPath": "/001/rgby/001_rg.png",
+                "otherPaths": [
+                    "/001/icon/1/3.gif",
+                    "/001/rgby/001.png",
+                    "/001/rgby/001_blue.png",
+                    "/001/rgby/001_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/001/footmark/001.png",
                 "/001/footmark/001b.png",
@@ -127,25 +460,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 2,
             "imageColor": "green",
-            "name": "フシギソウ",
-            "gameImagePaths": [
-                "/002/icon/1/3.gif",
-                "/002/rgby/002.png",
-                "/002/rgby/002_blue.png",
-                "/002/rgby/002_pika.png",
-                "/002/rgby/002_rg.png"
-            ],
+            "name": "Ivysaur",
+            "gameImagePath": {
+                "mainPath": "/002/rgby/002_rg.png",
+                "otherPaths": [
+                    "/002/icon/1/3.gif",
+                    "/002/rgby/002.png",
+                    "/002/rgby/002_blue.png",
+                    "/002/rgby/002_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/002/footmark/002.png",
                 "/002/footmark/002b.png",
@@ -161,25 +496,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 3,
             "imageColor": "green",
-            "name": "フシギバナ",
-            "gameImagePaths": [
-                "/003/icon/1/3.gif",
-                "/003/rgby/003.png",
-                "/003/rgby/003_blue.png",
-                "/003/rgby/003_pika.png",
-                "/003/rgby/003_rg.png"
-            ],
+            "name": "Venusaur",
+            "gameImagePath": {
+                "mainPath": "/003/rgby/003_rg.png",
+                "otherPaths": [
+                    "/003/icon/1/3.gif",
+                    "/003/rgby/003.png",
+                    "/003/rgby/003_blue.png",
+                    "/003/rgby/003_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/003/footmark/003.png",
                 "/003/footmark/003b.png",
@@ -195,25 +532,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 4,
             "imageColor": "red",
-            "name": "ヒトカゲ",
-            "gameImagePaths": [
-                "/004/icon/1/1.gif",
-                "/004/rgby/004.png",
-                "/004/rgby/004_blue.png",
-                "/004/rgby/004_pika.png",
-                "/004/rgby/004_rg.png"
-            ],
+            "name": "Charmander",
+            "gameImagePath": {
+                "mainPath": "/004/rgby/004_rg.png",
+                "otherPaths": [
+                    "/004/icon/1/1.gif",
+                    "/004/rgby/004.png",
+                    "/004/rgby/004_blue.png",
+                    "/004/rgby/004_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/004/footmark/004.png",
                 "/004/footmark/004b.png",
@@ -229,21 +568,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 5,
             "imageColor": "red",
-            "name": "リザード",
-            "gameImagePaths": [
-                "/005/icon/1/1.gif",
-                "/005/rgby/005.png",
-                "/005/rgby/005_blue.png",
-                "/005/rgby/005_pika.png",
-                "/005/rgby/005_rg.png"
-            ],
+            "name": "Charmeleon",
+            "gameImagePath": {
+                "mainPath": "/005/rgby/005_rg.png",
+                "otherPaths": [
+                    "/005/icon/1/1.gif",
+                    "/005/rgby/005.png",
+                    "/005/rgby/005_blue.png",
+                    "/005/rgby/005_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/005/footmark/005.png",
                 "/005/footmark/005b.png",
@@ -259,21 +600,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 6,
             "imageColor": "red",
-            "name": "リザードン",
-            "gameImagePaths": [
-                "/006/icon/1/1.gif",
-                "/006/rgby/006.png",
-                "/006/rgby/006_blue.png",
-                "/006/rgby/006_pika.png",
-                "/006/rgby/006_rg.png"
-            ],
+            "name": "Charizard",
+            "gameImagePath": {
+                "mainPath": "/006/rgby/006_rg.png",
+                "otherPaths": [
+                    "/006/icon/1/1.gif",
+                    "/006/rgby/006.png",
+                    "/006/rgby/006_blue.png",
+                    "/006/rgby/006_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/006/footmark/006.png",
                 "/006/footmark/006b.png",
@@ -289,25 +632,27 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 7,
             "imageColor": "blue",
-            "name": "ゼニガメ",
-            "gameImagePaths": [
-                "/007/icon/1/6.gif",
-                "/007/rgby/007.png",
-                "/007/rgby/007_blue.png",
-                "/007/rgby/007_pika.png",
-                "/007/rgby/007_rg.png"
-            ],
+            "name": "Squirtle",
+            "gameImagePath": {
+                "mainPath": "/007/rgby/007_rg.png",
+                "otherPaths": [
+                    "/007/icon/1/6.gif",
+                    "/007/rgby/007.png",
+                    "/007/rgby/007_blue.png",
+                    "/007/rgby/007_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/007/footmark/007.png",
                 "/007/footmark/007b.png",
@@ -323,21 +668,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 8,
             "imageColor": "blue",
-            "name": "カメール",
-            "gameImagePaths": [
-                "/008/icon/1/6.gif",
-                "/008/rgby/008.png",
-                "/008/rgby/008_blue.png",
-                "/008/rgby/008_pika.png",
-                "/008/rgby/008_rg.png"
-            ],
+            "name": "Wartortle",
+            "gameImagePath": {
+                "mainPath": "/008/rgby/008_rg.png",
+                "otherPaths": [
+                    "/008/icon/1/6.gif",
+                    "/008/rgby/008.png",
+                    "/008/rgby/008_blue.png",
+                    "/008/rgby/008_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/008/footmark/008.png",
                 "/008/footmark/008b.png",
@@ -353,21 +700,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 9,
             "imageColor": "blue",
-            "name": "カメックス",
-            "gameImagePaths": [
-                "/009/icon/1/6.gif",
-                "/009/rgby/009.png",
-                "/009/rgby/009_blue.png",
-                "/009/rgby/009_pika.png",
-                "/009/rgby/009_rg.png"
-            ],
+            "name": "Blastoise",
+            "gameImagePath": {
+                "mainPath": "/009/rgby/009_rg.png",
+                "otherPaths": [
+                    "/009/icon/1/6.gif",
+                    "/009/rgby/009.png",
+                    "/009/rgby/009_blue.png",
+                    "/009/rgby/009_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/009/footmark/009.png",
                 "/009/footmark/009b.png",
@@ -383,21 +732,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 10,
             "imageColor": "green",
-            "name": "キャタピー",
-            "gameImagePaths": [
-                "/010/icon/1/5.gif",
-                "/010/rgby/010.png",
-                "/010/rgby/010_blue.png",
-                "/010/rgby/010_pika.png",
-                "/010/rgby/010_rg.png"
-            ],
+            "name": "Caterpie",
+            "gameImagePath": {
+                "mainPath": "/010/rgby/010_rg.png",
+                "otherPaths": [
+                    "/010/icon/1/5.gif",
+                    "/010/rgby/010.png",
+                    "/010/rgby/010_blue.png",
+                    "/010/rgby/010_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/010/footmark/010.png",
                 "/010/footmark/010b.png",
@@ -413,21 +764,23 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 }
             ]
         },
         {
             "id": 11,
             "imageColor": "green",
-            "name": "トランセル",
-            "gameImagePaths": [
-                "/011/icon/1/5.gif",
-                "/011/rgby/011.png",
-                "/011/rgby/011_blue.png",
-                "/011/rgby/011_pika.png",
-                "/011/rgby/011_rg.png"
-            ],
+            "name": "Metapod",
+            "gameImagePath": {
+                "mainPath": "/011/rgby/011_rg.png",
+                "otherPaths": [
+                    "/011/icon/1/5.gif",
+                    "/011/rgby/011.png",
+                    "/011/rgby/011_blue.png",
+                    "/011/rgby/011_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/011/overworld/011-1.gif",
                 "/011/overworld/011-2.gif",
@@ -441,21 +794,23 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 }
             ]
         },
         {
             "id": 12,
             "imageColor": "white",
-            "name": "バタフリー",
-            "gameImagePaths": [
-                "/012/icon/1/5.gif",
-                "/012/rgby/012.png",
-                "/012/rgby/012_blue.png",
-                "/012/rgby/012_pika.png",
-                "/012/rgby/012_rg.png"
-            ],
+            "name": "Butterfree",
+            "gameImagePath": {
+                "mainPath": "/012/rgby/012_rg.png",
+                "otherPaths": [
+                    "/012/icon/1/5.gif",
+                    "/012/rgby/012.png",
+                    "/012/rgby/012_blue.png",
+                    "/012/rgby/012_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/012/footmark/012.png",
                 "/012/footmark/012b.png",
@@ -471,25 +826,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 13,
             "imageColor": "brown",
-            "name": "ビードル",
-            "gameImagePaths": [
-                "/013/icon/1/5.gif",
-                "/013/rgby/013.png",
-                "/013/rgby/013_blue.png",
-                "/013/rgby/013_pika.png",
-                "/013/rgby/013_rg.png"
-            ],
+            "name": "Weedle",
+            "gameImagePath": {
+                "mainPath": "/013/rgby/013_rg.png",
+                "otherPaths": [
+                    "/013/icon/1/5.gif",
+                    "/013/rgby/013.png",
+                    "/013/rgby/013_blue.png",
+                    "/013/rgby/013_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/013/footmark/013.png",
                 "/013/footmark/013b.png",
@@ -505,25 +862,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 14,
             "imageColor": "yellow",
-            "name": "コクーン",
-            "gameImagePaths": [
-                "/014/icon/1/5.gif",
-                "/014/rgby/014.png",
-                "/014/rgby/014_blue.png",
-                "/014/rgby/014_pika.png",
-                "/014/rgby/014_rg.png"
-            ],
+            "name": "Kakuna",
+            "gameImagePath": {
+                "mainPath": "/014/rgby/014_rg.png",
+                "otherPaths": [
+                    "/014/icon/1/5.gif",
+                    "/014/rgby/014.png",
+                    "/014/rgby/014_blue.png",
+                    "/014/rgby/014_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/014/overworld/014-1.gif",
                 "/014/overworld/014-2.gif",
@@ -537,25 +896,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 15,
             "imageColor": "yellow",
-            "name": "スピアー",
-            "gameImagePaths": [
-                "/015/icon/1/5.gif",
-                "/015/rgby/015.png",
-                "/015/rgby/015_blue.png",
-                "/015/rgby/015_pika.png",
-                "/015/rgby/015_rg.png"
-            ],
+            "name": "Beedrill",
+            "gameImagePath": {
+                "mainPath": "/015/rgby/015_rg.png",
+                "otherPaths": [
+                    "/015/icon/1/5.gif",
+                    "/015/rgby/015.png",
+                    "/015/rgby/015_blue.png",
+                    "/015/rgby/015_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/015/footmark/015.png",
                 "/015/footmark/015b.png",
@@ -571,25 +932,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 16,
             "imageColor": "brown",
-            "name": "ポッポ",
-            "gameImagePaths": [
-                "/016/icon/1/8.gif",
-                "/016/rgby/016.png",
-                "/016/rgby/016_blue.png",
-                "/016/rgby/016_pika.png",
-                "/016/rgby/016_rg.png"
-            ],
+            "name": "Pidgey",
+            "gameImagePath": {
+                "mainPath": "/016/rgby/016_rg.png",
+                "otherPaths": [
+                    "/016/icon/1/8.gif",
+                    "/016/rgby/016.png",
+                    "/016/rgby/016_blue.png",
+                    "/016/rgby/016_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/016/footmark/016.png",
                 "/016/footmark/016b.png",
@@ -605,25 +968,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 17,
             "imageColor": "brown",
-            "name": "ピジョン",
-            "gameImagePaths": [
-                "/017/icon/1/8.gif",
-                "/017/rgby/017.png",
-                "/017/rgby/017_blue.png",
-                "/017/rgby/017_pika.png",
-                "/017/rgby/017_rg.png"
-            ],
+            "name": "Pidgeotto",
+            "gameImagePath": {
+                "mainPath": "/017/rgby/017_rg.png",
+                "otherPaths": [
+                    "/017/icon/1/8.gif",
+                    "/017/rgby/017.png",
+                    "/017/rgby/017_blue.png",
+                    "/017/rgby/017_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/017/footmark/017.png",
                 "/017/footmark/017b.png",
@@ -639,25 +1004,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 18,
             "imageColor": "brown",
-            "name": "ピジョット",
-            "gameImagePaths": [
-                "/018/icon/1/8.gif",
-                "/018/rgby/018.png",
-                "/018/rgby/018_blue.png",
-                "/018/rgby/018_pika.png",
-                "/018/rgby/018_rg.png"
-            ],
+            "name": "Pidgeot",
+            "gameImagePath": {
+                "mainPath": "/018/rgby/018_rg.png",
+                "otherPaths": [
+                    "/018/icon/1/8.gif",
+                    "/018/rgby/018.png",
+                    "/018/rgby/018_blue.png",
+                    "/018/rgby/018_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/018/footmark/018.png",
                 "/018/footmark/018b.png",
@@ -673,25 +1040,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 19,
             "imageColor": "purple",
-            "name": "コラッタ",
-            "gameImagePaths": [
-                "/019/icon/1/9.gif",
-                "/019/rgby/019.png",
-                "/019/rgby/019_blue.png",
-                "/019/rgby/019_pika.png",
-                "/019/rgby/019_rg.png"
-            ],
+            "name": "Rattata",
+            "gameImagePath": {
+                "mainPath": "/019/rgby/019_rg.png",
+                "otherPaths": [
+                    "/019/icon/1/9.gif",
+                    "/019/rgby/019.png",
+                    "/019/rgby/019_blue.png",
+                    "/019/rgby/019_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/019/footmark/019.png",
                 "/019/footmark/019b.png",
@@ -707,21 +1076,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 20,
             "imageColor": "brown",
-            "name": "ラッタ",
-            "gameImagePaths": [
-                "/020/icon/1/9.gif",
-                "/020/rgby/020.png",
-                "/020/rgby/020_blue.png",
-                "/020/rgby/020_pika.png",
-                "/020/rgby/020_rg.png"
-            ],
+            "name": "Raticate",
+            "gameImagePath": {
+                "mainPath": "/020/rgby/020_rg.png",
+                "otherPaths": [
+                    "/020/icon/1/9.gif",
+                    "/020/rgby/020.png",
+                    "/020/rgby/020_blue.png",
+                    "/020/rgby/020_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/020/footmark/020.png",
                 "/020/footmark/020b.png",
@@ -737,21 +1108,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 21,
             "imageColor": "brown",
-            "name": "オニスズメ",
-            "gameImagePaths": [
-                "/021/icon/1/8.gif",
-                "/021/rgby/021.png",
-                "/021/rgby/021_blue.png",
-                "/021/rgby/021_pika.png",
-                "/021/rgby/021_rg.png"
-            ],
+            "name": "Spearow",
+            "gameImagePath": {
+                "mainPath": "/021/rgby/021_rg.png",
+                "otherPaths": [
+                    "/021/icon/1/8.gif",
+                    "/021/rgby/021.png",
+                    "/021/rgby/021_blue.png",
+                    "/021/rgby/021_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/021/footmark/021.png",
                 "/021/footmark/021b.png",
@@ -767,25 +1140,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 22,
             "imageColor": "brown",
-            "name": "オニドリル",
-            "gameImagePaths": [
-                "/022/icon/1/8.gif",
-                "/022/rgby/022.png",
-                "/022/rgby/022_blue.png",
-                "/022/rgby/022_pika.png",
-                "/022/rgby/022_rg.png"
-            ],
+            "name": "Fearow",
+            "gameImagePath": {
+                "mainPath": "/022/rgby/022_rg.png",
+                "otherPaths": [
+                    "/022/icon/1/8.gif",
+                    "/022/rgby/022.png",
+                    "/022/rgby/022_blue.png",
+                    "/022/rgby/022_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/022/footmark/022.png",
                 "/022/footmark/022b.png",
@@ -801,25 +1176,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 23,
             "imageColor": "purple",
-            "name": "アーボ",
-            "gameImagePaths": [
-                "/023/icon/1/7.gif",
-                "/023/rgby/023.png",
-                "/023/rgby/023_blue.png",
-                "/023/rgby/023_pika.png",
-                "/023/rgby/023_rg.png"
-            ],
+            "name": "Ekans",
+            "gameImagePath": {
+                "mainPath": "/023/rgby/023_rg.png",
+                "otherPaths": [
+                    "/023/icon/1/7.gif",
+                    "/023/rgby/023.png",
+                    "/023/rgby/023_blue.png",
+                    "/023/rgby/023_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/023/overworld/023-1.gif",
                 "/023/overworld/023-2.gif",
@@ -833,21 +1210,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 24,
             "imageColor": "purple",
-            "name": "アーボック",
-            "gameImagePaths": [
-                "/024/icon/1/7.gif",
-                "/024/rgby/024.png",
-                "/024/rgby/024_blue.png",
-                "/024/rgby/024_pika.png",
-                "/024/rgby/024_rg.png"
-            ],
+            "name": "Arbok",
+            "gameImagePath": {
+                "mainPath": "/024/rgby/024_rg.png",
+                "otherPaths": [
+                    "/024/icon/1/7.gif",
+                    "/024/rgby/024.png",
+                    "/024/rgby/024_blue.png",
+                    "/024/rgby/024_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/024/overworld/024-1.gif",
                 "/024/overworld/024-2.gif",
@@ -861,52 +1240,54 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 25,
             "imageColor": "yellow",
-            "name": "ピカチュウ",
-            "gameImagePaths": [
-                "/025/icon/1/11.gif",
-                "/025/icon/1/2.gif",
-                "/025/rgby/025.png",
-                "/025/rgby/025_blue.png",
-                "/025/rgby/025_pika.png",
-                "/025/rgby/025_rg.png",
-                "/025/rgby/pika/pika_1.png",
-                "/025/rgby/pika/pika_10.png",
-                "/025/rgby/pika/pika_11.png",
-                "/025/rgby/pika/pika_12.png",
-                "/025/rgby/pika/pika_13.png",
-                "/025/rgby/pika/pika_14.png",
-                "/025/rgby/pika/pika_15.png",
-                "/025/rgby/pika/pika_16.png",
-                "/025/rgby/pika/pika_17.png",
-                "/025/rgby/pika/pika_18.png",
-                "/025/rgby/pika/pika_19.png",
-                "/025/rgby/pika/pika_2.png",
-                "/025/rgby/pika/pika_20.png",
-                "/025/rgby/pika/pika_21.png",
-                "/025/rgby/pika/pika_22.png",
-                "/025/rgby/pika/pika_23.png",
-                "/025/rgby/pika/pika_24.png",
-                "/025/rgby/pika/pika_25.png",
-                "/025/rgby/pika/pika_26.png",
-                "/025/rgby/pika/pika_27.png",
-                "/025/rgby/pika/pika_28.png",
-                "/025/rgby/pika/pika_29.png",
-                "/025/rgby/pika/pika_3.png",
-                "/025/rgby/pika/pika_30.png",
-                "/025/rgby/pika/pika_4.png",
-                "/025/rgby/pika/pika_5.png",
-                "/025/rgby/pika/pika_6.png",
-                "/025/rgby/pika/pika_7.png",
-                "/025/rgby/pika/pika_8.png",
-                "/025/rgby/pika/pika_9.png"
-            ],
+            "name": "Pikachu",
+            "gameImagePath": {
+                "mainPath": "/025/rgby/025_rg.png",
+                "otherPaths": [
+                    "/025/icon/1/11.gif",
+                    "/025/icon/1/2.gif",
+                    "/025/rgby/025.png",
+                    "/025/rgby/025_blue.png",
+                    "/025/rgby/025_pika.png",
+                    "/025/rgby/pika/pika_1.png",
+                    "/025/rgby/pika/pika_10.png",
+                    "/025/rgby/pika/pika_11.png",
+                    "/025/rgby/pika/pika_12.png",
+                    "/025/rgby/pika/pika_13.png",
+                    "/025/rgby/pika/pika_14.png",
+                    "/025/rgby/pika/pika_15.png",
+                    "/025/rgby/pika/pika_16.png",
+                    "/025/rgby/pika/pika_17.png",
+                    "/025/rgby/pika/pika_18.png",
+                    "/025/rgby/pika/pika_19.png",
+                    "/025/rgby/pika/pika_2.png",
+                    "/025/rgby/pika/pika_20.png",
+                    "/025/rgby/pika/pika_21.png",
+                    "/025/rgby/pika/pika_22.png",
+                    "/025/rgby/pika/pika_23.png",
+                    "/025/rgby/pika/pika_24.png",
+                    "/025/rgby/pika/pika_25.png",
+                    "/025/rgby/pika/pika_26.png",
+                    "/025/rgby/pika/pika_27.png",
+                    "/025/rgby/pika/pika_28.png",
+                    "/025/rgby/pika/pika_29.png",
+                    "/025/rgby/pika/pika_3.png",
+                    "/025/rgby/pika/pika_30.png",
+                    "/025/rgby/pika/pika_4.png",
+                    "/025/rgby/pika/pika_5.png",
+                    "/025/rgby/pika/pika_6.png",
+                    "/025/rgby/pika/pika_7.png",
+                    "/025/rgby/pika/pika_8.png",
+                    "/025/rgby/pika/pika_9.png"
+                ]
+            },
             "imagePaths": [
                 "/025/footmark/025.png",
                 "/025/footmark/025b.png",
@@ -926,22 +1307,24 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 }
             ]
         },
         {
             "id": 26,
             "imageColor": "yellow",
-            "name": "ライチュウ",
-            "gameImagePaths": [
-                "/026/icon/1/11.gif",
-                "/026/icon/1/2.gif",
-                "/026/rgby/026.png",
-                "/026/rgby/026_blue.png",
-                "/026/rgby/026_pika.png",
-                "/026/rgby/026_rg.png"
-            ],
+            "name": "Raichu",
+            "gameImagePath": {
+                "mainPath": "/026/rgby/026_rg.png",
+                "otherPaths": [
+                    "/026/icon/1/11.gif",
+                    "/026/icon/1/2.gif",
+                    "/026/rgby/026.png",
+                    "/026/rgby/026_blue.png",
+                    "/026/rgby/026_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/026/footmark/026.png",
                 "/026/footmark/026b.png",
@@ -957,21 +1340,23 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 }
             ]
         },
         {
             "id": 27,
             "imageColor": "yellow",
-            "name": "サンド",
-            "gameImagePaths": [
-                "/027/icon/1/1.gif",
-                "/027/rgby/027.png",
-                "/027/rgby/027_blue.png",
-                "/027/rgby/027_pika.png",
-                "/027/rgby/027_rg.png"
-            ],
+            "name": "Sandshrew",
+            "gameImagePath": {
+                "mainPath": "/027/rgby/027_rg.png",
+                "otherPaths": [
+                    "/027/icon/1/1.gif",
+                    "/027/rgby/027.png",
+                    "/027/rgby/027_blue.png",
+                    "/027/rgby/027_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/027/footmark/027.png",
                 "/027/footmark/027b.png",
@@ -987,21 +1372,23 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 28,
             "imageColor": "yellow",
-            "name": "サンドパン",
-            "gameImagePaths": [
-                "/028/icon/1/1.gif",
-                "/028/rgby/028.png",
-                "/028/rgby/028_blue.png",
-                "/028/rgby/028_pika.png",
-                "/028/rgby/028_rg.png"
-            ],
+            "name": "Sandslash",
+            "gameImagePath": {
+                "mainPath": "/028/rgby/028_rg.png",
+                "otherPaths": [
+                    "/028/icon/1/1.gif",
+                    "/028/rgby/028.png",
+                    "/028/rgby/028_blue.png",
+                    "/028/rgby/028_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/028/footmark/028.png",
                 "/028/footmark/028b.png",
@@ -1017,21 +1404,23 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 29,
             "imageColor": "blue",
-            "name": "ニドラン♀",
-            "gameImagePaths": [
-                "/029/icon/1/1.gif",
-                "/029/rgby/029.png",
-                "/029/rgby/029_blue.png",
-                "/029/rgby/029_pika.png",
-                "/029/rgby/029_rg.png"
-            ],
+            "name": "Nidoran♀",
+            "gameImagePath": {
+                "mainPath": "/029/rgby/029_rg.png",
+                "otherPaths": [
+                    "/029/icon/1/1.gif",
+                    "/029/rgby/029.png",
+                    "/029/rgby/029_blue.png",
+                    "/029/rgby/029_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/029/footmark/029.png",
                 "/029/footmark/029b.png",
@@ -1047,21 +1436,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 30,
             "imageColor": "blue",
-            "name": "ニドリーナ",
-            "gameImagePaths": [
-                "/030/icon/1/1.gif",
-                "/030/rgby/030.png",
-                "/030/rgby/030_blue.png",
-                "/030/rgby/030_pika.png",
-                "/030/rgby/030_rg.png"
-            ],
+            "name": "Nidorina",
+            "gameImagePath": {
+                "mainPath": "/030/rgby/030_rg.png",
+                "otherPaths": [
+                    "/030/icon/1/1.gif",
+                    "/030/rgby/030.png",
+                    "/030/rgby/030_blue.png",
+                    "/030/rgby/030_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/030/footmark/030.png",
                 "/030/footmark/030b.png",
@@ -1077,21 +1468,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 31,
             "imageColor": "blue",
-            "name": "ニドクイン",
-            "gameImagePaths": [
-                "/031/icon/1/1.gif",
-                "/031/rgby/031.png",
-                "/031/rgby/031_blue.png",
-                "/031/rgby/031_pika.png",
-                "/031/rgby/031_rg.png"
-            ],
+            "name": "Nidoqueen",
+            "gameImagePath": {
+                "mainPath": "/031/rgby/031_rg.png",
+                "otherPaths": [
+                    "/031/icon/1/1.gif",
+                    "/031/rgby/031.png",
+                    "/031/rgby/031_blue.png",
+                    "/031/rgby/031_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/031/footmark/031.png",
                 "/031/footmark/031b.png",
@@ -1107,25 +1500,27 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 },
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 32,
             "imageColor": "purple",
-            "name": "ニドラン♂",
-            "gameImagePaths": [
-                "/032/icon/1/1.gif",
-                "/032/rgby/032.png",
-                "/032/rgby/032_blue.png",
-                "/032/rgby/032_pika.png",
-                "/032/rgby/032_rg.png"
-            ],
+            "name": "Nidoran♂",
+            "gameImagePath": {
+                "mainPath": "/032/rgby/032_rg.png",
+                "otherPaths": [
+                    "/032/icon/1/1.gif",
+                    "/032/rgby/032.png",
+                    "/032/rgby/032_blue.png",
+                    "/032/rgby/032_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/032/footmark/032.png",
                 "/032/footmark/032b.png",
@@ -1141,21 +1536,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 33,
             "imageColor": "purple",
-            "name": "ニドリーノ",
-            "gameImagePaths": [
-                "/033/icon/1/1.gif",
-                "/033/rgby/033.png",
-                "/033/rgby/033_blue.png",
-                "/033/rgby/033_pika.png",
-                "/033/rgby/033_rg.png"
-            ],
+            "name": "Nidorino",
+            "gameImagePath": {
+                "mainPath": "/033/rgby/033_rg.png",
+                "otherPaths": [
+                    "/033/icon/1/1.gif",
+                    "/033/rgby/033.png",
+                    "/033/rgby/033_blue.png",
+                    "/033/rgby/033_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/033/footmark/033.png",
                 "/033/footmark/033b.png",
@@ -1171,21 +1568,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 34,
             "imageColor": "purple",
-            "name": "ニドキング",
-            "gameImagePaths": [
-                "/034/icon/1/1.gif",
-                "/034/rgby/034.png",
-                "/034/rgby/034_blue.png",
-                "/034/rgby/034_pika.png",
-                "/034/rgby/034_rg.png"
-            ],
+            "name": "Nidoking",
+            "gameImagePath": {
+                "mainPath": "/034/rgby/034_rg.png",
+                "otherPaths": [
+                    "/034/icon/1/1.gif",
+                    "/034/rgby/034.png",
+                    "/034/rgby/034_blue.png",
+                    "/034/rgby/034_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/034/footmark/034.png",
                 "/034/footmark/034b.png",
@@ -1201,25 +1600,27 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 },
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 35,
             "imageColor": "pink",
-            "name": "ピッピ",
-            "gameImagePaths": [
-                "/035/icon/1/2.gif",
-                "/035/rgby/035.png",
-                "/035/rgby/035_blue.png",
-                "/035/rgby/035_pika.png",
-                "/035/rgby/035_rg.png"
-            ],
+            "name": "Clefairy",
+            "gameImagePath": {
+                "mainPath": "/035/rgby/035_rg.png",
+                "otherPaths": [
+                    "/035/icon/1/2.gif",
+                    "/035/rgby/035.png",
+                    "/035/rgby/035_blue.png",
+                    "/035/rgby/035_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/035/footmark/035.png",
                 "/035/footmark/035b.png",
@@ -1235,21 +1636,23 @@
             "types": [
                 {
                     "code": "fairy",
-                    "name": "フェアリー"
+                    "name": "Fairy"
                 }
             ]
         },
         {
             "id": 36,
             "imageColor": "pink",
-            "name": "ピクシー",
-            "gameImagePaths": [
-                "/036/icon/1/2.gif",
-                "/036/rgby/036.png",
-                "/036/rgby/036_blue.png",
-                "/036/rgby/036_pika.png",
-                "/036/rgby/036_rg.png"
-            ],
+            "name": "Clefable",
+            "gameImagePath": {
+                "mainPath": "/036/rgby/036_rg.png",
+                "otherPaths": [
+                    "/036/icon/1/2.gif",
+                    "/036/rgby/036.png",
+                    "/036/rgby/036_blue.png",
+                    "/036/rgby/036_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/036/footmark/036.png",
                 "/036/footmark/036b.png",
@@ -1265,21 +1668,23 @@
             "types": [
                 {
                     "code": "fairy",
-                    "name": "フェアリー"
+                    "name": "Fairy"
                 }
             ]
         },
         {
             "id": 37,
             "imageColor": "brown",
-            "name": "ロコン",
-            "gameImagePaths": [
-                "/037/icon/1/9.gif",
-                "/037/rgby/037.png",
-                "/037/rgby/037_blue.png",
-                "/037/rgby/037_pika.png",
-                "/037/rgby/037_rg.png"
-            ],
+            "name": "Vulpix",
+            "gameImagePath": {
+                "mainPath": "/037/rgby/037_rg.png",
+                "otherPaths": [
+                    "/037/icon/1/9.gif",
+                    "/037/rgby/037.png",
+                    "/037/rgby/037_blue.png",
+                    "/037/rgby/037_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/037/footmark/037.png",
                 "/037/footmark/037b.png",
@@ -1295,21 +1700,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 38,
             "imageColor": "yellow",
-            "name": "キュウコン",
-            "gameImagePaths": [
-                "/038/icon/1/9.gif",
-                "/038/rgby/038.png",
-                "/038/rgby/038_blue.png",
-                "/038/rgby/038_pika.png",
-                "/038/rgby/038_rg.png"
-            ],
+            "name": "Ninetales",
+            "gameImagePath": {
+                "mainPath": "/038/rgby/038_rg.png",
+                "otherPaths": [
+                    "/038/icon/1/9.gif",
+                    "/038/rgby/038.png",
+                    "/038/rgby/038_blue.png",
+                    "/038/rgby/038_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/038/footmark/038.png",
                 "/038/footmark/038b.png",
@@ -1325,21 +1732,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 39,
             "imageColor": "pink",
-            "name": "プリン",
-            "gameImagePaths": [
-                "/039/icon/1/2.gif",
-                "/039/rgby/039.png",
-                "/039/rgby/039_blue.png",
-                "/039/rgby/039_pika.png",
-                "/039/rgby/039_rg.png"
-            ],
+            "name": "Jigglypuff",
+            "gameImagePath": {
+                "mainPath": "/039/rgby/039_rg.png",
+                "otherPaths": [
+                    "/039/icon/1/2.gif",
+                    "/039/rgby/039.png",
+                    "/039/rgby/039_blue.png",
+                    "/039/rgby/039_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/039/footmark/039.png",
                 "/039/footmark/039b.png",
@@ -1355,25 +1764,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "fairy",
-                    "name": "フェアリー"
+                    "name": "Fairy"
                 }
             ]
         },
         {
             "id": 40,
             "imageColor": "pink",
-            "name": "プクリン",
-            "gameImagePaths": [
-                "/040/icon/1/2.gif",
-                "/040/rgby/040.png",
-                "/040/rgby/040_blue.png",
-                "/040/rgby/040_pika.png",
-                "/040/rgby/040_rg.png"
-            ],
+            "name": "Wigglytuff",
+            "gameImagePath": {
+                "mainPath": "/040/rgby/040_rg.png",
+                "otherPaths": [
+                    "/040/icon/1/2.gif",
+                    "/040/rgby/040.png",
+                    "/040/rgby/040_blue.png",
+                    "/040/rgby/040_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/040/footmark/040.png",
                 "/040/footmark/040b.png",
@@ -1389,25 +1800,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "fairy",
-                    "name": "フェアリー"
+                    "name": "Fairy"
                 }
             ]
         },
         {
             "id": 41,
             "imageColor": "purple",
-            "name": "ズバット",
-            "gameImagePaths": [
-                "/041/icon/1/1.gif",
-                "/041/rgby/041.png",
-                "/041/rgby/041_blue.png",
-                "/041/rgby/041_pika.png",
-                "/041/rgby/041_rg.png"
-            ],
+            "name": "Zubat",
+            "gameImagePath": {
+                "mainPath": "/041/rgby/041_rg.png",
+                "otherPaths": [
+                    "/041/icon/1/1.gif",
+                    "/041/rgby/041.png",
+                    "/041/rgby/041_blue.png",
+                    "/041/rgby/041_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/041/overworld/041-1.gif",
                 "/041/overworld/041-2.gif",
@@ -1421,25 +1834,27 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 42,
             "imageColor": "purple",
-            "name": "ゴルバット",
-            "gameImagePaths": [
-                "/042/icon/1/1.gif",
-                "/042/rgby/042.png",
-                "/042/rgby/042_blue.png",
-                "/042/rgby/042_pika.png",
-                "/042/rgby/042_rg.png"
-            ],
+            "name": "Golbat",
+            "gameImagePath": {
+                "mainPath": "/042/rgby/042_rg.png",
+                "otherPaths": [
+                    "/042/icon/1/1.gif",
+                    "/042/rgby/042.png",
+                    "/042/rgby/042_blue.png",
+                    "/042/rgby/042_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/042/footmark/042.png",
                 "/042/footmark/042b.png",
@@ -1455,25 +1870,27 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 43,
             "imageColor": "blue",
-            "name": "ナゾノクサ",
-            "gameImagePaths": [
-                "/043/icon/1/3.gif",
-                "/043/rgby/043.png",
-                "/043/rgby/043_blue.png",
-                "/043/rgby/043_pika.png",
-                "/043/rgby/043_rg.png"
-            ],
+            "name": "Oddish",
+            "gameImagePath": {
+                "mainPath": "/043/rgby/043_rg.png",
+                "otherPaths": [
+                    "/043/icon/1/3.gif",
+                    "/043/rgby/043.png",
+                    "/043/rgby/043_blue.png",
+                    "/043/rgby/043_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/043/footmark/043.png",
                 "/043/footmark/043b.png",
@@ -1489,25 +1906,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 44,
             "imageColor": "blue",
-            "name": "クサイハナ",
-            "gameImagePaths": [
-                "/044/icon/1/3.gif",
-                "/044/rgby/044.png",
-                "/044/rgby/044_blue.png",
-                "/044/rgby/044_pika.png",
-                "/044/rgby/044_rg.png"
-            ],
+            "name": "Gloom",
+            "gameImagePath": {
+                "mainPath": "/044/rgby/044_rg.png",
+                "otherPaths": [
+                    "/044/icon/1/3.gif",
+                    "/044/rgby/044.png",
+                    "/044/rgby/044_blue.png",
+                    "/044/rgby/044_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/044/footmark/044.png",
                 "/044/footmark/044b.png",
@@ -1523,25 +1942,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 45,
             "imageColor": "red",
-            "name": "ラフレシア",
-            "gameImagePaths": [
-                "/045/icon/1/3.gif",
-                "/045/rgby/045.png",
-                "/045/rgby/045_blue.png",
-                "/045/rgby/045_pika.png",
-                "/045/rgby/045_rg.png"
-            ],
+            "name": "Vileplume",
+            "gameImagePath": {
+                "mainPath": "/045/rgby/045_rg.png",
+                "otherPaths": [
+                    "/045/icon/1/3.gif",
+                    "/045/rgby/045.png",
+                    "/045/rgby/045_blue.png",
+                    "/045/rgby/045_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/045/footmark/045.png",
                 "/045/footmark/045b.png",
@@ -1557,25 +1978,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 46,
             "imageColor": "red",
-            "name": "パラス",
-            "gameImagePaths": [
-                "/046/icon/1/5.gif",
-                "/046/rgby/046.png",
-                "/046/rgby/046_blue.png",
-                "/046/rgby/046_pika.png",
-                "/046/rgby/046_rg.png"
-            ],
+            "name": "Paras",
+            "gameImagePath": {
+                "mainPath": "/046/rgby/046_rg.png",
+                "otherPaths": [
+                    "/046/icon/1/5.gif",
+                    "/046/rgby/046.png",
+                    "/046/rgby/046_blue.png",
+                    "/046/rgby/046_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/046/footmark/046.png",
                 "/046/footmark/046b.png",
@@ -1591,25 +2014,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 }
             ]
         },
         {
             "id": 47,
             "imageColor": "red",
-            "name": "パラセクト",
-            "gameImagePaths": [
-                "/047/icon/1/5.gif",
-                "/047/rgby/047.png",
-                "/047/rgby/047_blue.png",
-                "/047/rgby/047_pika.png",
-                "/047/rgby/047_rg.png"
-            ],
+            "name": "Parasect",
+            "gameImagePath": {
+                "mainPath": "/047/rgby/047_rg.png",
+                "otherPaths": [
+                    "/047/icon/1/5.gif",
+                    "/047/rgby/047.png",
+                    "/047/rgby/047_blue.png",
+                    "/047/rgby/047_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/047/footmark/047.png",
                 "/047/footmark/047b.png",
@@ -1625,25 +2050,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 }
             ]
         },
         {
             "id": 48,
             "imageColor": "purple",
-            "name": "コンパン",
-            "gameImagePaths": [
-                "/048/icon/1/5.gif",
-                "/048/rgby/048.png",
-                "/048/rgby/048_blue.png",
-                "/048/rgby/048_pika.png",
-                "/048/rgby/048_rg.png"
-            ],
+            "name": "Venonat",
+            "gameImagePath": {
+                "mainPath": "/048/rgby/048_rg.png",
+                "otherPaths": [
+                    "/048/icon/1/5.gif",
+                    "/048/rgby/048.png",
+                    "/048/rgby/048_blue.png",
+                    "/048/rgby/048_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/048/footmark/048.png",
                 "/048/footmark/048b.png",
@@ -1659,25 +2086,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 49,
             "imageColor": "purple",
-            "name": "モルフォン",
-            "gameImagePaths": [
-                "/049/icon/1/5.gif",
-                "/049/rgby/049.png",
-                "/049/rgby/049_blue.png",
-                "/049/rgby/049_pika.png",
-                "/049/rgby/049_rg.png"
-            ],
+            "name": "Venomoth",
+            "gameImagePath": {
+                "mainPath": "/049/rgby/049_rg.png",
+                "otherPaths": [
+                    "/049/icon/1/5.gif",
+                    "/049/rgby/049.png",
+                    "/049/rgby/049_blue.png",
+                    "/049/rgby/049_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/049/footmark/049.png",
                 "/049/footmark/049b.png",
@@ -1693,25 +2122,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 50,
             "imageColor": "brown",
-            "name": "ディグダ",
-            "gameImagePaths": [
-                "/050/icon/1/1.gif",
-                "/050/rgby/050.png",
-                "/050/rgby/050_blue.png",
-                "/050/rgby/050_pika.png",
-                "/050/rgby/050_rg.png"
-            ],
+            "name": "Diglett",
+            "gameImagePath": {
+                "mainPath": "/050/rgby/050_rg.png",
+                "otherPaths": [
+                    "/050/icon/1/1.gif",
+                    "/050/rgby/050.png",
+                    "/050/rgby/050_blue.png",
+                    "/050/rgby/050_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/050/overworld/050-1.gif",
                 "/050/overworld/050-2.gif",
@@ -1725,21 +2156,23 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 51,
             "imageColor": "brown",
-            "name": "ダグトリオ",
-            "gameImagePaths": [
-                "/051/icon/1/1.gif",
-                "/051/rgby/051.png",
-                "/051/rgby/051_blue.png",
-                "/051/rgby/051_pika.png",
-                "/051/rgby/051_rg.png"
-            ],
+            "name": "Dugtrio",
+            "gameImagePath": {
+                "mainPath": "/051/rgby/051_rg.png",
+                "otherPaths": [
+                    "/051/icon/1/1.gif",
+                    "/051/rgby/051.png",
+                    "/051/rgby/051_blue.png",
+                    "/051/rgby/051_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/051/overworld/051-1.gif",
                 "/051/overworld/051-2.gif",
@@ -1753,21 +2186,23 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 52,
             "imageColor": "yellow",
-            "name": "ニャース",
-            "gameImagePaths": [
-                "/052/icon/1/1.gif",
-                "/052/rgby/052.png",
-                "/052/rgby/052_blue.png",
-                "/052/rgby/052_pika.png",
-                "/052/rgby/052_rg.png"
-            ],
+            "name": "Meowth",
+            "gameImagePath": {
+                "mainPath": "/052/rgby/052_rg.png",
+                "otherPaths": [
+                    "/052/icon/1/1.gif",
+                    "/052/rgby/052.png",
+                    "/052/rgby/052_blue.png",
+                    "/052/rgby/052_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/052/footmark/052.png",
                 "/052/footmark/052b.png",
@@ -1783,21 +2218,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 53,
             "imageColor": "yellow",
-            "name": "ペルシアン",
-            "gameImagePaths": [
-                "/053/icon/1/1.gif",
-                "/053/rgby/053.png",
-                "/053/rgby/053_blue.png",
-                "/053/rgby/053_pika.png",
-                "/053/rgby/053_rg.png"
-            ],
+            "name": "Persian",
+            "gameImagePath": {
+                "mainPath": "/053/rgby/053_rg.png",
+                "otherPaths": [
+                    "/053/icon/1/1.gif",
+                    "/053/rgby/053.png",
+                    "/053/rgby/053_blue.png",
+                    "/053/rgby/053_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/053/footmark/053.png",
                 "/053/footmark/053b.png",
@@ -1813,21 +2250,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 54,
             "imageColor": "yellow",
-            "name": "コダック",
-            "gameImagePaths": [
-                "/054/icon/1/1.gif",
-                "/054/rgby/054.png",
-                "/054/rgby/054_blue.png",
-                "/054/rgby/054_pika.png",
-                "/054/rgby/054_rg.png"
-            ],
+            "name": "Psyduck",
+            "gameImagePath": {
+                "mainPath": "/054/rgby/054_rg.png",
+                "otherPaths": [
+                    "/054/icon/1/1.gif",
+                    "/054/rgby/054.png",
+                    "/054/rgby/054_blue.png",
+                    "/054/rgby/054_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/054/footmark/054.png",
                 "/054/footmark/054b.png",
@@ -1843,21 +2282,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 55,
             "imageColor": "blue",
-            "name": "ゴルダック",
-            "gameImagePaths": [
-                "/055/icon/1/1.gif",
-                "/055/rgby/055.png",
-                "/055/rgby/055_blue.png",
-                "/055/rgby/055_pika.png",
-                "/055/rgby/055_rg.png"
-            ],
+            "name": "Golduck",
+            "gameImagePath": {
+                "mainPath": "/055/rgby/055_rg.png",
+                "otherPaths": [
+                    "/055/icon/1/1.gif",
+                    "/055/rgby/055.png",
+                    "/055/rgby/055_blue.png",
+                    "/055/rgby/055_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/055/footmark/055.png",
                 "/055/footmark/055b.png",
@@ -1873,21 +2314,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 56,
             "imageColor": "brown",
-            "name": "マンキー",
-            "gameImagePaths": [
-                "/056/icon/1/1.gif",
-                "/056/rgby/056.png",
-                "/056/rgby/056_blue.png",
-                "/056/rgby/056_pika.png",
-                "/056/rgby/056_rg.png"
-            ],
+            "name": "Mankey",
+            "gameImagePath": {
+                "mainPath": "/056/rgby/056_rg.png",
+                "otherPaths": [
+                    "/056/icon/1/1.gif",
+                    "/056/rgby/056.png",
+                    "/056/rgby/056_blue.png",
+                    "/056/rgby/056_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/056/footmark/056.png",
                 "/056/footmark/056b.png",
@@ -1903,21 +2346,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 57,
             "imageColor": "brown",
-            "name": "オコリザル",
-            "gameImagePaths": [
-                "/057/icon/1/1.gif",
-                "/057/rgby/057.png",
-                "/057/rgby/057_blue.png",
-                "/057/rgby/057_pika.png",
-                "/057/rgby/057_rg.png"
-            ],
+            "name": "Primeape",
+            "gameImagePath": {
+                "mainPath": "/057/rgby/057_rg.png",
+                "otherPaths": [
+                    "/057/icon/1/1.gif",
+                    "/057/rgby/057.png",
+                    "/057/rgby/057_blue.png",
+                    "/057/rgby/057_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/057/footmark/057.png",
                 "/057/footmark/057b.png",
@@ -1933,21 +2378,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 58,
             "imageColor": "brown",
-            "name": "ガーディ",
-            "gameImagePaths": [
-                "/058/icon/1/9.gif",
-                "/058/rgby/058.png",
-                "/058/rgby/058_blue.png",
-                "/058/rgby/058_pika.png",
-                "/058/rgby/058_rg.png"
-            ],
+            "name": "Growlithe",
+            "gameImagePath": {
+                "mainPath": "/058/rgby/058_rg.png",
+                "otherPaths": [
+                    "/058/icon/1/9.gif",
+                    "/058/rgby/058.png",
+                    "/058/rgby/058_blue.png",
+                    "/058/rgby/058_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/058/footmark/058.png",
                 "/058/footmark/058b.png",
@@ -1963,21 +2410,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 59,
             "imageColor": "brown",
-            "name": "ウインディ",
-            "gameImagePaths": [
-                "/059/icon/1/9.gif",
-                "/059/rgby/059.png",
-                "/059/rgby/059_blue.png",
-                "/059/rgby/059_pika.png",
-                "/059/rgby/059_rg.png"
-            ],
+            "name": "Arcanine",
+            "gameImagePath": {
+                "mainPath": "/059/rgby/059_rg.png",
+                "otherPaths": [
+                    "/059/icon/1/9.gif",
+                    "/059/rgby/059.png",
+                    "/059/rgby/059_blue.png",
+                    "/059/rgby/059_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/059/footmark/059.png",
                 "/059/footmark/059b.png",
@@ -1993,21 +2442,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 60,
             "imageColor": "blue",
-            "name": "ニョロモ",
-            "gameImagePaths": [
-                "/060/icon/1/1.gif",
-                "/060/rgby/060.png",
-                "/060/rgby/060_blue.png",
-                "/060/rgby/060_pika.png",
-                "/060/rgby/060_rg.png"
-            ],
+            "name": "Poliwag",
+            "gameImagePath": {
+                "mainPath": "/060/rgby/060_rg.png",
+                "otherPaths": [
+                    "/060/icon/1/1.gif",
+                    "/060/rgby/060.png",
+                    "/060/rgby/060_blue.png",
+                    "/060/rgby/060_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/060/footmark/060.png",
                 "/060/footmark/060b.png",
@@ -2023,21 +2474,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 61,
             "imageColor": "blue",
-            "name": "ニョロゾ",
-            "gameImagePaths": [
-                "/061/icon/1/1.gif",
-                "/061/rgby/061.png",
-                "/061/rgby/061_blue.png",
-                "/061/rgby/061_pika.png",
-                "/061/rgby/061_rg.png"
-            ],
+            "name": "Poliwhirl",
+            "gameImagePath": {
+                "mainPath": "/061/rgby/061_rg.png",
+                "otherPaths": [
+                    "/061/icon/1/1.gif",
+                    "/061/rgby/061.png",
+                    "/061/rgby/061_blue.png",
+                    "/061/rgby/061_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/061/footmark/061.png",
                 "/061/footmark/061b.png",
@@ -2053,21 +2506,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 62,
             "imageColor": "blue",
-            "name": "ニョロボン",
-            "gameImagePaths": [
-                "/062/icon/1/1.gif",
-                "/062/rgby/062.png",
-                "/062/rgby/062_blue.png",
-                "/062/rgby/062_pika.png",
-                "/062/rgby/062_rg.png"
-            ],
+            "name": "Poliwrath",
+            "gameImagePath": {
+                "mainPath": "/062/rgby/062_rg.png",
+                "otherPaths": [
+                    "/062/icon/1/1.gif",
+                    "/062/rgby/062.png",
+                    "/062/rgby/062_blue.png",
+                    "/062/rgby/062_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/062/footmark/062.png",
                 "/062/footmark/062b.png",
@@ -2083,25 +2538,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 63,
             "imageColor": "brown",
-            "name": "ケーシィ",
-            "gameImagePaths": [
-                "/063/icon/1/1.gif",
-                "/063/rgby/063.png",
-                "/063/rgby/063_blue.png",
-                "/063/rgby/063_pika.png",
-                "/063/rgby/063_rg.png"
-            ],
+            "name": "Abra",
+            "gameImagePath": {
+                "mainPath": "/063/rgby/063_rg.png",
+                "otherPaths": [
+                    "/063/icon/1/1.gif",
+                    "/063/rgby/063.png",
+                    "/063/rgby/063_blue.png",
+                    "/063/rgby/063_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/063/footmark/063.png",
                 "/063/footmark/063b.png",
@@ -2117,21 +2574,23 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 64,
             "imageColor": "brown",
-            "name": "ユンゲラー",
-            "gameImagePaths": [
-                "/064/icon/1/1.gif",
-                "/064/rgby/064.png",
-                "/064/rgby/064_blue.png",
-                "/064/rgby/064_pika.png",
-                "/064/rgby/064_rg.png"
-            ],
+            "name": "Kadabra",
+            "gameImagePath": {
+                "mainPath": "/064/rgby/064_rg.png",
+                "otherPaths": [
+                    "/064/icon/1/1.gif",
+                    "/064/rgby/064.png",
+                    "/064/rgby/064_blue.png",
+                    "/064/rgby/064_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/064/footmark/064.png",
                 "/064/footmark/064b.png",
@@ -2147,21 +2606,23 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 65,
             "imageColor": "brown",
-            "name": "フーディン",
-            "gameImagePaths": [
-                "/065/icon/1/1.gif",
-                "/065/rgby/065.png",
-                "/065/rgby/065_blue.png",
-                "/065/rgby/065_pika.png",
-                "/065/rgby/065_rg.png"
-            ],
+            "name": "Alakazam",
+            "gameImagePath": {
+                "mainPath": "/065/rgby/065_rg.png",
+                "otherPaths": [
+                    "/065/icon/1/1.gif",
+                    "/065/rgby/065.png",
+                    "/065/rgby/065_blue.png",
+                    "/065/rgby/065_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/065/footmark/065.png",
                 "/065/footmark/065b.png",
@@ -2177,21 +2638,23 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 66,
             "imageColor": "gray",
-            "name": "ワンリキー",
-            "gameImagePaths": [
-                "/066/icon/1/1.gif",
-                "/066/rgby/066.png",
-                "/066/rgby/066_blue.png",
-                "/066/rgby/066_pika.png",
-                "/066/rgby/066_rg.png"
-            ],
+            "name": "Machop",
+            "gameImagePath": {
+                "mainPath": "/066/rgby/066_rg.png",
+                "otherPaths": [
+                    "/066/icon/1/1.gif",
+                    "/066/rgby/066.png",
+                    "/066/rgby/066_blue.png",
+                    "/066/rgby/066_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/066/footmark/066.png",
                 "/066/footmark/066b.png",
@@ -2207,21 +2670,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 67,
             "imageColor": "gray",
-            "name": "ゴーリキー",
-            "gameImagePaths": [
-                "/067/icon/1/1.gif",
-                "/067/rgby/067.png",
-                "/067/rgby/067_blue.png",
-                "/067/rgby/067_pika.png",
-                "/067/rgby/067_rg.png"
-            ],
+            "name": "Machoke",
+            "gameImagePath": {
+                "mainPath": "/067/rgby/067_rg.png",
+                "otherPaths": [
+                    "/067/icon/1/1.gif",
+                    "/067/rgby/067.png",
+                    "/067/rgby/067_blue.png",
+                    "/067/rgby/067_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/067/footmark/067.png",
                 "/067/footmark/067b.png",
@@ -2237,21 +2702,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 68,
             "imageColor": "gray",
-            "name": "カイリキー",
-            "gameImagePaths": [
-                "/068/icon/1/1.gif",
-                "/068/rgby/068.png",
-                "/068/rgby/068_blue.png",
-                "/068/rgby/068_pika.png",
-                "/068/rgby/068_rg.png"
-            ],
+            "name": "Machamp",
+            "gameImagePath": {
+                "mainPath": "/068/rgby/068_rg.png",
+                "otherPaths": [
+                    "/068/icon/1/1.gif",
+                    "/068/rgby/068.png",
+                    "/068/rgby/068_blue.png",
+                    "/068/rgby/068_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/068/footmark/068.png",
                 "/068/footmark/068b.png",
@@ -2267,21 +2734,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 69,
             "imageColor": "green",
-            "name": "マダツボミ",
-            "gameImagePaths": [
-                "/069/icon/1/3.gif",
-                "/069/rgby/069.png",
-                "/069/rgby/069_blue.png",
-                "/069/rgby/069_pika.png",
-                "/069/rgby/069_rg.png"
-            ],
+            "name": "Bellsprout",
+            "gameImagePath": {
+                "mainPath": "/069/rgby/069_rg.png",
+                "otherPaths": [
+                    "/069/icon/1/3.gif",
+                    "/069/rgby/069.png",
+                    "/069/rgby/069_blue.png",
+                    "/069/rgby/069_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/069/footmark/069.png",
                 "/069/footmark/069b.png",
@@ -2297,25 +2766,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 70,
             "imageColor": "green",
-            "name": "ウツドン",
-            "gameImagePaths": [
-                "/070/icon/1/3.gif",
-                "/070/rgby/070.png",
-                "/070/rgby/070_blue.png",
-                "/070/rgby/070_pika.png",
-                "/070/rgby/070_rg.png"
-            ],
+            "name": "Weepinbell",
+            "gameImagePath": {
+                "mainPath": "/070/rgby/070_rg.png",
+                "otherPaths": [
+                    "/070/icon/1/3.gif",
+                    "/070/rgby/070.png",
+                    "/070/rgby/070_blue.png",
+                    "/070/rgby/070_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/070/overworld/070-1.gif",
                 "/070/overworld/070-2.gif",
@@ -2329,25 +2800,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 71,
             "imageColor": "green",
-            "name": "ウツボット",
-            "gameImagePaths": [
-                "/071/icon/1/3.gif",
-                "/071/rgby/071.png",
-                "/071/rgby/071_blue.png",
-                "/071/rgby/071_pika.png",
-                "/071/rgby/071_rg.png"
-            ],
+            "name": "Victreebel",
+            "gameImagePath": {
+                "mainPath": "/071/rgby/071_rg.png",
+                "otherPaths": [
+                    "/071/icon/1/3.gif",
+                    "/071/rgby/071.png",
+                    "/071/rgby/071_blue.png",
+                    "/071/rgby/071_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/071/overworld/071-1.gif",
                 "/071/overworld/071-2.gif",
@@ -2361,25 +2834,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 72,
             "imageColor": "blue",
-            "name": "メノクラゲ",
-            "gameImagePaths": [
-                "/072/icon/1/6.gif",
-                "/072/rgby/072.png",
-                "/072/rgby/072_blue.png",
-                "/072/rgby/072_pika.png",
-                "/072/rgby/072_rg.png"
-            ],
+            "name": "Tentacool",
+            "gameImagePath": {
+                "mainPath": "/072/rgby/072_rg.png",
+                "otherPaths": [
+                    "/072/icon/1/6.gif",
+                    "/072/rgby/072.png",
+                    "/072/rgby/072_blue.png",
+                    "/072/rgby/072_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/072/overworld/072-1.gif",
                 "/072/overworld/072-2.gif",
@@ -2393,25 +2868,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 73,
             "imageColor": "blue",
-            "name": "ドククラゲ",
-            "gameImagePaths": [
-                "/073/icon/1/6.gif",
-                "/073/rgby/073.png",
-                "/073/rgby/073_blue.png",
-                "/073/rgby/073_pika.png",
-                "/073/rgby/073_rg.png"
-            ],
+            "name": "Tentacruel",
+            "gameImagePath": {
+                "mainPath": "/073/rgby/073_rg.png",
+                "otherPaths": [
+                    "/073/icon/1/6.gif",
+                    "/073/rgby/073.png",
+                    "/073/rgby/073_blue.png",
+                    "/073/rgby/073_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/073/overworld/073-1.gif",
                 "/073/overworld/073-2.gif",
@@ -2425,25 +2902,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 74,
             "imageColor": "brown",
-            "name": "イシツブテ",
-            "gameImagePaths": [
-                "/074/icon/1/1.gif",
-                "/074/rgby/074.png",
-                "/074/rgby/074_blue.png",
-                "/074/rgby/074_pika.png",
-                "/074/rgby/074_rg.png"
-            ],
+            "name": "Geodude",
+            "gameImagePath": {
+                "mainPath": "/074/rgby/074_rg.png",
+                "otherPaths": [
+                    "/074/icon/1/1.gif",
+                    "/074/rgby/074.png",
+                    "/074/rgby/074_blue.png",
+                    "/074/rgby/074_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/074/overworld/074-1.gif",
                 "/074/overworld/074-2.gif",
@@ -2457,25 +2936,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 75,
             "imageColor": "brown",
-            "name": "ゴローン",
-            "gameImagePaths": [
-                "/075/icon/1/1.gif",
-                "/075/rgby/075.png",
-                "/075/rgby/075_blue.png",
-                "/075/rgby/075_pika.png",
-                "/075/rgby/075_rg.png"
-            ],
+            "name": "Graveler",
+            "gameImagePath": {
+                "mainPath": "/075/rgby/075_rg.png",
+                "otherPaths": [
+                    "/075/icon/1/1.gif",
+                    "/075/rgby/075.png",
+                    "/075/rgby/075_blue.png",
+                    "/075/rgby/075_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/075/footmark/075.png",
                 "/075/footmark/075b.png",
@@ -2491,25 +2972,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 76,
             "imageColor": "brown",
-            "name": "ゴローニャ",
-            "gameImagePaths": [
-                "/076/icon/1/1.gif",
-                "/076/rgby/076.png",
-                "/076/rgby/076_blue.png",
-                "/076/rgby/076_pika.png",
-                "/076/rgby/076_rg.png"
-            ],
+            "name": "Golem",
+            "gameImagePath": {
+                "mainPath": "/076/rgby/076_rg.png",
+                "otherPaths": [
+                    "/076/icon/1/1.gif",
+                    "/076/rgby/076.png",
+                    "/076/rgby/076_blue.png",
+                    "/076/rgby/076_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/076/footmark/076.png",
                 "/076/footmark/076b.png",
@@ -2525,25 +3008,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 77,
             "imageColor": "yellow",
-            "name": "ポニータ",
-            "gameImagePaths": [
-                "/077/icon/1/9.gif",
-                "/077/rgby/077.png",
-                "/077/rgby/077_blue.png",
-                "/077/rgby/077_pika.png",
-                "/077/rgby/077_rg.png"
-            ],
+            "name": "Ponyta",
+            "gameImagePath": {
+                "mainPath": "/077/rgby/077_rg.png",
+                "otherPaths": [
+                    "/077/icon/1/9.gif",
+                    "/077/rgby/077.png",
+                    "/077/rgby/077_blue.png",
+                    "/077/rgby/077_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/077/footmark/077.png",
                 "/077/footmark/077b.png",
@@ -2559,21 +3044,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 78,
             "imageColor": "yellow",
-            "name": "ギャロップ",
-            "gameImagePaths": [
-                "/078/icon/1/9.gif",
-                "/078/rgby/078.png",
-                "/078/rgby/078_blue.png",
-                "/078/rgby/078_pika.png",
-                "/078/rgby/078_rg.png"
-            ],
+            "name": "Rapidash",
+            "gameImagePath": {
+                "mainPath": "/078/rgby/078_rg.png",
+                "otherPaths": [
+                    "/078/icon/1/9.gif",
+                    "/078/rgby/078.png",
+                    "/078/rgby/078_blue.png",
+                    "/078/rgby/078_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/078/footmark/078.png",
                 "/078/footmark/078b.png",
@@ -2589,21 +3076,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 79,
             "imageColor": "pink",
-            "name": "ヤドン",
-            "gameImagePaths": [
-                "/079/icon/1/9.gif",
-                "/079/rgby/079.png",
-                "/079/rgby/079_blue.png",
-                "/079/rgby/079_pika.png",
-                "/079/rgby/079_rg.png"
-            ],
+            "name": "Slowpoke",
+            "gameImagePath": {
+                "mainPath": "/079/rgby/079_rg.png",
+                "otherPaths": [
+                    "/079/icon/1/9.gif",
+                    "/079/rgby/079.png",
+                    "/079/rgby/079_blue.png",
+                    "/079/rgby/079_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/079/footmark/079.png",
                 "/079/footmark/079b.png",
@@ -2619,25 +3108,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 80,
             "imageColor": "pink",
-            "name": "ヤドラン",
-            "gameImagePaths": [
-                "/080/icon/1/1.gif",
-                "/080/rgby/080.png",
-                "/080/rgby/080_blue.png",
-                "/080/rgby/080_pika.png",
-                "/080/rgby/080_rg.png"
-            ],
+            "name": "Slowbro",
+            "gameImagePath": {
+                "mainPath": "/080/rgby/080_rg.png",
+                "otherPaths": [
+                    "/080/icon/1/1.gif",
+                    "/080/rgby/080.png",
+                    "/080/rgby/080_blue.png",
+                    "/080/rgby/080_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/080/footmark/080.png",
                 "/080/footmark/080b.png",
@@ -2653,25 +3144,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 81,
             "imageColor": "gray",
-            "name": "コイル",
-            "gameImagePaths": [
-                "/081/icon/1/4.gif",
-                "/081/rgby/081.png",
-                "/081/rgby/081_blue.png",
-                "/081/rgby/081_pika.png",
-                "/081/rgby/081_rg.png"
-            ],
+            "name": "Magnemite",
+            "gameImagePath": {
+                "mainPath": "/081/rgby/081_rg.png",
+                "otherPaths": [
+                    "/081/icon/1/4.gif",
+                    "/081/rgby/081.png",
+                    "/081/rgby/081_blue.png",
+                    "/081/rgby/081_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/081/footmark/081.png",
                 "/081/footmark/081b.png",
@@ -2687,25 +3180,27 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 },
                 {
                     "code": "steel",
-                    "name": "はがね"
+                    "name": "Steel"
                 }
             ]
         },
         {
             "id": 82,
             "imageColor": "gray",
-            "name": "レアコイル",
-            "gameImagePaths": [
-                "/082/icon/1/4.gif",
-                "/082/rgby/082.png",
-                "/082/rgby/082_blue.png",
-                "/082/rgby/082_pika.png",
-                "/082/rgby/082_rg.png"
-            ],
+            "name": "Magneton",
+            "gameImagePath": {
+                "mainPath": "/082/rgby/082_rg.png",
+                "otherPaths": [
+                    "/082/icon/1/4.gif",
+                    "/082/rgby/082.png",
+                    "/082/rgby/082_blue.png",
+                    "/082/rgby/082_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/082/footmark/082.png",
                 "/082/footmark/082b.png",
@@ -2721,25 +3216,27 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 },
                 {
                     "code": "steel",
-                    "name": "はがね"
+                    "name": "Steel"
                 }
             ]
         },
         {
             "id": 83,
             "imageColor": "brown",
-            "name": "カモネギ",
-            "gameImagePaths": [
-                "/083/icon/1/8.gif",
-                "/083/rgby/083.png",
-                "/083/rgby/083_blue.png",
-                "/083/rgby/083_pika.png",
-                "/083/rgby/083_rg.png"
-            ],
+            "name": "Farfetch’d",
+            "gameImagePath": {
+                "mainPath": "/083/rgby/083_rg.png",
+                "otherPaths": [
+                    "/083/icon/1/8.gif",
+                    "/083/rgby/083.png",
+                    "/083/rgby/083_blue.png",
+                    "/083/rgby/083_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/083/footmark/083.png",
                 "/083/footmark/083b.png",
@@ -2755,25 +3252,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 84,
             "imageColor": "brown",
-            "name": "ドードー",
-            "gameImagePaths": [
-                "/084/icon/1/8.gif",
-                "/084/rgby/084.png",
-                "/084/rgby/084_blue.png",
-                "/084/rgby/084_pika.png",
-                "/084/rgby/084_rg.png"
-            ],
+            "name": "Doduo",
+            "gameImagePath": {
+                "mainPath": "/084/rgby/084_rg.png",
+                "otherPaths": [
+                    "/084/icon/1/8.gif",
+                    "/084/rgby/084.png",
+                    "/084/rgby/084_blue.png",
+                    "/084/rgby/084_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/084/footmark/084.png",
                 "/084/footmark/084b.png",
@@ -2789,25 +3288,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 85,
             "imageColor": "brown",
-            "name": "ドードリオ",
-            "gameImagePaths": [
-                "/085/icon/1/8.gif",
-                "/085/rgby/085.png",
-                "/085/rgby/085_blue.png",
-                "/085/rgby/085_pika.png",
-                "/085/rgby/085_rg.png"
-            ],
+            "name": "Dodrio",
+            "gameImagePath": {
+                "mainPath": "/085/rgby/085_rg.png",
+                "otherPaths": [
+                    "/085/icon/1/8.gif",
+                    "/085/rgby/085.png",
+                    "/085/rgby/085_blue.png",
+                    "/085/rgby/085_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/085/footmark/085.png",
                 "/085/footmark/085b.png",
@@ -2823,25 +3324,27 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 86,
             "imageColor": "white",
-            "name": "パウワウ",
-            "gameImagePaths": [
-                "/086/icon/1/6.gif",
-                "/086/rgby/086.png",
-                "/086/rgby/086_blue.png",
-                "/086/rgby/086_pika.png",
-                "/086/rgby/086_rg.png"
-            ],
+            "name": "Seel",
+            "gameImagePath": {
+                "mainPath": "/086/rgby/086_rg.png",
+                "otherPaths": [
+                    "/086/icon/1/6.gif",
+                    "/086/rgby/086.png",
+                    "/086/rgby/086_blue.png",
+                    "/086/rgby/086_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/086/overworld/086-1.gif",
                 "/086/overworld/086-2.gif",
@@ -2855,21 +3358,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 87,
             "imageColor": "white",
-            "name": "ジュゴン",
-            "gameImagePaths": [
-                "/087/icon/1/6.gif",
-                "/087/rgby/087.png",
-                "/087/rgby/087_blue.png",
-                "/087/rgby/087_pika.png",
-                "/087/rgby/087_rg.png"
-            ],
+            "name": "Dewgong",
+            "gameImagePath": {
+                "mainPath": "/087/rgby/087_rg.png",
+                "otherPaths": [
+                    "/087/icon/1/6.gif",
+                    "/087/rgby/087.png",
+                    "/087/rgby/087_blue.png",
+                    "/087/rgby/087_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/087/overworld/087-1.gif",
                 "/087/overworld/087-2.gif",
@@ -2883,25 +3388,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "ice",
-                    "name": "こおり"
+                    "name": "Ice"
                 }
             ]
         },
         {
             "id": 88,
             "imageColor": "purple",
-            "name": "ベトベター",
-            "gameImagePaths": [
-                "/088/icon/1/1.gif",
-                "/088/rgby/088.png",
-                "/088/rgby/088_blue.png",
-                "/088/rgby/088_pika.png",
-                "/088/rgby/088_rg.png"
-            ],
+            "name": "Grimer",
+            "gameImagePath": {
+                "mainPath": "/088/rgby/088_rg.png",
+                "otherPaths": [
+                    "/088/icon/1/1.gif",
+                    "/088/rgby/088.png",
+                    "/088/rgby/088_blue.png",
+                    "/088/rgby/088_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/088/overworld/088-1.gif",
                 "/088/overworld/088-2.gif",
@@ -2915,21 +3422,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 89,
             "imageColor": "purple",
-            "name": "ベトベトン",
-            "gameImagePaths": [
-                "/089/icon/1/1.gif",
-                "/089/rgby/089.png",
-                "/089/rgby/089_blue.png",
-                "/089/rgby/089_pika.png",
-                "/089/rgby/089_rg.png"
-            ],
+            "name": "Muk",
+            "gameImagePath": {
+                "mainPath": "/089/rgby/089_rg.png",
+                "otherPaths": [
+                    "/089/icon/1/1.gif",
+                    "/089/rgby/089.png",
+                    "/089/rgby/089_blue.png",
+                    "/089/rgby/089_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/089/overworld/089-1.gif",
                 "/089/overworld/089-2.gif",
@@ -2943,21 +3452,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 90,
             "imageColor": "purple",
-            "name": "シェルダー",
-            "gameImagePaths": [
-                "/090/icon/1/10.gif",
-                "/090/rgby/090.png",
-                "/090/rgby/090_blue.png",
-                "/090/rgby/090_pika.png",
-                "/090/rgby/090_rg.png"
-            ],
+            "name": "Shellder",
+            "gameImagePath": {
+                "mainPath": "/090/rgby/090_rg.png",
+                "otherPaths": [
+                    "/090/icon/1/10.gif",
+                    "/090/rgby/090.png",
+                    "/090/rgby/090_blue.png",
+                    "/090/rgby/090_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/090/overworld/090-1.gif",
                 "/090/overworld/090-2.gif",
@@ -2971,21 +3482,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 91,
             "imageColor": "purple",
-            "name": "パルシェン",
-            "gameImagePaths": [
-                "/091/icon/1/10.gif",
-                "/091/rgby/091.png",
-                "/091/rgby/091_blue.png",
-                "/091/rgby/091_pika.png",
-                "/091/rgby/091_rg.png"
-            ],
+            "name": "Cloyster",
+            "gameImagePath": {
+                "mainPath": "/091/rgby/091_rg.png",
+                "otherPaths": [
+                    "/091/icon/1/10.gif",
+                    "/091/rgby/091.png",
+                    "/091/rgby/091_blue.png",
+                    "/091/rgby/091_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/091/overworld/091-1.gif",
                 "/091/overworld/091-2.gif",
@@ -2999,25 +3512,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "ice",
-                    "name": "こおり"
+                    "name": "Ice"
                 }
             ]
         },
         {
             "id": 92,
             "imageColor": "purple",
-            "name": "ゴース",
-            "gameImagePaths": [
-                "/092/icon/1/1.gif",
-                "/092/rgby/092.png",
-                "/092/rgby/092_blue.png",
-                "/092/rgby/092_pika.png",
-                "/092/rgby/092_rg.png"
-            ],
+            "name": "Gastly",
+            "gameImagePath": {
+                "mainPath": "/092/rgby/092_rg.png",
+                "otherPaths": [
+                    "/092/icon/1/1.gif",
+                    "/092/rgby/092.png",
+                    "/092/rgby/092_blue.png",
+                    "/092/rgby/092_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/092/overworld/092-1.gif",
                 "/092/overworld/092-2.gif",
@@ -3031,25 +3546,27 @@
             "types": [
                 {
                     "code": "ghost",
-                    "name": "ゴースト"
+                    "name": "Ghost"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 93,
             "imageColor": "purple",
-            "name": "ゴースト",
-            "gameImagePaths": [
-                "/093/icon/1/1.gif",
-                "/093/rgby/093.png",
-                "/093/rgby/093_blue.png",
-                "/093/rgby/093_pika.png",
-                "/093/rgby/093_rg.png"
-            ],
+            "name": "Haunter",
+            "gameImagePath": {
+                "mainPath": "/093/rgby/093_rg.png",
+                "otherPaths": [
+                    "/093/icon/1/1.gif",
+                    "/093/rgby/093.png",
+                    "/093/rgby/093_blue.png",
+                    "/093/rgby/093_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/093/overworld/093-1.gif",
                 "/093/overworld/093-2.gif",
@@ -3063,25 +3580,27 @@
             "types": [
                 {
                     "code": "ghost",
-                    "name": "ゴースト"
+                    "name": "Ghost"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 94,
             "imageColor": "purple",
-            "name": "ゲンガー",
-            "gameImagePaths": [
-                "/094/icon/1/1.gif",
-                "/094/rgby/094.png",
-                "/094/rgby/094_blue.png",
-                "/094/rgby/094_pika.png",
-                "/094/rgby/094_rg.png"
-            ],
+            "name": "Gengar",
+            "gameImagePath": {
+                "mainPath": "/094/rgby/094_rg.png",
+                "otherPaths": [
+                    "/094/icon/1/1.gif",
+                    "/094/rgby/094.png",
+                    "/094/rgby/094_blue.png",
+                    "/094/rgby/094_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/094/footmark/094.png",
                 "/094/footmark/094b.png",
@@ -3097,25 +3616,27 @@
             "types": [
                 {
                     "code": "ghost",
-                    "name": "ゴースト"
+                    "name": "Ghost"
                 },
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 95,
             "imageColor": "gray",
-            "name": "イワーク",
-            "gameImagePaths": [
-                "/095/icon/1/7.gif",
-                "/095/rgby/095.png",
-                "/095/rgby/095_blue.png",
-                "/095/rgby/095_pika.png",
-                "/095/rgby/095_rg.png"
-            ],
+            "name": "Onix",
+            "gameImagePath": {
+                "mainPath": "/095/rgby/095_rg.png",
+                "otherPaths": [
+                    "/095/icon/1/7.gif",
+                    "/095/rgby/095.png",
+                    "/095/rgby/095_blue.png",
+                    "/095/rgby/095_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/095/overworld/095-1.gif",
                 "/095/overworld/095-2.gif",
@@ -3129,25 +3650,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 96,
             "imageColor": "yellow",
-            "name": "スリープ",
-            "gameImagePaths": [
-                "/096/icon/1/1.gif",
-                "/096/rgby/096.png",
-                "/096/rgby/096_blue.png",
-                "/096/rgby/096_pika.png",
-                "/096/rgby/096_rg.png"
-            ],
+            "name": "Drowzee",
+            "gameImagePath": {
+                "mainPath": "/096/rgby/096_rg.png",
+                "otherPaths": [
+                    "/096/icon/1/1.gif",
+                    "/096/rgby/096.png",
+                    "/096/rgby/096_blue.png",
+                    "/096/rgby/096_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/096/footmark/096.png",
                 "/096/footmark/096b.png",
@@ -3163,21 +3686,23 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 97,
             "imageColor": "yellow",
-            "name": "スリーパー",
-            "gameImagePaths": [
-                "/097/icon/1/1.gif",
-                "/097/rgby/097.png",
-                "/097/rgby/097_blue.png",
-                "/097/rgby/097_pika.png",
-                "/097/rgby/097_rg.png"
-            ],
+            "name": "Hypno",
+            "gameImagePath": {
+                "mainPath": "/097/rgby/097_rg.png",
+                "otherPaths": [
+                    "/097/icon/1/1.gif",
+                    "/097/rgby/097.png",
+                    "/097/rgby/097_blue.png",
+                    "/097/rgby/097_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/097/footmark/097.png",
                 "/097/footmark/097b.png",
@@ -3193,21 +3718,23 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 98,
             "imageColor": "red",
-            "name": "クラブ",
-            "gameImagePaths": [
-                "/098/icon/1/6.gif",
-                "/098/rgby/098.png",
-                "/098/rgby/098_blue.png",
-                "/098/rgby/098_pika.png",
-                "/098/rgby/098_rg.png"
-            ],
+            "name": "Krabby",
+            "gameImagePath": {
+                "mainPath": "/098/rgby/098_rg.png",
+                "otherPaths": [
+                    "/098/icon/1/6.gif",
+                    "/098/rgby/098.png",
+                    "/098/rgby/098_blue.png",
+                    "/098/rgby/098_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/098/footmark/098.png",
                 "/098/footmark/098b.png",
@@ -3223,21 +3750,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 99,
             "imageColor": "red",
-            "name": "キングラー",
-            "gameImagePaths": [
-                "/099/icon/1/6.gif",
-                "/099/rgby/099.png",
-                "/099/rgby/099_blue.png",
-                "/099/rgby/099_pika.png",
-                "/099/rgby/099_rg.png"
-            ],
+            "name": "Kingler",
+            "gameImagePath": {
+                "mainPath": "/099/rgby/099_rg.png",
+                "otherPaths": [
+                    "/099/icon/1/6.gif",
+                    "/099/rgby/099.png",
+                    "/099/rgby/099_blue.png",
+                    "/099/rgby/099_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/099/footmark/099.png",
                 "/099/footmark/099b.png",
@@ -3253,21 +3782,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 100,
             "imageColor": "red",
-            "name": "ビリリダマ",
-            "gameImagePaths": [
-                "/100/icon/1/4.gif",
-                "/100/rgby/100.png",
-                "/100/rgby/100_blue.png",
-                "/100/rgby/100_pika.png",
-                "/100/rgby/100_rg.png"
-            ],
+            "name": "Voltorb",
+            "gameImagePath": {
+                "mainPath": "/100/rgby/100_rg.png",
+                "otherPaths": [
+                    "/100/icon/1/4.gif",
+                    "/100/rgby/100.png",
+                    "/100/rgby/100_blue.png",
+                    "/100/rgby/100_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/100/overworld/100-1.gif",
                 "/100/overworld/100-2.gif",
@@ -3281,21 +3812,23 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 }
             ]
         },
         {
             "id": 101,
             "imageColor": "red",
-            "name": "マルマイン",
-            "gameImagePaths": [
-                "/101/icon/1/4.gif",
-                "/101/rgby/101.png",
-                "/101/rgby/101_blue.png",
-                "/101/rgby/101_pika.png",
-                "/101/rgby/101_rg.png"
-            ],
+            "name": "Electrode",
+            "gameImagePath": {
+                "mainPath": "/101/rgby/101_rg.png",
+                "otherPaths": [
+                    "/101/icon/1/4.gif",
+                    "/101/rgby/101.png",
+                    "/101/rgby/101_blue.png",
+                    "/101/rgby/101_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/101/overworld/101-1.gif",
                 "/101/overworld/101-2.gif",
@@ -3309,21 +3842,23 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 }
             ]
         },
         {
             "id": 102,
             "imageColor": "pink",
-            "name": "タマタマ",
-            "gameImagePaths": [
-                "/102/icon/1/3.gif",
-                "/102/rgby/102.png",
-                "/102/rgby/102_blue.png",
-                "/102/rgby/102_pika.png",
-                "/102/rgby/102_rg.png"
-            ],
+            "name": "Exeggcute",
+            "gameImagePath": {
+                "mainPath": "/102/rgby/102_rg.png",
+                "otherPaths": [
+                    "/102/icon/1/3.gif",
+                    "/102/rgby/102.png",
+                    "/102/rgby/102_blue.png",
+                    "/102/rgby/102_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/102/overworld/102-1.gif",
                 "/102/overworld/102-2.gif",
@@ -3337,25 +3872,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 103,
             "imageColor": "yellow",
-            "name": "ナッシー",
-            "gameImagePaths": [
-                "/103/icon/1/3.gif",
-                "/103/rgby/103.png",
-                "/103/rgby/103_blue.png",
-                "/103/rgby/103_pika.png",
-                "/103/rgby/103_rg.png"
-            ],
+            "name": "Exeggutor",
+            "gameImagePath": {
+                "mainPath": "/103/rgby/103_rg.png",
+                "otherPaths": [
+                    "/103/icon/1/3.gif",
+                    "/103/rgby/103.png",
+                    "/103/rgby/103_blue.png",
+                    "/103/rgby/103_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/103/footmark/103.png",
                 "/103/footmark/103b.png",
@@ -3371,25 +3908,27 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 },
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 104,
             "imageColor": "brown",
-            "name": "カラカラ",
-            "gameImagePaths": [
-                "/104/icon/1/1.gif",
-                "/104/rgby/104.png",
-                "/104/rgby/104_blue.png",
-                "/104/rgby/104_pika.png",
-                "/104/rgby/104_rg.png"
-            ],
+            "name": "Cubone",
+            "gameImagePath": {
+                "mainPath": "/104/rgby/104_rg.png",
+                "otherPaths": [
+                    "/104/icon/1/1.gif",
+                    "/104/rgby/104.png",
+                    "/104/rgby/104_blue.png",
+                    "/104/rgby/104_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/104/footmark/104.png",
                 "/104/footmark/104b.png",
@@ -3405,21 +3944,23 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 105,
             "imageColor": "brown",
-            "name": "ガラガラ",
-            "gameImagePaths": [
-                "/105/icon/1/1.gif",
-                "/105/rgby/105.png",
-                "/105/rgby/105_blue.png",
-                "/105/rgby/105_pika.png",
-                "/105/rgby/105_rg.png"
-            ],
+            "name": "Marowak",
+            "gameImagePath": {
+                "mainPath": "/105/rgby/105_rg.png",
+                "otherPaths": [
+                    "/105/icon/1/1.gif",
+                    "/105/rgby/105.png",
+                    "/105/rgby/105_blue.png",
+                    "/105/rgby/105_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/105/footmark/105.png",
                 "/105/footmark/105b.png",
@@ -3435,21 +3976,23 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 }
             ]
         },
         {
             "id": 106,
             "imageColor": "brown",
-            "name": "サワムラー",
-            "gameImagePaths": [
-                "/106/icon/1/1.gif",
-                "/106/rgby/106.png",
-                "/106/rgby/106_blue.png",
-                "/106/rgby/106_pika.png",
-                "/106/rgby/106_rg.png"
-            ],
+            "name": "Hitmonlee",
+            "gameImagePath": {
+                "mainPath": "/106/rgby/106_rg.png",
+                "otherPaths": [
+                    "/106/icon/1/1.gif",
+                    "/106/rgby/106.png",
+                    "/106/rgby/106_blue.png",
+                    "/106/rgby/106_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/106/footmark/106.png",
                 "/106/footmark/106b.png",
@@ -3465,21 +4008,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 107,
             "imageColor": "brown",
-            "name": "エビワラー",
-            "gameImagePaths": [
-                "/107/icon/1/1.gif",
-                "/107/rgby/107.png",
-                "/107/rgby/107_blue.png",
-                "/107/rgby/107_pika.png",
-                "/107/rgby/107_rg.png"
-            ],
+            "name": "Hitmonchan",
+            "gameImagePath": {
+                "mainPath": "/107/rgby/107_rg.png",
+                "otherPaths": [
+                    "/107/icon/1/1.gif",
+                    "/107/rgby/107.png",
+                    "/107/rgby/107_blue.png",
+                    "/107/rgby/107_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/107/footmark/107.png",
                 "/107/footmark/107b.png",
@@ -3495,21 +4040,23 @@
             "types": [
                 {
                     "code": "fighting",
-                    "name": "かくとう"
+                    "name": "Fighting"
                 }
             ]
         },
         {
             "id": 108,
             "imageColor": "pink",
-            "name": "ベロリンガ",
-            "gameImagePaths": [
-                "/108/icon/1/1.gif",
-                "/108/rgby/108.png",
-                "/108/rgby/108_blue.png",
-                "/108/rgby/108_pika.png",
-                "/108/rgby/108_rg.png"
-            ],
+            "name": "Lickitung",
+            "gameImagePath": {
+                "mainPath": "/108/rgby/108_rg.png",
+                "otherPaths": [
+                    "/108/icon/1/1.gif",
+                    "/108/rgby/108.png",
+                    "/108/rgby/108_blue.png",
+                    "/108/rgby/108_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/108/footmark/108.png",
                 "/108/footmark/108b.png",
@@ -3525,21 +4072,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 109,
             "imageColor": "purple",
-            "name": "ドガース",
-            "gameImagePaths": [
-                "/109/icon/1/1.gif",
-                "/109/rgby/109.png",
-                "/109/rgby/109_blue.png",
-                "/109/rgby/109_pika.png",
-                "/109/rgby/109_rg.png"
-            ],
+            "name": "Koffing",
+            "gameImagePath": {
+                "mainPath": "/109/rgby/109_rg.png",
+                "otherPaths": [
+                    "/109/icon/1/1.gif",
+                    "/109/rgby/109.png",
+                    "/109/rgby/109_blue.png",
+                    "/109/rgby/109_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/109/overworld/109-1.gif",
                 "/109/overworld/109-2.gif",
@@ -3553,21 +4102,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 110,
             "imageColor": "purple",
-            "name": "マタドガス",
-            "gameImagePaths": [
-                "/110/icon/1/1.gif",
-                "/110/rgby/110.png",
-                "/110/rgby/110_blue.png",
-                "/110/rgby/110_pika.png",
-                "/110/rgby/110_rg.png"
-            ],
+            "name": "Weezing",
+            "gameImagePath": {
+                "mainPath": "/110/rgby/110_rg.png",
+                "otherPaths": [
+                    "/110/icon/1/1.gif",
+                    "/110/rgby/110.png",
+                    "/110/rgby/110_blue.png",
+                    "/110/rgby/110_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/110/overworld/110-1.gif",
                 "/110/overworld/110-2.gif",
@@ -3581,21 +4132,23 @@
             "types": [
                 {
                     "code": "poison",
-                    "name": "どく"
+                    "name": "Poison"
                 }
             ]
         },
         {
             "id": 111,
             "imageColor": "gray",
-            "name": "サイホーン",
-            "gameImagePaths": [
-                "/111/icon/1/9.gif",
-                "/111/rgby/111.png",
-                "/111/rgby/111_blue.png",
-                "/111/rgby/111_pika.png",
-                "/111/rgby/111_rg.png"
-            ],
+            "name": "Rhyhorn",
+            "gameImagePath": {
+                "mainPath": "/111/rgby/111_rg.png",
+                "otherPaths": [
+                    "/111/icon/1/9.gif",
+                    "/111/rgby/111.png",
+                    "/111/rgby/111_blue.png",
+                    "/111/rgby/111_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/111/footmark/111.png",
                 "/111/footmark/111b.png",
@@ -3611,25 +4164,27 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 },
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 }
             ]
         },
         {
             "id": 112,
             "imageColor": "gray",
-            "name": "サイドン",
-            "gameImagePaths": [
-                "/112/icon/1/1.gif",
-                "/112/rgby/112.png",
-                "/112/rgby/112_blue.png",
-                "/112/rgby/112_pika.png",
-                "/112/rgby/112_rg.png"
-            ],
+            "name": "Rhydon",
+            "gameImagePath": {
+                "mainPath": "/112/rgby/112_rg.png",
+                "otherPaths": [
+                    "/112/icon/1/1.gif",
+                    "/112/rgby/112.png",
+                    "/112/rgby/112_blue.png",
+                    "/112/rgby/112_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/112/footmark/112.png",
                 "/112/footmark/112b.png",
@@ -3645,25 +4200,27 @@
             "types": [
                 {
                     "code": "ground",
-                    "name": "じめん"
+                    "name": "Ground"
                 },
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 }
             ]
         },
         {
             "id": 113,
             "imageColor": "pink",
-            "name": "ラッキー",
-            "gameImagePaths": [
-                "/113/icon/1/2.gif",
-                "/113/rgby/113.png",
-                "/113/rgby/113_blue.png",
-                "/113/rgby/113_pika.png",
-                "/113/rgby/113_rg.png"
-            ],
+            "name": "Chansey",
+            "gameImagePath": {
+                "mainPath": "/113/rgby/113_rg.png",
+                "otherPaths": [
+                    "/113/icon/1/2.gif",
+                    "/113/rgby/113.png",
+                    "/113/rgby/113_blue.png",
+                    "/113/rgby/113_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/113/footmark/113.png",
                 "/113/footmark/113b.png",
@@ -3679,21 +4236,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 114,
             "imageColor": "blue",
-            "name": "モンジャラ",
-            "gameImagePaths": [
-                "/114/icon/1/3.gif",
-                "/114/rgby/114.png",
-                "/114/rgby/114_blue.png",
-                "/114/rgby/114_pika.png",
-                "/114/rgby/114_rg.png"
-            ],
+            "name": "Tangela",
+            "gameImagePath": {
+                "mainPath": "/114/rgby/114_rg.png",
+                "otherPaths": [
+                    "/114/icon/1/3.gif",
+                    "/114/rgby/114.png",
+                    "/114/rgby/114_blue.png",
+                    "/114/rgby/114_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/114/footmark/114.png",
                 "/114/footmark/114b.png",
@@ -3709,21 +4268,23 @@
             "types": [
                 {
                     "code": "grass",
-                    "name": "くさ"
+                    "name": "Grass"
                 }
             ]
         },
         {
             "id": 115,
             "imageColor": "brown",
-            "name": "ガルーラ",
-            "gameImagePaths": [
-                "/115/icon/1/1.gif",
-                "/115/rgby/115.png",
-                "/115/rgby/115_blue.png",
-                "/115/rgby/115_pika.png",
-                "/115/rgby/115_rg.png"
-            ],
+            "name": "Kangaskhan",
+            "gameImagePath": {
+                "mainPath": "/115/rgby/115_rg.png",
+                "otherPaths": [
+                    "/115/icon/1/1.gif",
+                    "/115/rgby/115.png",
+                    "/115/rgby/115_blue.png",
+                    "/115/rgby/115_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/115/footmark/115.png",
                 "/115/footmark/115b.png",
@@ -3739,21 +4300,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 116,
             "imageColor": "blue",
-            "name": "タッツー",
-            "gameImagePaths": [
-                "/116/icon/1/6.gif",
-                "/116/rgby/116.png",
-                "/116/rgby/116_blue.png",
-                "/116/rgby/116_pika.png",
-                "/116/rgby/116_rg.png"
-            ],
+            "name": "Horsea",
+            "gameImagePath": {
+                "mainPath": "/116/rgby/116_rg.png",
+                "otherPaths": [
+                    "/116/icon/1/6.gif",
+                    "/116/rgby/116.png",
+                    "/116/rgby/116_blue.png",
+                    "/116/rgby/116_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/116/overworld/116-1.gif",
                 "/116/overworld/116-2.gif",
@@ -3767,21 +4330,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 117,
             "imageColor": "blue",
-            "name": "シードラ",
-            "gameImagePaths": [
-                "/117/icon/1/6.gif",
-                "/117/rgby/117.png",
-                "/117/rgby/117_blue.png",
-                "/117/rgby/117_pika.png",
-                "/117/rgby/117_rg.png"
-            ],
+            "name": "Seadra",
+            "gameImagePath": {
+                "mainPath": "/117/rgby/117_rg.png",
+                "otherPaths": [
+                    "/117/icon/1/6.gif",
+                    "/117/rgby/117.png",
+                    "/117/rgby/117_blue.png",
+                    "/117/rgby/117_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/117/overworld/117-1.gif",
                 "/117/overworld/117-2.gif",
@@ -3795,21 +4360,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 118,
             "imageColor": "red",
-            "name": "トサキント",
-            "gameImagePaths": [
-                "/118/icon/1/6.gif",
-                "/118/rgby/118.png",
-                "/118/rgby/118_blue.png",
-                "/118/rgby/118_pika.png",
-                "/118/rgby/118_rg.png"
-            ],
+            "name": "Goldeen",
+            "gameImagePath": {
+                "mainPath": "/118/rgby/118_rg.png",
+                "otherPaths": [
+                    "/118/icon/1/6.gif",
+                    "/118/rgby/118.png",
+                    "/118/rgby/118_blue.png",
+                    "/118/rgby/118_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/118/overworld/118-1.gif",
                 "/118/overworld/118-2.gif",
@@ -3823,21 +4390,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 119,
             "imageColor": "red",
-            "name": "アズマオウ",
-            "gameImagePaths": [
-                "/119/icon/1/6.gif",
-                "/119/rgby/119.png",
-                "/119/rgby/119_blue.png",
-                "/119/rgby/119_pika.png",
-                "/119/rgby/119_rg.png"
-            ],
+            "name": "Seaking",
+            "gameImagePath": {
+                "mainPath": "/119/rgby/119_rg.png",
+                "otherPaths": [
+                    "/119/icon/1/6.gif",
+                    "/119/rgby/119.png",
+                    "/119/rgby/119_blue.png",
+                    "/119/rgby/119_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/119/overworld/119-1.gif",
                 "/119/overworld/119-2.gif",
@@ -3851,21 +4420,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 120,
             "imageColor": "brown",
-            "name": "ヒトデマン",
-            "gameImagePaths": [
-                "/120/icon/1/10.gif",
-                "/120/rgby/120.png",
-                "/120/rgby/120_blue.png",
-                "/120/rgby/120_pika.png",
-                "/120/rgby/120_rg.png"
-            ],
+            "name": "Staryu",
+            "gameImagePath": {
+                "mainPath": "/120/rgby/120_rg.png",
+                "otherPaths": [
+                    "/120/icon/1/10.gif",
+                    "/120/rgby/120.png",
+                    "/120/rgby/120_blue.png",
+                    "/120/rgby/120_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/120/footmark/120.png",
                 "/120/footmark/120b.png",
@@ -3881,21 +4452,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 121,
             "imageColor": "purple",
-            "name": "スターミー",
-            "gameImagePaths": [
-                "/121/icon/1/10.gif",
-                "/121/rgby/121.png",
-                "/121/rgby/121_blue.png",
-                "/121/rgby/121_pika.png",
-                "/121/rgby/121_rg.png"
-            ],
+            "name": "Starmie",
+            "gameImagePath": {
+                "mainPath": "/121/rgby/121_rg.png",
+                "otherPaths": [
+                    "/121/icon/1/10.gif",
+                    "/121/rgby/121.png",
+                    "/121/rgby/121_blue.png",
+                    "/121/rgby/121_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/121/footmark/121.png",
                 "/121/footmark/121b.png",
@@ -3911,25 +4484,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 122,
             "imageColor": "pink",
-            "name": "バリヤード",
-            "gameImagePaths": [
-                "/122/icon/1/1.gif",
-                "/122/rgby/122.png",
-                "/122/rgby/122_blue.png",
-                "/122/rgby/122_pika.png",
-                "/122/rgby/122_rg.png"
-            ],
+            "name": "Mr. Mime",
+            "gameImagePath": {
+                "mainPath": "/122/rgby/122_rg.png",
+                "otherPaths": [
+                    "/122/icon/1/1.gif",
+                    "/122/rgby/122.png",
+                    "/122/rgby/122_blue.png",
+                    "/122/rgby/122_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/122/footmark/122.png",
                 "/122/footmark/122b.png",
@@ -3945,25 +4520,27 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 },
                 {
                     "code": "fairy",
-                    "name": "フェアリー"
+                    "name": "Fairy"
                 }
             ]
         },
         {
             "id": 123,
             "imageColor": "green",
-            "name": "ストライク",
-            "gameImagePaths": [
-                "/123/icon/1/5.gif",
-                "/123/rgby/123.png",
-                "/123/rgby/123_blue.png",
-                "/123/rgby/123_pika.png",
-                "/123/rgby/123_rg.png"
-            ],
+            "name": "Scyther",
+            "gameImagePath": {
+                "mainPath": "/123/rgby/123_rg.png",
+                "otherPaths": [
+                    "/123/icon/1/5.gif",
+                    "/123/rgby/123.png",
+                    "/123/rgby/123_blue.png",
+                    "/123/rgby/123_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/123/footmark/123.png",
                 "/123/footmark/123b.png",
@@ -3979,25 +4556,27 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 124,
             "imageColor": "red",
-            "name": "ルージュラ",
-            "gameImagePaths": [
-                "/124/icon/1/1.gif",
-                "/124/rgby/124.png",
-                "/124/rgby/124_blue.png",
-                "/124/rgby/124_pika.png",
-                "/124/rgby/124_rg.png"
-            ],
+            "name": "Jynx",
+            "gameImagePath": {
+                "mainPath": "/124/rgby/124_rg.png",
+                "otherPaths": [
+                    "/124/icon/1/1.gif",
+                    "/124/rgby/124.png",
+                    "/124/rgby/124_blue.png",
+                    "/124/rgby/124_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/124/overworld/124-1.gif",
                 "/124/overworld/124-2.gif",
@@ -4011,25 +4590,27 @@
             "types": [
                 {
                     "code": "ice",
-                    "name": "こおり"
+                    "name": "Ice"
                 },
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 125,
             "imageColor": "yellow",
-            "name": "エレブー",
-            "gameImagePaths": [
-                "/125/icon/1/1.gif",
-                "/125/rgby/125.png",
-                "/125/rgby/125_blue.png",
-                "/125/rgby/125_pika.png",
-                "/125/rgby/125_rg.png"
-            ],
+            "name": "Electabuzz",
+            "gameImagePath": {
+                "mainPath": "/125/rgby/125_rg.png",
+                "otherPaths": [
+                    "/125/icon/1/1.gif",
+                    "/125/rgby/125.png",
+                    "/125/rgby/125_blue.png",
+                    "/125/rgby/125_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/125/footmark/125.png",
                 "/125/footmark/125b.png",
@@ -4045,21 +4626,23 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 }
             ]
         },
         {
             "id": 126,
             "imageColor": "red",
-            "name": "ブーバー",
-            "gameImagePaths": [
-                "/126/icon/1/1.gif",
-                "/126/rgby/126.png",
-                "/126/rgby/126_blue.png",
-                "/126/rgby/126_pika.png",
-                "/126/rgby/126_rg.png"
-            ],
+            "name": "Magmar",
+            "gameImagePath": {
+                "mainPath": "/126/rgby/126_rg.png",
+                "otherPaths": [
+                    "/126/icon/1/1.gif",
+                    "/126/rgby/126.png",
+                    "/126/rgby/126_blue.png",
+                    "/126/rgby/126_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/126/footmark/126.png",
                 "/126/footmark/126b.png",
@@ -4075,21 +4658,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 127,
             "imageColor": "brown",
-            "name": "カイロス",
-            "gameImagePaths": [
-                "/127/icon/1/5.gif",
-                "/127/rgby/127.png",
-                "/127/rgby/127_blue.png",
-                "/127/rgby/127_pika.png",
-                "/127/rgby/127_rg.png"
-            ],
+            "name": "Pinsir",
+            "gameImagePath": {
+                "mainPath": "/127/rgby/127_rg.png",
+                "otherPaths": [
+                    "/127/icon/1/5.gif",
+                    "/127/rgby/127.png",
+                    "/127/rgby/127_blue.png",
+                    "/127/rgby/127_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/127/footmark/127.png",
                 "/127/footmark/127b.png",
@@ -4105,21 +4690,23 @@
             "types": [
                 {
                     "code": "bug",
-                    "name": "むし"
+                    "name": "Bug"
                 }
             ]
         },
         {
             "id": 128,
             "imageColor": "brown",
-            "name": "ケンタロス",
-            "gameImagePaths": [
-                "/128/icon/1/9.gif",
-                "/128/rgby/128.png",
-                "/128/rgby/128_blue.png",
-                "/128/rgby/128_pika.png",
-                "/128/rgby/128_rg.png"
-            ],
+            "name": "Tauros",
+            "gameImagePath": {
+                "mainPath": "/128/rgby/128_rg.png",
+                "otherPaths": [
+                    "/128/icon/1/9.gif",
+                    "/128/rgby/128.png",
+                    "/128/rgby/128_blue.png",
+                    "/128/rgby/128_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/128/footmark/128.png",
                 "/128/footmark/128b.png",
@@ -4135,21 +4722,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 129,
             "imageColor": "red",
-            "name": "コイキング",
-            "gameImagePaths": [
-                "/129/icon/1/6.gif",
-                "/129/rgby/129.png",
-                "/129/rgby/129_blue.png",
-                "/129/rgby/129_pika.png",
-                "/129/rgby/129_rg.png"
-            ],
+            "name": "Magikarp",
+            "gameImagePath": {
+                "mainPath": "/129/rgby/129_rg.png",
+                "otherPaths": [
+                    "/129/icon/1/6.gif",
+                    "/129/rgby/129.png",
+                    "/129/rgby/129_blue.png",
+                    "/129/rgby/129_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/129/overworld/129-1.gif",
                 "/129/overworld/129-2.gif",
@@ -4163,21 +4752,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 130,
             "imageColor": "blue",
-            "name": "ギャラドス",
-            "gameImagePaths": [
-                "/130/icon/1/7.gif",
-                "/130/rgby/130.png",
-                "/130/rgby/130_blue.png",
-                "/130/rgby/130_pika.png",
-                "/130/rgby/130_rg.png"
-            ],
+            "name": "Gyarados",
+            "gameImagePath": {
+                "mainPath": "/130/rgby/130_rg.png",
+                "otherPaths": [
+                    "/130/icon/1/7.gif",
+                    "/130/rgby/130.png",
+                    "/130/rgby/130_blue.png",
+                    "/130/rgby/130_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/130/overworld/130-1.gif",
                 "/130/overworld/130-2.gif",
@@ -4191,25 +4782,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 131,
             "imageColor": "blue",
-            "name": "ラプラス",
-            "gameImagePaths": [
-                "/131/icon/1/6.gif",
-                "/131/rgby/131.png",
-                "/131/rgby/131_blue.png",
-                "/131/rgby/131_pika.png",
-                "/131/rgby/131_rg.png"
-            ],
+            "name": "Lapras",
+            "gameImagePath": {
+                "mainPath": "/131/rgby/131_rg.png",
+                "otherPaths": [
+                    "/131/icon/1/6.gif",
+                    "/131/rgby/131.png",
+                    "/131/rgby/131_blue.png",
+                    "/131/rgby/131_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/131/overworld/131-1.gif",
                 "/131/overworld/131-2.gif",
@@ -4223,25 +4816,27 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 },
                 {
                     "code": "ice",
-                    "name": "こおり"
+                    "name": "Ice"
                 }
             ]
         },
         {
             "id": 132,
             "imageColor": "purple",
-            "name": "メタモン",
-            "gameImagePaths": [
-                "/132/icon/1/1.gif",
-                "/132/rgby/132.png",
-                "/132/rgby/132_blue.png",
-                "/132/rgby/132_pika.png",
-                "/132/rgby/132_rg.png"
-            ],
+            "name": "Ditto",
+            "gameImagePath": {
+                "mainPath": "/132/rgby/132_rg.png",
+                "otherPaths": [
+                    "/132/icon/1/1.gif",
+                    "/132/rgby/132.png",
+                    "/132/rgby/132_blue.png",
+                    "/132/rgby/132_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/132/overworld/132-1.gif",
                 "/132/overworld/132-2.gif",
@@ -4255,21 +4850,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 133,
             "imageColor": "brown",
-            "name": "イーブイ",
-            "gameImagePaths": [
-                "/133/icon/1/9.gif",
-                "/133/rgby/133.png",
-                "/133/rgby/133_blue.png",
-                "/133/rgby/133_pika.png",
-                "/133/rgby/133_rg.png"
-            ],
+            "name": "Eevee",
+            "gameImagePath": {
+                "mainPath": "/133/rgby/133_rg.png",
+                "otherPaths": [
+                    "/133/icon/1/9.gif",
+                    "/133/rgby/133.png",
+                    "/133/rgby/133_blue.png",
+                    "/133/rgby/133_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/133/footmark/133.png",
                 "/133/footmark/133b.png",
@@ -4285,21 +4882,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 134,
             "imageColor": "blue",
-            "name": "シャワーズ",
-            "gameImagePaths": [
-                "/134/icon/1/9.gif",
-                "/134/rgby/134.png",
-                "/134/rgby/134_blue.png",
-                "/134/rgby/134_pika.png",
-                "/134/rgby/134_rg.png"
-            ],
+            "name": "Vaporeon",
+            "gameImagePath": {
+                "mainPath": "/134/rgby/134_rg.png",
+                "otherPaths": [
+                    "/134/icon/1/9.gif",
+                    "/134/rgby/134.png",
+                    "/134/rgby/134_blue.png",
+                    "/134/rgby/134_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/134/footmark/134.png",
                 "/134/footmark/134b.png",
@@ -4315,21 +4914,23 @@
             "types": [
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 135,
             "imageColor": "yellow",
-            "name": "サンダース",
-            "gameImagePaths": [
-                "/135/icon/1/9.gif",
-                "/135/rgby/135.png",
-                "/135/rgby/135_blue.png",
-                "/135/rgby/135_pika.png",
-                "/135/rgby/135_rg.png"
-            ],
+            "name": "Jolteon",
+            "gameImagePath": {
+                "mainPath": "/135/rgby/135_rg.png",
+                "otherPaths": [
+                    "/135/icon/1/9.gif",
+                    "/135/rgby/135.png",
+                    "/135/rgby/135_blue.png",
+                    "/135/rgby/135_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/135/footmark/135.png",
                 "/135/footmark/135b.png",
@@ -4345,21 +4946,23 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 }
             ]
         },
         {
             "id": 136,
             "imageColor": "red",
-            "name": "ブースター",
-            "gameImagePaths": [
-                "/136/icon/1/9.gif",
-                "/136/rgby/136.png",
-                "/136/rgby/136_blue.png",
-                "/136/rgby/136_pika.png",
-                "/136/rgby/136_rg.png"
-            ],
+            "name": "Flareon",
+            "gameImagePath": {
+                "mainPath": "/136/rgby/136_rg.png",
+                "otherPaths": [
+                    "/136/icon/1/9.gif",
+                    "/136/rgby/136.png",
+                    "/136/rgby/136_blue.png",
+                    "/136/rgby/136_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/136/footmark/136.png",
                 "/136/footmark/136b.png",
@@ -4375,21 +4978,23 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 }
             ]
         },
         {
             "id": 137,
             "imageColor": "pink",
-            "name": "ポリゴン",
-            "gameImagePaths": [
-                "/137/icon/1/1.gif",
-                "/137/rgby/137.png",
-                "/137/rgby/137_blue.png",
-                "/137/rgby/137_pika.png",
-                "/137/rgby/137_rg.png"
-            ],
+            "name": "Porygon",
+            "gameImagePath": {
+                "mainPath": "/137/rgby/137_rg.png",
+                "otherPaths": [
+                    "/137/icon/1/1.gif",
+                    "/137/rgby/137.png",
+                    "/137/rgby/137_blue.png",
+                    "/137/rgby/137_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/137/footmark/137.png",
                 "/137/footmark/137b.png",
@@ -4405,21 +5010,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 138,
             "imageColor": "blue",
-            "name": "オムナイト",
-            "gameImagePaths": [
-                "/138/icon/1/10.gif",
-                "/138/rgby/138.png",
-                "/138/rgby/138_blue.png",
-                "/138/rgby/138_pika.png",
-                "/138/rgby/138_rg.png"
-            ],
+            "name": "Omanyte",
+            "gameImagePath": {
+                "mainPath": "/138/rgby/138_rg.png",
+                "otherPaths": [
+                    "/138/icon/1/10.gif",
+                    "/138/rgby/138.png",
+                    "/138/rgby/138_blue.png",
+                    "/138/rgby/138_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/138/footmark/138.png",
                 "/138/footmark/138b.png",
@@ -4435,25 +5042,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 139,
             "imageColor": "blue",
-            "name": "オムスター",
-            "gameImagePaths": [
-                "/139/icon/1/10.gif",
-                "/139/rgby/139.png",
-                "/139/rgby/139_blue.png",
-                "/139/rgby/139_pika.png",
-                "/139/rgby/139_rg.png"
-            ],
+            "name": "Omastar",
+            "gameImagePath": {
+                "mainPath": "/139/rgby/139_rg.png",
+                "otherPaths": [
+                    "/139/icon/1/10.gif",
+                    "/139/rgby/139.png",
+                    "/139/rgby/139_blue.png",
+                    "/139/rgby/139_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/139/footmark/139.png",
                 "/139/footmark/139b.png",
@@ -4469,25 +5078,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 140,
             "imageColor": "brown",
-            "name": "カブト",
-            "gameImagePaths": [
-                "/140/icon/1/10.gif",
-                "/140/rgby/140.png",
-                "/140/rgby/140_blue.png",
-                "/140/rgby/140_pika.png",
-                "/140/rgby/140_rg.png"
-            ],
+            "name": "Kabuto",
+            "gameImagePath": {
+                "mainPath": "/140/rgby/140_rg.png",
+                "otherPaths": [
+                    "/140/icon/1/10.gif",
+                    "/140/rgby/140.png",
+                    "/140/rgby/140_blue.png",
+                    "/140/rgby/140_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/140/footmark/140.png",
                 "/140/footmark/140b.png",
@@ -4503,25 +5114,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 141,
             "imageColor": "brown",
-            "name": "カブトプス",
-            "gameImagePaths": [
-                "/141/icon/1/10.gif",
-                "/141/rgby/141.png",
-                "/141/rgby/141_blue.png",
-                "/141/rgby/141_pika.png",
-                "/141/rgby/141_rg.png"
-            ],
+            "name": "Kabutops",
+            "gameImagePath": {
+                "mainPath": "/141/rgby/141_rg.png",
+                "otherPaths": [
+                    "/141/icon/1/10.gif",
+                    "/141/rgby/141.png",
+                    "/141/rgby/141_blue.png",
+                    "/141/rgby/141_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/141/footmark/141.png",
                 "/141/footmark/141b.png",
@@ -4537,25 +5150,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "water",
-                    "name": "みず"
+                    "name": "Water"
                 }
             ]
         },
         {
             "id": 142,
             "imageColor": "purple",
-            "name": "プテラ",
-            "gameImagePaths": [
-                "/142/icon/1/8.gif",
-                "/142/rgby/142.png",
-                "/142/rgby/142_blue.png",
-                "/142/rgby/142_pika.png",
-                "/142/rgby/142_rg.png"
-            ],
+            "name": "Aerodactyl",
+            "gameImagePath": {
+                "mainPath": "/142/rgby/142_rg.png",
+                "otherPaths": [
+                    "/142/icon/1/8.gif",
+                    "/142/rgby/142.png",
+                    "/142/rgby/142_blue.png",
+                    "/142/rgby/142_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/142/footmark/142.png",
                 "/142/footmark/142b.png",
@@ -4571,25 +5186,27 @@
             "types": [
                 {
                     "code": "rock",
-                    "name": "いわ"
+                    "name": "Rock"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 143,
             "imageColor": "black",
-            "name": "カビゴン",
-            "gameImagePaths": [
-                "/143/icon/1/1.gif",
-                "/143/rgby/143.png",
-                "/143/rgby/143_blue.png",
-                "/143/rgby/143_pika.png",
-                "/143/rgby/143_rg.png"
-            ],
+            "name": "Snorlax",
+            "gameImagePath": {
+                "mainPath": "/143/rgby/143_rg.png",
+                "otherPaths": [
+                    "/143/icon/1/1.gif",
+                    "/143/rgby/143.png",
+                    "/143/rgby/143_blue.png",
+                    "/143/rgby/143_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/143/footmark/143.png",
                 "/143/footmark/143b.png",
@@ -4605,21 +5222,23 @@
             "types": [
                 {
                     "code": "normal",
-                    "name": "ノーマル"
+                    "name": "Normal"
                 }
             ]
         },
         {
             "id": 144,
             "imageColor": "blue",
-            "name": "フリーザー",
-            "gameImagePaths": [
-                "/144/icon/1/8.gif",
-                "/144/rgby/144.png",
-                "/144/rgby/144_blue.png",
-                "/144/rgby/144_pika.png",
-                "/144/rgby/144_rg.png"
-            ],
+            "name": "Articuno",
+            "gameImagePath": {
+                "mainPath": "/144/rgby/144_rg.png",
+                "otherPaths": [
+                    "/144/icon/1/8.gif",
+                    "/144/rgby/144.png",
+                    "/144/rgby/144_blue.png",
+                    "/144/rgby/144_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/144/footmark/144.png",
                 "/144/footmark/144b.png",
@@ -4635,25 +5254,27 @@
             "types": [
                 {
                     "code": "ice",
-                    "name": "こおり"
+                    "name": "Ice"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 145,
             "imageColor": "yellow",
-            "name": "サンダー",
-            "gameImagePaths": [
-                "/145/icon/1/8.gif",
-                "/145/rgby/145.png",
-                "/145/rgby/145_blue.png",
-                "/145/rgby/145_pika.png",
-                "/145/rgby/145_rg.png"
-            ],
+            "name": "Zapdos",
+            "gameImagePath": {
+                "mainPath": "/145/rgby/145_rg.png",
+                "otherPaths": [
+                    "/145/icon/1/8.gif",
+                    "/145/rgby/145.png",
+                    "/145/rgby/145_blue.png",
+                    "/145/rgby/145_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/145/footmark/145.png",
                 "/145/footmark/145b.png",
@@ -4669,25 +5290,27 @@
             "types": [
                 {
                     "code": "electric",
-                    "name": "でんき"
+                    "name": "Electric"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 146,
             "imageColor": "yellow",
-            "name": "ファイヤー",
-            "gameImagePaths": [
-                "/146/icon/1/8.gif",
-                "/146/rgby/146.png",
-                "/146/rgby/146_blue.png",
-                "/146/rgby/146_pika.png",
-                "/146/rgby/146_rg.png"
-            ],
+            "name": "Moltres",
+            "gameImagePath": {
+                "mainPath": "/146/rgby/146_rg.png",
+                "otherPaths": [
+                    "/146/icon/1/8.gif",
+                    "/146/rgby/146.png",
+                    "/146/rgby/146_blue.png",
+                    "/146/rgby/146_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/146/footmark/146.png",
                 "/146/footmark/146b.png",
@@ -4703,25 +5326,27 @@
             "types": [
                 {
                     "code": "fire",
-                    "name": "ほのお"
+                    "name": "Fire"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 147,
             "imageColor": "blue",
-            "name": "ミニリュウ",
-            "gameImagePaths": [
-                "/147/icon/1/7.gif",
-                "/147/rgby/147.png",
-                "/147/rgby/147_blue.png",
-                "/147/rgby/147_pika.png",
-                "/147/rgby/147_rg.png"
-            ],
+            "name": "Dratini",
+            "gameImagePath": {
+                "mainPath": "/147/rgby/147_rg.png",
+                "otherPaths": [
+                    "/147/icon/1/7.gif",
+                    "/147/rgby/147.png",
+                    "/147/rgby/147_blue.png",
+                    "/147/rgby/147_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/147/overworld/147-1.gif",
                 "/147/overworld/147-2.gif",
@@ -4735,21 +5360,23 @@
             "types": [
                 {
                     "code": "dragon",
-                    "name": "ドラゴン"
+                    "name": "Dragon"
                 }
             ]
         },
         {
             "id": 148,
             "imageColor": "blue",
-            "name": "ハクリュー",
-            "gameImagePaths": [
-                "/148/icon/1/7.gif",
-                "/148/rgby/148.png",
-                "/148/rgby/148_blue.png",
-                "/148/rgby/148_pika.png",
-                "/148/rgby/148_rg.png"
-            ],
+            "name": "Dragonair",
+            "gameImagePath": {
+                "mainPath": "/148/rgby/148_rg.png",
+                "otherPaths": [
+                    "/148/icon/1/7.gif",
+                    "/148/rgby/148.png",
+                    "/148/rgby/148_blue.png",
+                    "/148/rgby/148_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/148/overworld/148-1.gif",
                 "/148/overworld/148-2.gif",
@@ -4763,21 +5390,23 @@
             "types": [
                 {
                     "code": "dragon",
-                    "name": "ドラゴン"
+                    "name": "Dragon"
                 }
             ]
         },
         {
             "id": 149,
             "imageColor": "brown",
-            "name": "カイリュー",
-            "gameImagePaths": [
-                "/149/icon/1/7.gif",
-                "/149/rgby/149.png",
-                "/149/rgby/149_blue.png",
-                "/149/rgby/149_pika.png",
-                "/149/rgby/149_rg.png"
-            ],
+            "name": "Dragonite",
+            "gameImagePath": {
+                "mainPath": "/149/rgby/149_rg.png",
+                "otherPaths": [
+                    "/149/icon/1/7.gif",
+                    "/149/rgby/149.png",
+                    "/149/rgby/149_blue.png",
+                    "/149/rgby/149_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/149/footmark/149.png",
                 "/149/footmark/149b.png",
@@ -4793,25 +5422,27 @@
             "types": [
                 {
                     "code": "dragon",
-                    "name": "ドラゴン"
+                    "name": "Dragon"
                 },
                 {
                     "code": "flying",
-                    "name": "ひこう"
+                    "name": "Flying"
                 }
             ]
         },
         {
             "id": 150,
             "imageColor": "purple",
-            "name": "ミュウツー",
-            "gameImagePaths": [
-                "/150/icon/1/1.gif",
-                "/150/rgby/150.png",
-                "/150/rgby/150_blue.png",
-                "/150/rgby/150_pika.png",
-                "/150/rgby/150_rg.png"
-            ],
+            "name": "Mewtwo",
+            "gameImagePath": {
+                "mainPath": "/150/rgby/150_rg.png",
+                "otherPaths": [
+                    "/150/icon/1/1.gif",
+                    "/150/rgby/150.png",
+                    "/150/rgby/150_blue.png",
+                    "/150/rgby/150_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/150/footmark/150.png",
                 "/150/footmark/150b.png",
@@ -4827,21 +5458,23 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         },
         {
             "id": 151,
             "imageColor": "pink",
-            "name": "ミュウ",
-            "gameImagePaths": [
-                "/151/icon/1/1.gif",
-                "/151/rgby/151.png",
-                "/151/rgby/151_blue.png",
-                "/151/rgby/151_pika.png",
-                "/151/rgby/151_rg.png"
-            ],
+            "name": "Mew",
+            "gameImagePath": {
+                "mainPath": "/151/rgby/151_rg.png",
+                "otherPaths": [
+                    "/151/icon/1/1.gif",
+                    "/151/rgby/151.png",
+                    "/151/rgby/151_blue.png",
+                    "/151/rgby/151_pika.png"
+                ]
+            },
             "imagePaths": [
                 "/151/footmark/151.png",
                 "/151/footmark/151b.png",
@@ -4857,7 +5490,7 @@
             "types": [
                 {
                     "code": "psychic",
-                    "name": "エスパー"
+                    "name": "Psychic"
                 }
             ]
         }

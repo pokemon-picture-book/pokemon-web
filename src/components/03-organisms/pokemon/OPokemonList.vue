@@ -1,20 +1,14 @@
 <template>
-    <section class="o-pokemon-list">
-        <div v-if="!state.items.length" class="o-pokemon-list__empty">
+    <section v-if="!state.isLoading" class="o-pokemon-list">
+        <div v-if="!items.length" class="o-pokemon-list__empty">
             <span>No data...</span>
         </div>
-        <div v-else v-for="item in state.items" :key="item.id" class="o-pokemon-list__card">
+        <div v-else v-for="item in items" :key="item.id" class="o-pokemon-list__card">
             <m-card class="o-pokemon-list__card--main">
                 <template #img>
-                    <div
-                        v-for="(path, index) in item.gameImagePaths"
-                        :key="path"
-                        class="pokemon-card"
-                    >
+                    <div class="pokemon-card">
                         <img
-                            v-if="index === state.gameImagePathIndex[item.id]"
-                            :src="require(`@/assets/img/pokemon${path}`)"
-                            @click="incrementGameImagePathIndex(item)"
+                            :src="require(`@/assets/img/pokemon${item.mainImagePath}`)"
                             alt="pokemon"
                             class="pokemon-card__image"
                         />
@@ -24,16 +18,21 @@
             </m-card>
         </div>
     </section>
+    <template v-else>
+        <o-spinner />
+    </template>
 </template>
 
 <script lang="ts">
-import { defineComponent, provide, reactive, watch } from 'vue';
+import { computed, defineComponent, provide, reactive, watch } from 'vue';
 import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
 import { OPokemonItem, OPokemonState } from '@/types/components/03-organisms/pokemon/OPokemonList';
 import MCard from '@/components/02-molecules/data-display/MCard.vue';
 import MPokemonTypeAndName from '@/components/02-molecules/pokemon/MPokemonTypeAndName.vue';
+import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
+import { LocationQueryValue, useRoute } from 'vue-router';
 
-// TODO: props から取得するよう修正すること
+// default parameter
 const LANGUAGE = 'ja-Hrkt';
 const GAME = 'rgby';
 const REGIONS = ['kanto'];
@@ -41,51 +40,60 @@ const REGIONS = ['kanto'];
 export default defineComponent({
     components: {
         MCard,
-        MPokemonTypeAndName
+        MPokemonTypeAndName,
+        OSpinner
     },
-    async setup() {
+    setup() {
+        const route = useRoute();
+
         const store = pokemonState();
         provide<PokemonStateType>(PokemonStateKey, store);
 
-        const pathReg = new RegExp(`.*(/${GAME}/).*`, 'i');
         const state = reactive<OPokemonState>({
-            items: [],
-            gameImagePathIndex: {}
+            isLoading: false
         });
 
-        const computedMethod = {};
+        const computedMethod = {
+            items: computed<OPokemonItem[]>(() => {
+                return store.getter.pokemons.value.map((pokemon) => ({
+                    id: pokemon.id,
+                    imageColor: pokemon.imageColor,
+                    name: pokemon.name,
+                    mainImagePath: pokemon.gameImagePath.mainPath,
+                    types: pokemon.types.map((type) => ({
+                        code: type.code
+                    }))
+                }));
+            })
+        };
 
-        const method = {
-            incrementGameImagePathIndex({ id, gameImagePaths }: OPokemonItem) {
-                const increment = state.gameImagePathIndex[id] + 1;
-                if (increment >= gameImagePaths.length) {
-                    state.gameImagePathIndex[id] = 0;
-                    return;
-                }
-                state.gameImagePathIndex[id] = increment;
+        const method = {};
+
+        const privateMethod = {
+            fetch: async () => {
+                state.isLoading = true;
+
+                const queryGame = route.query.game as LocationQueryValue;
+                const queryRegions = route.query.regions as LocationQueryValue[];
+
+                const game = queryGame || GAME;
+                const regions = (queryRegions && queryRegions.length
+                    ? queryRegions
+                    : REGIONS) as string[];
+
+                await store.action.fetchAll(LANGUAGE, game, regions);
+
+                state.isLoading = false;
             }
         };
 
         watch(
-            () => store.getter.pokemons.value,
-            (newPokemons) => {
-                state.items = newPokemons.map((pokemon) => {
-                    if (!state.gameImagePathIndex[pokemon.id]) {
-                        state.gameImagePathIndex[pokemon.id] = 0;
-                    }
-                    return {
-                        ...pokemon,
-                        gameImagePaths: pokemon.gameImagePaths.filter((path) => pathReg.test(path)),
-                        types: pokemon.types.map((type) => ({
-                            code: type.code
-                        }))
-                    };
-                });
-            }
+            () => route.query,
+            () => privateMethod.fetch()
         );
 
         // fetch data
-        await store.action.fetchAll(LANGUAGE, GAME, REGIONS);
+        privateMethod.fetch();
 
         return {
             state,

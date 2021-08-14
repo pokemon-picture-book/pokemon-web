@@ -1,25 +1,35 @@
 <template>
-    <div class="o-header">
+    <header class="o-header">
         <div class="o-header__title">
             <i class="ib ib-whh-pokemon ib-3x"></i>
             <h2 class="o-header__title--text">ポケモン図鑑</h2>
         </div>
-        <div class="o-header__operation">
-            <a-select :items="languageItems" @select="updateLanguageItem" />
-            <i class="ib ib-ri-search-eye-line ib-2x" @click="onOpenFilter"></i>
-        </div>
-    </div>
+        <nav class="o-header__navigation gnav">
+            <ul class="gnav__menu">
+                <!-- TODO: グローバル対応実施のタイミングで表示する -->
+                <li class="gnav__menu--item" style="display: none">
+                    <a-select :items="languageItems" @select="updateLanguageItem" />
+                </li>
+                <li class="gnav__menu--item">
+                    <o-pokemon-filter-modal />
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="dummy-contains"></div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, provide } from 'vue';
 import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
+import OPokemonFilterModal from '@/components/03-organisms/pokemon/OPokemonFilterModal.vue';
 import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/master/language';
 import { ASelectItem } from '@/types/components/01-atoms/data-entry/ASelect';
 
 export default defineComponent({
     components: {
-        ASelect
+        ASelect,
+        OPokemonFilterModal
     },
     setup() {
         const store = languageState();
@@ -40,9 +50,6 @@ export default defineComponent({
         const method = {
             updateLanguageItem: (newItem: ASelectItem) => {
                 console.log(newItem);
-            },
-            onOpenFilter: () => {
-                console.log('Open filter modal!!');
             }
         };
 
@@ -59,10 +66,14 @@ export default defineComponent({
 @import '@/assets/style/index.scss';
 
 .o-header {
+    background: #fff;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $p-black-color;
     padding: 8px 16px;
+    position: fixed;
+    width: 98%;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+    z-index: 100;
 
     @media only screen and (max-width: 750px) {
         flex-direction: column;
@@ -78,18 +89,27 @@ export default defineComponent({
         }
     }
 
-    &__operation {
-        margin: auto 0;
-        display: flex;
-        align-items: center;
+    &__navigation {
+        & .gnav {
+            &__menu {
+                display: flex;
+                align-items: flex-end;
+                padding: 0;
 
-        & * {
-            margin-left: 16px;
+                &--item {
+                    margin: 0 8px;
+                    list-style: none;
+                }
+            }
         }
+    }
+}
 
-        i {
-            cursor: pointer;
-        }
+.dummy-contains {
+    height: 100px;
+
+    @media only screen and (max-width: 750px) {
+        height: 160px;
     }
 }
 </style>

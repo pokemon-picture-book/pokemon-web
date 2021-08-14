@@ -11,6 +11,7 @@
 @import 'icon-blender/scss/icons/ic.scss';
 @import 'icon-blender/scss/icons/fe.scss';
 @import 'icon-blender/scss/icons/icomoon-free.scss';
+@import 'icon-blender/scss/icons/fa.scss';
 
 /*
  * custom style
@@ -34,7 +35,7 @@
  * Html: <i class="ib ib-gg-pokemon"></i>
  */
 .ib-gg-pokemon {
-    color: $p-monster-ball;
+    color: $p-primary-color;
 
     @include iconUrl($icons-gg, 'pokemon');
 }
@@ -44,7 +45,7 @@
  * Html: <i class="ib ib-whh-pokemon"></i>
  */
 .ib-whh-pokemon {
-    color: $p-monster-ball;
+    color: $p-primary-color;
 
     @include iconUrl($icons-whh, 'pokemon');
 }
@@ -54,7 +55,7 @@
  * Html: <i class="ib ib-mdi-pokemon-go"></i>
  */
 .ib-mdi-pokemon-go {
-    color: $p-monster-ball;
+    color: $p-primary-color;
 
     @include iconUrl($icons-mdi, 'pokemon-go');
 }
@@ -74,7 +75,7 @@
  * Html: <i class="ib ib-ic-baseline-catching-pokemon"></i>
  */
 .ib-ic-baseline-catching-pokemon {
-    color: $p-monster-ball;
+    color: $p-primary-color;
 
     @include iconUrl($icons-ic, 'baseline-catching-pokemon');
 }
@@ -84,7 +85,7 @@
  * Html: <i class="ib ib-ic-twotone-catching-pokemon"></i>
  */
 .ib-ic-twotone-catching-pokemon {
-    color: $p-monster-ball;
+    color: $p-primary-color;
 
     @include iconUrl($icons-ic, 'twotone-catching-pokemon');
 }
@@ -103,4 +104,9 @@
  */
 .ib-icomoon-free-spinner5 {
     @include iconUrl($icons-icomoon-free, 'spinner5');
+}
+
+/* Html: <i class="ib fa-close"></i> */
+.fa-close {
+    @include iconUrl($icons-fa, 'close');
 }
