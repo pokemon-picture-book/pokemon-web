@@ -63,12 +63,7 @@ import MRadioGroup from '@/components/02-molecules/data-entry/MRadioGroup.vue';
 import AButton from '@/components/01-atoms/general/AButton.vue';
 import { ACheckboxOption } from '@/types/components/01-atoms/data-entry/ACheckbox';
 import { ARadioOption } from '@/types/components/01-atoms/data-entry/ARadio';
-
-type State = {
-    isShowModal: boolean;
-    selectedGameVersionGroup: string;
-    selectedRegions: string[];
-};
+import { OPokemonFilterModalState } from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
 
 export default defineComponent({
     components: {
@@ -81,7 +76,7 @@ export default defineComponent({
         const router = useRouter();
         const route = useRoute();
 
-        const state = reactive<State>({
+        const state = reactive<OPokemonFilterModalState>({
             isShowModal: false,
             selectedGameVersionGroup: '',
             selectedRegions: []

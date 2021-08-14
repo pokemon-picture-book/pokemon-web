@@ -6,8 +6,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue';
-
-type ButtonColor = 'primary' | 'default';
+import { ButtonColor } from '@/types/components/01-atoms/general/AButton';
 
 export default defineComponent({
     props: {
