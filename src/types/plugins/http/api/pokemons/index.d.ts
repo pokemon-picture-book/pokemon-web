@@ -1,4 +1,4 @@
-export declare type PokemonResponse = {
+export declare type PokemonResponseData = {
     id: number;
     imageColor: string;
     name: string;
@@ -6,6 +6,10 @@ export declare type PokemonResponse = {
         mainPath: string;
         otherPaths: string[];
     };
-    imagePaths: string[];
     types: { code: string; name: string }[];
+};
+
+export declare type PokemonResponse = {
+    hits: number;
+    data: PokemonResponseData[];
 };
