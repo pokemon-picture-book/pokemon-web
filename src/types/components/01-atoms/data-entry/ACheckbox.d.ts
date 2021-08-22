@@ -5,12 +5,3 @@ export declare type ACheckboxOption = {
     value: ACheckboxValues[number];
     disabled?: boolean;
 };
-
-export declare type ACheckboxProps = {
-    option: ACheckboxOption;
-    modelValue: ACheckboxValues;
-};
-
-export declare type ACheckboxState = {
-    sources: ACheckboxValues;
-};

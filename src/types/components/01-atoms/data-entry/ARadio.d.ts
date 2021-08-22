@@ -4,12 +4,3 @@ export declare type ARadioOption = {
     value: string;
     disabled?: boolean;
 };
-
-export declare type ARadioProps = {
-    option: ARadioOption;
-    modelValue: string;
-};
-
-export declare type ARadioState = {
-    source: string;
-};

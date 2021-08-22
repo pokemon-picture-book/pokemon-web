@@ -1,18 +1,14 @@
 <template>
     <fieldset class="m-radio-group">
         <template v-for="option in options" :key="option.value">
-            <a-radio :option="option" v-model="state.source" @change="onChange" />
+            <a-radio :option="option" v-model="model" @change="onChange" />
         </template>
     </fieldset>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, SetupContext, watch } from 'vue';
+import { computed, defineComponent, PropType, SetupContext } from 'vue';
 import ARadio from '@/components/01-atoms/data-entry/ARadio.vue';
-import {
-    MRadioGroupProps,
-    MRadioGroupState
-} from '@/types/components/02-molecules/data-entry/MRadioGroup';
 import { ARadioOption } from '@/types/components/01-atoms/data-entry/ARadio';
 
 export default defineComponent({
@@ -29,26 +25,23 @@ export default defineComponent({
             default: () => ''
         }
     },
-    setup(props: MRadioGroupProps, { emit }: SetupContext) {
-        const state = reactive<MRadioGroupState>({
-            source: props.modelValue
-        });
-
+    setup(props, { emit }: SetupContext) {
         const method = {
-            onChange: () => {
-                emit('update:modelValue', state.source);
-                emit('change', state.source);
+            onChange: (option: ARadioOption) => {
+                emit('change', option, props.options);
             }
         };
 
-        watch(
-            () => props.modelValue,
-            (newValue: string) => (state.source = newValue)
-        );
+        const computedMethod = {
+            model: computed({
+                get: () => props.modelValue,
+                set: (newModelValue) => emit('update:modelValue', newModelValue)
+            })
+        };
 
         return {
-            state,
-            ...method
+            ...method,
+            ...computedMethod
         };
     }
 });

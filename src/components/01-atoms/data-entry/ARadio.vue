@@ -5,9 +5,9 @@
             class="a-radio__input"
             type="radio"
             name="a-radio-field"
+            v-model="model"
             :value="option.value"
             :disabled="option.disabled"
-            v-model="state.source"
             @change="onChange"
         />
         <label
@@ -21,12 +21,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, SetupContext, watch } from 'vue';
-import {
-    ARadioOption,
-    ARadioProps,
-    ARadioState
-} from '@/types/components/01-atoms/data-entry/ARadio';
+import { computed, defineComponent, PropType, SetupContext } from 'vue';
+import { ARadioOption } from '@/types/components/01-atoms/data-entry/ARadio';
 
 export default defineComponent({
     props: {
@@ -39,26 +35,23 @@ export default defineComponent({
             default: () => ''
         }
     },
-    setup(props: ARadioProps, { emit }: SetupContext) {
-        const state = reactive<ARadioState>({
-            source: props.modelValue
-        });
-
+    setup(props, { emit }: SetupContext) {
         const method = {
             onChange: () => {
-                emit('update:modelValue', state.source);
-                emit('change', state.source);
+                emit('change', props.option);
             }
         };
 
-        watch(
-            () => props.modelValue,
-            (newValue: string) => (state.source = newValue)
-        );
+        const computedMethod = {
+            model: computed({
+                get: () => props.modelValue,
+                set: (newModelValue) => emit('update:modelValue', newModelValue)
+            })
+        };
 
         return {
-            state,
-            ...method
+            ...method,
+            ...computedMethod
         };
     }
 });
