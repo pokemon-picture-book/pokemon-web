@@ -26,11 +26,13 @@
         "axios": "0.21.1",
         "core-js": "^3.6.5",
         "icon-blender": "1.0.0-beta.3",
+        "infinite-loading-vue3-ts": "1.0.5",
         "pokemon-font": "1.8.1",
         "react": "17.0.1",
         "react-dom": "17.0.1",
         "register-service-worker": "^1.7.1",
         "vue": "^3.0.0",
+        "vue-infinite-loading": "2.4.5",
         "vue-router": "^4.0.0-0"
     },
     "devDependencies": {
