@@ -14,5 +14,5 @@ export declare type Getter = {
 };
 
 export declare type Action = {
-    fetchAll: (lang: string, game: string, regions: string[]) => Promise<void>;
+    fetchAll: (lang: string, game: string, regions: string[], page: number) => Promise<void>;
 };
