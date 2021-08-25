@@ -1,11 +1,9 @@
 <template>
-    <section v-if="!state.isLoading" class="o-pokemon-list">
-        <template v-if="!items.length">
-            <div class="o-pokemon-list__empty">
-                <span>No data...</span>
-            </div>
-        </template>
-        <template v-else>
+    <template v-if="state.isLoading">
+        <o-spinner mode="full-screen" />
+    </template>
+    <section v-else class="o-pokemon-list">
+        <template v-if="items.length">
             <div v-for="item in items" :key="item.id" class="o-pokemon-list__card">
                 <m-card class="o-pokemon-list__card--main">
                     <template #img>
@@ -29,10 +27,12 @@
                 </template>
             </infinite-loading>
         </template>
+        <template v-else>
+            <div class="o-pokemon-list__empty">
+                <span>No data...</span>
+            </div>
+        </template>
     </section>
-    <template v-else>
-        <o-spinner mode="full-screen" />
-    </template>
 </template>
 
 <script lang="ts">
