@@ -10,3 +10,17 @@ export const Simple = () => ({
     <o-spinner></o-spinner>
     `
 });
+
+export const FullScreen = () => ({
+    components: { OSpinner },
+    template: `
+    <o-spinner mode="full-screen"></o-spinner>
+    `
+});
+
+export const FullWidth = () => ({
+    components: { OSpinner },
+    template: `
+    <o-spinner mode="full-width"></o-spinner>
+    `
+});

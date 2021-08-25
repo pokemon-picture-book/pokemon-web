@@ -3,10 +3,10 @@
         <input
             type="checkbox"
             class="a-checkbox__input"
+            v-model="model"
             :id="`checkbox-toggle-${option.value}`"
             :value="option.value"
             :disabled="option.disabled"
-            v-model="state.sources"
             @change="onChange"
         />
         <label
@@ -20,13 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, SetupContext, watch } from 'vue';
-import {
-    ACheckboxOption,
-    ACheckboxProps,
-    ACheckboxState,
-    ACheckboxValues
-} from '@/types/components/01-atoms/data-entry/ACheckbox';
+import { computed, defineComponent, PropType, SetupContext } from 'vue';
+import { ACheckboxOption, ACheckboxValues } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default defineComponent({
     props: {
@@ -39,26 +34,23 @@ export default defineComponent({
             default: () => {}
         }
     },
-    setup(props: ACheckboxProps, { emit }: SetupContext) {
-        const state = reactive<ACheckboxState>({
-            sources: [...props.modelValue]
-        });
-
+    setup(props, { emit }: SetupContext) {
         const method = {
-            onChange: () => {
-                emit('update:modelValue', state.sources);
-                emit('change', state.sources);
+            onChange: (event: any) => {
+                emit('change', props.option, event.target.checked);
             }
         };
 
-        watch(
-            () => props.modelValue,
-            (newValue: ACheckboxValues) => (state.sources = [...newValue])
-        );
+        const computedMethod = {
+            model: computed({
+                get: () => props.modelValue,
+                set: (newModelValue) => emit('update:modelValue', newModelValue)
+            })
+        };
 
         return {
-            state,
-            ...method
+            ...method,
+            ...computedMethod
         };
     }
 });

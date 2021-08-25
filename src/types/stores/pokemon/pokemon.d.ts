@@ -4,13 +4,15 @@ import { PokemonResponse } from '@/types/plugins/http/api/pokemons';
 type Pokemon = PokemonResponse;
 
 export declare type State = {
-    pokemons: Pokemon[];
+    hits: number;
+    pokemons: Pokemon['data'];
 };
 
 export declare type Getter = {
-    pokemons: ComputedRef<Pokemon[]>;
+    hits: ComputedRef<number>;
+    pokemons: ComputedRef<Pokemon['data']>;
 };
 
 export declare type Action = {
-    fetchAll: (lang: string, game: string, regions: string[]) => Promise<void>;
+    fetchAll: (lang: string, game: string, regions: string[], page: number) => Promise<void>;
 };

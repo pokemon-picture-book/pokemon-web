@@ -8,4 +8,5 @@ export declare type OPokemonItem = {
 
 export declare type OPokemonState = {
     isLoading: boolean;
+    page: number;
 };

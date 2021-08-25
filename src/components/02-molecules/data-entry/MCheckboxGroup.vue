@@ -1,18 +1,14 @@
 <template>
     <fieldset class="m-checkbox-group">
         <template v-for="option in options" :key="option.value">
-            <a-checkbox :option="option" v-model="state.sources" @change="onChange" />
+            <a-checkbox :option="option" v-model="model" @change="onChange" />
         </template>
     </fieldset>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, SetupContext, watch } from 'vue';
+import { computed, defineComponent, PropType, SetupContext } from 'vue';
 import ACheckbox from '@/components/01-atoms/data-entry/ACheckbox.vue';
-import {
-    MCheckboxGroupProps,
-    MCheckboxGroupState
-} from '@/types/components/02-molecules/data-entry/MCheckboxGroup';
 import { ACheckboxOption, ACheckboxValues } from '@/types/components/01-atoms/data-entry/ACheckbox';
 
 export default defineComponent({
@@ -29,26 +25,23 @@ export default defineComponent({
             default: () => []
         }
     },
-    setup(props: MCheckboxGroupProps, { emit }: SetupContext) {
-        const state = reactive<MCheckboxGroupState>({
-            sources: [...props.modelValue]
-        });
-
+    setup(props, { emit }: SetupContext) {
         const method = {
-            onChange: () => {
-                emit('update:modelValue', state.sources);
-                emit('change', state.sources);
+            onChange: (option: ACheckboxOption, checked: boolean) => {
+                emit('change', option, checked, props.options);
             }
         };
 
-        watch(
-            () => props.modelValue,
-            (newValue: ACheckboxValues) => (state.sources = [...newValue])
-        );
+        const computedMethod = {
+            model: computed({
+                get: () => props.modelValue,
+                set: (newModelValue) => emit('update:modelValue', newModelValue)
+            })
+        };
 
         return {
-            state,
-            ...method
+            ...method,
+            ...computedMethod
         };
     }
 });

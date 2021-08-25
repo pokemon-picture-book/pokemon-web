@@ -1,30 +1,44 @@
 <template>
-    <section v-if="!state.isLoading" class="o-pokemon-list">
-        <div v-if="!items.length" class="o-pokemon-list__empty">
-            <span>No data...</span>
-        </div>
-        <div v-else v-for="item in items" :key="item.id" class="o-pokemon-list__card">
-            <m-card class="o-pokemon-list__card--main">
-                <template #img>
-                    <div class="pokemon-card">
-                        <img
-                            :src="require(`@/assets/img/pokemon${item.mainImagePath}`)"
-                            alt="pokemon"
-                            class="pokemon-card__image"
-                        />
-                    </div>
-                </template>
-                <m-pokemon-type-and-name :name="item.name" :type-items="item.types" />
-            </m-card>
-        </div>
-    </section>
-    <template v-else>
-        <o-spinner />
+    <template v-if="state.isLoading">
+        <o-spinner mode="full-screen" />
     </template>
+    <section v-else class="o-pokemon-list">
+        <template v-if="items.length">
+            <div v-for="item in items" :key="item.id" class="o-pokemon-list__card">
+                <m-card class="o-pokemon-list__card--main">
+                    <template #img>
+                        <div class="pokemon-card">
+                            <img
+                                :src="require(`@/assets/img/pokemon${item.mainImagePath}`)"
+                                alt="pokemon"
+                                class="pokemon-card__image"
+                            />
+                        </div>
+                    </template>
+                    <m-pokemon-type-and-name :name="item.name" :type-items="item.types" />
+                </m-card>
+            </div>
+            <infinite-loading @infinite="infiniteHandler">
+                <template v-slot:spinner>
+                    <o-spinner mode="full-width" />
+                </template>
+                <template v-slot:no-more>
+                    <div></div>
+                </template>
+            </infinite-loading>
+        </template>
+        <template v-else>
+            <div class="o-pokemon-list__empty">
+                <span>No data...</span>
+            </div>
+        </template>
+    </section>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, provide, reactive, watch } from 'vue';
+import { StateChanger } from 'vue-infinite-loading';
+import InfiniteLoading from 'infinite-loading-vue3-ts';
 import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
 import { OPokemonItem, OPokemonState } from '@/types/components/03-organisms/pokemon/OPokemonList';
 import MCard from '@/components/02-molecules/data-display/MCard.vue';
@@ -41,7 +55,8 @@ export default defineComponent({
     components: {
         MCard,
         MPokemonTypeAndName,
-        OSpinner
+        OSpinner,
+        InfiniteLoading
     },
     setup() {
         const route = useRoute();
@@ -50,7 +65,8 @@ export default defineComponent({
         provide<PokemonStateType>(PokemonStateKey, store);
 
         const state = reactive<OPokemonState>({
-            isLoading: false
+            isLoading: false,
+            page: 1
         });
 
         const computedMethod = {
@@ -67,12 +83,27 @@ export default defineComponent({
             })
         };
 
-        const method = {};
+        const method = {
+            infiniteHandler: async ($state: StateChanger) => {
+                const { hits, pokemons } = store.getter;
+                if (hits.value > pokemons.value.length) {
+                    await privateMethod.fetch(++state.page);
+                    $state.loaded();
+                    return;
+                }
+                $state.complete();
+            }
+        };
 
         const privateMethod = {
-            fetch: async () => {
+            async fetchLoading(page: number) {
                 state.isLoading = true;
 
+                await this.fetch(page);
+
+                state.isLoading = false;
+            },
+            async fetch(page: number) {
                 const queryGame = route.query.game as LocationQueryValue;
                 const queryRegions = route.query.regions as LocationQueryValue[];
 
@@ -81,19 +112,17 @@ export default defineComponent({
                     ? queryRegions
                     : REGIONS) as string[];
 
-                await store.action.fetchAll(LANGUAGE, game, regions);
-
-                state.isLoading = false;
+                await store.action.fetchAll(LANGUAGE, game, regions, page);
             }
         };
 
         watch(
             () => route.query,
-            () => privateMethod.fetch()
+            () => privateMethod.fetchLoading((state.page = 1))
         );
 
         // fetch data
-        privateMethod.fetch();
+        privateMethod.fetchLoading(state.page);
 
         return {
             state,
@@ -105,6 +134,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/index.scss';
+
 .o-pokemon-list {
     display: flex;
     flex-wrap: wrap;
