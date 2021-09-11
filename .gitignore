@@ -8,9 +8,6 @@ node_modules
 # unit test coverage
 coverage
 
-# pokemon images
-src/assets/img/pokemon
-
 # local env files
 .env
 .env.local

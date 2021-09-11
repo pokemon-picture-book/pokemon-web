@@ -9,7 +9,7 @@
                     <template #img>
                         <div class="pokemon-card">
                             <img
-                                :src="require(`@/assets/img/pokemon${item.mainImagePath}`)"
+                                :src="item.mainImagePath"
                                 alt="pokemon"
                                 class="pokemon-card__image"
                             />

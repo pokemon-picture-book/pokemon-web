@@ -3,7 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "img:sync": "mkdir ./src/assets/img && mkdir ./src/assets/img/pokemon && rsync -r ../pokemon.json/img/* ./src/assets/img/pokemon",
         "json-server": "json-server --watch ./json-server/db.json",
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
