@@ -2,10 +2,7 @@ export declare type PokemonResponseData = {
     id: number;
     imageColor: string;
     name: string;
-    gameImagePath: {
-        mainPath: string;
-        otherPaths: string[];
-    };
+    gameImagePath: string;
     types: { code: string; name: string }[];
 };
 
