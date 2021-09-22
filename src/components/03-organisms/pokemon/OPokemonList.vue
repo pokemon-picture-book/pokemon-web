@@ -9,7 +9,7 @@
                     <template #img>
                         <div class="pokemon-card">
                             <img
-                                :src="item.mainImagePath"
+                                :src="item.gameImagePath"
                                 alt="pokemon"
                                 class="pokemon-card__image"
                             />
@@ -75,7 +75,7 @@ export default defineComponent({
                     id: pokemon.id,
                     imageColor: pokemon.imageColor,
                     name: pokemon.name,
-                    mainImagePath: pokemon.gameImagePath.mainPath,
+                    gameImagePath: pokemon.gameImagePath,
                     types: pokemon.types.map((type) => ({
                         code: type.code
                     }))

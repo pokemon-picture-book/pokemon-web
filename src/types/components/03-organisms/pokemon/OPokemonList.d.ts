@@ -2,7 +2,7 @@ export declare type OPokemonItem = {
     id: number;
     imageColor: string;
     name: string;
-    mainImagePath: string;
+    gameImagePath: string;
     types: { code: string }[];
 };
 
