@@ -1,24 +1,33 @@
 {
     "compilerOptions": {
         "target": "esnext",
+        "useDefineForClassFields": true,
         "module": "esnext",
+        "moduleResolution": "node",
         "strict": true,
         "jsx": "preserve",
-        "importHelpers": true,
-        "moduleResolution": "node",
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
         "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "lib": ["esnext", "dom"],
+        "importHelpers": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
-        "types": ["webpack-env", "jest", "./src/types"],
+        "types": [
+            "webpack-env",
+            "vite/client",
+            "@types/jest",
+            "cypress",
+            "./src/types"
+        ],
         "paths": {
             "@/*": ["src/*"]
-        },
-        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+        }
     },
     "include": [
         "src/**/*.ts",
+        "src/**/*.d.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
         "tests/**/*.ts",
