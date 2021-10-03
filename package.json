@@ -90,7 +90,7 @@
             "git add"
         ]
     },
-    "engines": {
+    "volta": {
         "node": "16.10.0",
         "npm": "7.24.0"
     }
