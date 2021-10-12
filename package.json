@@ -26,7 +26,7 @@
     "dependencies": {
         "axios": "0.21.1",
         "core-js": "^3.6.5",
-        "icon-blender": "1.0.0-beta.3",
+        "icon-blender": "1.0.0-beta.4",
         "infinite-loading-vue3-ts": "1.0.5",
         "pokemon-font": "1.8.1",
         "react": "17.0.1",
