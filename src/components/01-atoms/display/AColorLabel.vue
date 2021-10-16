@@ -1,12 +1,12 @@
 <template>
-    <div class="a-type">
+    <div class="a-color-label">
         <span
-            class="a-type__label"
+            class="a-color-label__text"
             v-for="(item, index) in items"
             :key="index"
             :class="[
-                { 'a-type__label-not-found': !item.label },
-                `a-type__label-color--${item.code}`
+                { 'a-color-label__text-not-found': !item.label },
+                `a-color-label__text-color--${item.code}`
             ]"
         >
             {{ item.label }}
@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ATypeItem } from '@/types/components/01-atoms/pokemon/AType';
+import { AColorLabelItem } from '@/types/components/01-atoms/display/AColorLabel';
 
 /**
  * ポケモンタイプ.
@@ -24,7 +24,7 @@ import { ATypeItem } from '@/types/components/01-atoms/pokemon/AType';
 export default defineComponent({
     props: {
         items: {
-            type: Array as PropType<ATypeItem[]>,
+            type: Array as PropType<AColorLabelItem[]>,
             require: true,
             default: () => []
         }
@@ -35,12 +35,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/color.scss';
 
-.a-type {
+.a-color-label {
     display: flex;
     flex-wrap: wrap;
     margin: 8px;
 
-    &__label {
+    &__text {
         min-height: 16px;
         min-width: 16px;
         border-radius: 16px;

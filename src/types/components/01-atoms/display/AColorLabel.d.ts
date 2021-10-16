@@ -1,4 +1,4 @@
-export declare type PokemonTypeCode =
+export declare type ColorCode =
     | 'normal'
     | 'fighting'
     | 'flying'
@@ -18,11 +18,11 @@ export declare type PokemonTypeCode =
     | 'dark'
     | 'fairy';
 
-export declare type ATypeItem = {
+export declare type AColorLabelItem = {
     label?: string;
-    code: PokemonTypeCode;
+    code: ColorCode;
 };
 
-export declare type ATypeProps = {
-    items: ATypeItem[];
+export declare type AColorLabelProps = {
+    items: AColorLabelItem[];
 };
