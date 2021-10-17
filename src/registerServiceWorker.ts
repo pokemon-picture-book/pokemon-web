@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 
 import { register } from 'register-service-worker';
+import config from '@/config';
 
-if (import.meta.env.PROD) {
-    register(`${import.meta.env.VITE_BASE_URL}service-worker.js`, {
+if (config.PROD) {
+    register(`${config.APP_BASE_URL}service-worker.js`, {
         ready() {
             console.log(
                 'App is being served from cache by a service worker.\n' +

@@ -13,6 +13,7 @@ module.exports = {
         config.resolve = {
             extensions: ['.ts', '.js'],
             alias: {
+                '@/config': path.resolve(__dirname, '../src/configForStorybook'),
                 '@': path.join(__dirname, '../src/'),
                 vue$: 'vue/dist/vue.esm-bundler.js'
             }
