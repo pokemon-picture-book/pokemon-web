@@ -1,13 +1,13 @@
 <template>
     <div class="a-select" :class="{ opened: state.isOpened }">
-        <span class="a-select__trigger" :class="classes" @click="onClickTrigger">
+        <span class="a-select__label" :class="classes" @click="onClickTrigger">
             {{ source.label }}
         </span>
         <div class="a-select__list">
             <span
                 v-for="item in items.length ? items : [notItemValue]"
                 :key="item.id"
-                class="a-select__list--item"
+                class="a-select__list-item"
                 :class="{ selection: source.value === item.value }"
                 @click="onClickItem(item)"
             >
@@ -58,7 +58,7 @@ export default defineComponent({
             selectedSource: null
         });
 
-        const computedMethod = {
+        const computedMethods = {
             classes: computed(() => [
                 `color--${propToRef.color.value}`,
                 `size--${propToRef.size.value}`
@@ -77,7 +77,7 @@ export default defineComponent({
             })
         };
 
-        const method = {
+        const methods = {
             onClickTrigger: (e: Event) => {
                 document.body.onclick = () => {
                     state.isOpened = false;
@@ -95,8 +95,8 @@ export default defineComponent({
         return {
             notItemValue,
             state,
-            ...computedMethod,
-            ...method
+            ...computedMethods,
+            ...methods
         };
     },
     onUnmounted() {
@@ -158,7 +158,7 @@ export default defineComponent({
         }
     }
 
-    &__trigger {
+    &__label {
         position: relative;
         display: flex;
         align-items: center;
@@ -223,7 +223,7 @@ export default defineComponent({
             transition: all 0.4s ease-in-out;
         }
 
-        &--item {
+        &-item {
             position: relative;
             display: flex;
             align-items: center;
@@ -245,14 +245,14 @@ export default defineComponent({
             }
         }
 
-        &--item:hover,
+        &-item:hover,
         .selection {
             background: $p-select-hover-color;
             color: $p-shadow-color;
         }
     }
 
-    .opened &__trigger::after {
+    .opened &__label::after {
         margin-top: 3px;
         transform: rotate(-135deg) translateY(-50%);
     }

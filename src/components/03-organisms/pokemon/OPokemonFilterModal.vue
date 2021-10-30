@@ -5,7 +5,7 @@
             <template v-slot:header>
                 <div class="modal__title">
                     <i class="ib ib-ri-search-eye-line ib-2x"></i>
-                    <span class="modal__title--text">条件を入力</span>
+                    <span class="modal__title-text">条件を入力</span>
                 </div>
             </template>
             <template v-slot:body>
@@ -13,7 +13,7 @@
                     <div class="modal-body__game contains">
                         <div class="contains__title">
                             <i class="ib ib-gg-pokemon ib-3x"></i>
-                            <span class="contains__title--text">ゲーム</span>
+                            <span class="contains__title-text">ゲーム</span>
                         </div>
                         <m-radio-group
                             v-model="state.selectedGameVersionGroup"
@@ -24,8 +24,8 @@
                     <div class="modal-body__region contains">
                         <div class="contains__title">
                             <i class="ib ib-ic-twotone-catching-pokemon ib-3x"></i>
-                            <span class="contains__title--text">地域</span>
-                            <span class="contains__title--description">
+                            <span class="contains__title-text">地域</span>
+                            <span class="contains__title-description">
                                 ※何も選択されていない場合は【Kanto/関東】地方が選択されます
                             </span>
                         </div>
@@ -115,7 +115,7 @@ export default defineComponent({
             throw new Error('inject failed.');
         }
 
-        const computedMethod = {
+        const computedMethods = {
             gameVersionGroups: computed<ARadioOption[]>(() => {
                 return gameVersionGroupStore.getter.gameVersionGroups.value.map(
                     (gameVersionGroup) => {
@@ -153,7 +153,7 @@ export default defineComponent({
             })
         };
 
-        const method = {
+        const methods = {
             modalOpen() {
                 state.isShowModal = true;
             },
@@ -196,8 +196,8 @@ export default defineComponent({
 
         return {
             state,
-            ...computedMethod,
-            ...method
+            ...computedMethods,
+            ...methods
         };
     }
 });
@@ -210,7 +210,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
 
-    &--text {
+    &-text {
         font-size: $font-size;
         padding: 0 8px;
     }
@@ -233,14 +233,14 @@ export default defineComponent({
 
                     line-height: 1;
 
-                    &--text {
+                    &-text {
                         font-weight: bold;
                         display: block;
                         position: relative;
                         white-space: nowrap;
                     }
 
-                    &--description {
+                    &-description {
                         color: $p-gray-color;
                         padding-left: 8px;
                     }

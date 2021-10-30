@@ -5,7 +5,7 @@
             v-for="(item, index) in items"
             :key="index"
             :class="[
-                { 'a-color-label__text-not-found': !item.label },
+                { 'a-color-label__text--not-found': !item.label },
                 `a-color-label__text-color--${item.code}`
             ]"
         >
@@ -56,7 +56,7 @@ export default defineComponent({
             margin-right: 0;
         }
 
-        &-not-found {
+        &--not-found {
             border-radius: 50%;
             padding: 4px;
         }

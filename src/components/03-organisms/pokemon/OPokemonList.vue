@@ -5,7 +5,7 @@
     <section v-else class="o-pokemon-list">
         <template v-if="items.length">
             <div v-for="item in items" :key="item.id" class="o-pokemon-list__card">
-                <m-card class="o-pokemon-list__card--main">
+                <m-card class="o-pokemon-list__card-main">
                     <template #img>
                         <div class="pokemon-card">
                             <img
@@ -49,7 +49,7 @@ import { LocationQueryValue, useRoute } from 'vue-router';
 // default parameter
 const LANGUAGE = 'ja-Hrkt';
 const GAME = 'rgby';
-const REGIONS = ['kanto'];
+const REGIONS = ['kanto'] as const;
 
 export default defineComponent({
     components: {
@@ -69,7 +69,7 @@ export default defineComponent({
             page: 1
         });
 
-        const computedMethod = {
+        const computedMethods = {
             items: computed<OPokemonItem[]>(() => {
                 return store.getter.pokemons.value.map((pokemon) => ({
                     id: pokemon.id,
@@ -83,7 +83,7 @@ export default defineComponent({
             })
         };
 
-        const method = {
+        const methods = {
             infiniteHandler: async ($state: StateChanger) => {
                 const { hits, pokemons } = store.getter;
                 if (hits.value > pokemons.value.length) {
@@ -126,8 +126,8 @@ export default defineComponent({
 
         return {
             state,
-            ...computedMethod,
-            ...method
+            ...computedMethods,
+            ...methods
         };
     }
 });
@@ -148,7 +148,7 @@ export default defineComponent({
     &__card {
         margin: 0 16px;
 
-        &--main {
+        &-main {
             width: 200px;
         }
 

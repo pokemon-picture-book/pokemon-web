@@ -2,15 +2,15 @@
     <header class="o-header">
         <div class="o-header__title">
             <i class="ib ib-whh-pokemon ib-3x"></i>
-            <h2 class="o-header__title--text">ポケモン図鑑</h2>
+            <h2 class="o-header__title-text">ポケモン図鑑</h2>
         </div>
         <nav class="o-header__navigation gnav">
             <ul class="gnav__menu">
                 <!-- TODO: グローバル対応実施のタイミングで表示する -->
-                <li class="gnav__menu--item" style="display: none">
+                <li class="gnav__menu-item" style="display: none">
                     <a-select :items="languageItems" @select="updateLanguageItem" />
                 </li>
-                <li class="gnav__menu--item">
+                <li class="gnav__menu-item">
                     <o-pokemon-filter-modal />
                 </li>
             </ul>
@@ -37,7 +37,7 @@ export default defineComponent({
 
         store.action.fetchAll();
 
-        const computedMethod = {
+        const computedMethods = {
             languageItems: computed<ASelectItem[]>(() => {
                 return store.getter.languages.value.map((language) => ({
                     id: language.id,
@@ -47,7 +47,7 @@ export default defineComponent({
             })
         };
 
-        const method = {
+        const methods = {
             updateLanguageItem: (newItem: ASelectItem) => {
                 console.log(newItem);
             }
@@ -55,8 +55,8 @@ export default defineComponent({
 
         return {
             store,
-            ...computedMethod,
-            ...method
+            ...computedMethods,
+            ...methods
         };
     }
 });
@@ -84,7 +84,7 @@ export default defineComponent({
         display: flex;
         align-items: center;
 
-        &--text {
+        &-text {
             margin: 0 16px;
         }
     }
@@ -96,7 +96,7 @@ export default defineComponent({
                 align-items: flex-end;
                 padding: 0;
 
-                &--item {
+                &-item {
                     margin: 0 8px;
                     list-style: none;
                 }
