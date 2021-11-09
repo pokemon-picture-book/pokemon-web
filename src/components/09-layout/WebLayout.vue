@@ -7,7 +7,7 @@
             </div>
         </template>
         <template #fallback>
-            <o-spinner />
+            <o-spinner mode="full-screen" />
         </template>
     </Suspense>
 </template>
