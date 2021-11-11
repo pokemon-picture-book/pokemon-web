@@ -30,7 +30,7 @@ export default defineComponent({
     display: inline-block;
     padding: 16px;
     text-decoration: none;
-    border-style: dashed;
+    border-style: hidden;
     border-radius: 32px;
     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
     font-weight: bold;

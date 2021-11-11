@@ -1,22 +1,22 @@
-import MPokemonTypeAndName from '@/components/02-molecules/pokemon/MPokemonTypeAndName.vue';
+import MColorLabelGroup from '@/components/02-molecules/data-display/MColorLabelGroup.vue';
 import { AColorLabelItem } from '@/types/components/01-atoms/display/AColorLabel';
 
 export default {
-    title: 'Molecules/m-pokemon-type-and-name'
+    title: 'Molecules/m-color-label-group'
 };
 
 export const TypeAndName = () => ({
-    components: { MPokemonTypeAndName },
+    components: { MColorLabelGroup },
     data: () => {
         return {
             typeItems: [{ code: 'poison' }, { code: 'grass' }] as AColorLabelItem[]
         };
     },
-    template: '<m-pokemon-type-and-name name="フシギダネ" :type-items="typeItems" />'
+    template: '<m-color-label-group name="フシギダネ" :type-items="typeItems" />'
 });
 
 export const TypeNameAndName = () => ({
-    components: { MPokemonTypeAndName },
+    components: { MColorLabelGroup },
     data: () => {
         return {
             typeItems: [
@@ -25,5 +25,5 @@ export const TypeNameAndName = () => ({
             ] as AColorLabelItem[]
         };
     },
-    template: '<m-pokemon-type-and-name name="フシギダネ" :type-items="typeItems" />'
+    template: '<m-color-label-group name="フシギダネ" :type-items="typeItems" />'
 });

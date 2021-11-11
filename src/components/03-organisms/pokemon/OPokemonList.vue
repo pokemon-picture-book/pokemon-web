@@ -11,7 +11,7 @@
                         <img :src="item.gameImagePath" alt="pokemon" />
                     </div>
                 </template>
-                <m-pokemon-type-and-name :name="item.name" :type-items="item.types" />
+                <m-color-label-group :name="item.name" :type-items="item.types" />
             </m-card>
             <infinite-loading @infinite="infiniteHandler">
                 <template v-slot:spinner>
@@ -37,13 +37,13 @@ import InfiniteLoading from 'infinite-loading-vue3-ts';
 import { PokemonStateKey, PokemonStateType } from '@/stores/pokemon/pokemon';
 import { OPokemonItem, OPokemonState } from '@/types/components/03-organisms/pokemon/OPokemonList';
 import MCard from '@/components/02-molecules/data-display/MCard.vue';
-import MPokemonTypeAndName from '@/components/02-molecules/pokemon/MPokemonTypeAndName.vue';
+import MColorLabelGroup from '@/components/02-molecules/data-display/MColorLabelGroup.vue';
 import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
 
 export default defineComponent({
     components: {
         MCard,
-        MPokemonTypeAndName,
+        MColorLabelGroup,
         OSpinner,
         InfiniteLoading
     },

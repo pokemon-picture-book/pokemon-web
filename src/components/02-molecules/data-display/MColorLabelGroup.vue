@@ -1,7 +1,7 @@
 <template>
-    <div class="m-pokemon-type-and-name">
+    <div class="m-color-label-group">
         <a-color-label :items="typeItems" />
-        <div class="m-pokemon-type-and-name__name">{{ name }}</div>
+        <div class="m-color-label-group__name">{{ name }}</div>
     </div>
 </template>
 
@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.m-pokemon-type-and-name {
+.m-color-label-group {
     display: flex;
     align-items: center;
     flex-direction: column;
