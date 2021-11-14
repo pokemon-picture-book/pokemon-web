@@ -28,12 +28,20 @@ export default defineComponent({
 .a-button {
     position: relative;
     display: inline-block;
+    width: 160px;
+    max-width: 100%;
     padding: 16px;
     text-decoration: none;
     border-style: hidden;
-    border-radius: 32px;
+    border-radius: 24px;
     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
     font-weight: bold;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        opacity: 0.7;
+    }
 
     /** color default */
     &.default {
