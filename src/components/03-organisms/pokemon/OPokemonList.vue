@@ -5,12 +5,11 @@
                 class="card-item o-pokemon-list__card-item"
                 v-for="item in items"
                 :key="item.id"
+                :img="{
+                    src: item.gameImagePath,
+                    alt: item.name
+                }"
             >
-                <template #img>
-                    <div class="card-item__image">
-                        <img :src="item.gameImagePath" alt="pokemon" />
-                    </div>
-                </template>
                 <m-color-label-group :name="item.name" :type-items="item.types" />
             </m-card>
             <infinite-loading @infinite="infiniteHandler">

@@ -1,11 +1,17 @@
 <template>
     <section class="m-card">
-        <div class="m-card__img">
-            <slot name="img"></slot>
-        </div>
-        <div class="m-card__content">
+        <figure
+            v-if="img"
+            class="m-card__img-wrapper"
+            :class="{ 'm-card__img-border': img && img.borderLine }"
+        >
+            <img class="m-card__img" :src="img.src" :alt="img.alt || 'card image'" />
+        </figure>
+
+        <div class="m-card__body">
             <slot></slot>
         </div>
+
         <div class="m-card__footer">
             <slot name="footer"></slot>
         </div>
@@ -13,19 +19,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
+import { CardImg } from '@/types/components/02-molecules/data-display/MCard';
 
 /**
  * ポケモンタイプ.
  */
-export default defineComponent({});
+export default defineComponent({
+    props: {
+        img: {
+            type: Object as PropType<CardImg | null>,
+            default: () => null
+        }
+    }
+});
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/style/color.scss';
 
 .m-card {
-    margin: 30px auto;
     background: $p-white-color;
     border-radius: 5px;
     box-shadow: 2px 2px 5px $p-shadow-color;
@@ -39,30 +52,27 @@ export default defineComponent({});
     }
 
     &__img {
-        border-bottom: 1px solid $p-light-gray-line-color;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: translateY(-50%);
 
-        & ::v-slotted(img) {
-            border-radius: 5px 5px 0 0;
-            max-width: 100%;
-            height: auto;
+        &-wrapper {
+            position: relative;
+            padding-top: 65%;
+        }
+
+        &-border {
+            border-bottom: 1px solid $p-light-gray-line-color;
+            margin: 0;
         }
     }
 
-    &__content {
+    &__body {
         margin: 0;
         padding: 16px;
-
-        &--title {
-            font-weight: bold;
-            margin-bottom: 16px;
-            color: $p-black-color;
-        }
-
-        &--description {
-            margin-top: 16px;
-            color: $p-gray-color;
-            line-height: 1.5;
-        }
     }
 
     &__footer {

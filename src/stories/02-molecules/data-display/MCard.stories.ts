@@ -16,10 +16,7 @@ export const Simple = () => ({
 export const ImageSample = () => ({
     components: { MCard },
     template: `
-    <m-card style="width: 350px;">
-        <template #img>
-            <img src="/img/pokemon.jpg" alt="pokemon" >
-        </template>
+    <m-card style="width: 350px;" :img="{ src: '/img/pokemon.jpg', alt: 'pokemon' }">
         <span>Pokemon</span>
     </m-card>
     `
@@ -28,10 +25,7 @@ export const ImageSample = () => ({
 export const FooterSample = () => ({
     components: { MCard },
     template: `
-    <m-card style="width: 350px;">
-        <template #img>
-            <img src="/img/pokemon.jpg" alt="pokemon" >
-        </template>
+    <m-card style="width: 350px;" :img="{ src: '/img/pokemon.jpg', alt: 'pokemon', borderLine: true }">
         <span>Pokemon</span>
         <template #footer>
             <a src="#">action1</a>
