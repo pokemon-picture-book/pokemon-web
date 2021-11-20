@@ -51,8 +51,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, provide, reactive } from 'vue';
-import { LocationQueryValue, useRoute, useRouter } from 'vue-router';
+import { computed, defineComponent, PropType, provide, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 import {
     GameVersionGroupStateKey,
     gameVersionGroupState,
@@ -65,7 +65,10 @@ import MRadioGroup from '@/components/02-molecules/data-entry/MRadioGroup.vue';
 import AButton from '@/components/01-atoms/general/AButton.vue';
 import { ACheckboxOption } from '@/types/components/01-atoms/data-entry/ACheckbox';
 import { ARadioOption } from '@/types/components/01-atoms/data-entry/ARadio';
-import { OPokemonFilterModalState } from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
+import {
+    OPokemonFilterModalState,
+    SelectedParam
+} from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
 
 export default defineComponent({
     components: {
@@ -74,9 +77,14 @@ export default defineComponent({
         MCheckboxGroup,
         AButton
     },
-    setup() {
+    props: {
+        selectedParam: {
+            type: Object as PropType<SelectedParam>,
+            default: () => ({ regions: [], game: '' })
+        }
+    },
+    setup(props) {
         const router = useRouter();
-        const route = useRoute();
 
         const state = reactive<OPokemonFilterModalState>({
             isShowModal: false,
@@ -87,10 +95,9 @@ export default defineComponent({
         const gameVersionGroupStore = gameVersionGroupState();
         provide<GameVersionGroupStateType>(GameVersionGroupStateKey, gameVersionGroupStore);
         gameVersionGroupStore.action.fetchAll('ja-Hrkt', true).then(() => {
-            const queryGame = route.query.game as LocationQueryValue;
             // set first value
-            if (queryGame) {
-                state.selectedGameVersionGroup = queryGame;
+            if (props.selectedParam.game) {
+                state.selectedGameVersionGroup = props.selectedParam.game;
                 return;
             }
             state.selectedGameVersionGroup =
@@ -100,14 +107,9 @@ export default defineComponent({
         const regionStore = regionState();
         provide<RegionStateType>(RegionStateKey, regionStore);
         regionStore.action.fetchAll('ja-Hrkt').then(() => {
-            const queryRegions = route.query.regions;
             // set first value
-            if (Array.isArray(queryRegions)) {
-                state.selectedRegions = queryRegions as string[];
-                return;
-            }
-            if (queryRegions) {
-                state.selectedRegions = [queryRegions];
+            if (props.selectedParam.regions.length) {
+                state.selectedRegions = props.selectedParam.regions;
                 return;
             }
             state.selectedRegions = [regionStore.getter.regions.value[0].name];

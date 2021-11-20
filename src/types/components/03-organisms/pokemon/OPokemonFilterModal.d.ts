@@ -3,3 +3,8 @@ export declare type OPokemonFilterModalState = {
     selectedGameVersionGroup: string;
     selectedRegions: string[];
 };
+
+export declare type SelectedParam = {
+    regions: string[];
+    game: string;
+};

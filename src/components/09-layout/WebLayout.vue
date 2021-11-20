@@ -13,7 +13,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
+import { LocationQueryValue, useRoute } from 'vue-router';
 import OHeader from '@/components/03-organisms/global/OHeader.vue';
 import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
 
@@ -21,6 +22,17 @@ export default defineComponent({
     components: {
         OHeader,
         OSpinner
+    },
+    setup() {
+        const route = useRoute();
+
+        const computedMethods = {
+            queryParam: computed(() => route.query)
+        };
+
+        return {
+            ...computedMethods
+        };
     }
 });
 </script>

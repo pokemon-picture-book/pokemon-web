@@ -11,7 +11,7 @@
                     <a-select :items="languageItems" @select="updateLanguageItem" />
                 </li>
                 <li class="gnav__menu-item">
-                    <o-pokemon-filter-modal />
+                    <o-pokemon-filter-modal :selected-param="selectedFilterParam" />
                 </li>
             </ul>
         </nav>
@@ -20,18 +20,25 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, provide } from 'vue';
+import { computed, defineComponent, PropType, provide } from 'vue';
+import { LocationQuery, LocationQueryValue } from 'vue-router';
 import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
 import OPokemonFilterModal from '@/components/03-organisms/pokemon/OPokemonFilterModal.vue';
 import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/master/language';
 import { ASelectItem } from '@/types/components/01-atoms/data-entry/ASelect';
+import { SelectedParam } from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
 
 export default defineComponent({
     components: {
         ASelect,
         OPokemonFilterModal
     },
-    setup() {
+    props: {
+        queryParam: {
+            type: Object as PropType<LocationQuery>
+        }
+    },
+    setup(props) {
         const store = languageState();
         provide<LanguageStateType>(LanguageStateKey, store);
 
@@ -44,6 +51,32 @@ export default defineComponent({
                     label: language.labelName,
                     value: language.name
                 }));
+            }),
+            selectedFilterParam: computed<SelectedParam>(() => {
+                const param = {
+                    regions: [],
+                    game: ''
+                };
+
+                if (!(props.queryParam && Object.keys(props.queryParam).length)) {
+                    return param;
+                }
+
+                const queryGame = props.queryParam.game as LocationQueryValue;
+                if (queryGame) {
+                    Object.assign(param, { game: queryGame });
+                }
+
+                const queryRegions = props.queryParam.regions;
+                if (Array.isArray(queryRegions)) {
+                    Object.assign(param, { regions: queryRegions as string[] });
+                    return param;
+                }
+                if (queryRegions) {
+                    Object.assign(param, { regions: [queryRegions] });
+                    return param;
+                }
+                return param;
             })
         };
 
