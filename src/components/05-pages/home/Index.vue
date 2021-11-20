@@ -1,14 +1,68 @@
 <template>
-    <o-pokemon-list />
+    <o-pokemon-list :items="items" @fetch="fetch" />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent, provide, watch } from 'vue';
+import { LocationQueryValue, useRoute } from 'vue-router';
+import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
 import OPokemonList from '@/components/03-organisms/pokemon/OPokemonList.vue';
+import { OPokemonItem } from '@/types/components/03-organisms/pokemon/OPokemonList';
+
+// default parameter
+const LANGUAGE = 'ja-Hrkt';
+const GAME = 'rgby';
+const REGIONS = ['kanto'] as const;
 
 export default defineComponent({
     components: {
         OPokemonList
+    },
+    async setup() {
+        const route = useRoute();
+        const store = pokemonState();
+        provide<PokemonStateType>(PokemonStateKey, store);
+
+        const computedMethods = {
+            items: computed<OPokemonItem[]>(() => {
+                return store.getter.pokemons.value.map((pokemon) => ({
+                    id: pokemon.id,
+                    imageColor: pokemon.imageColor,
+                    name: pokemon.name,
+                    gameImagePath: pokemon.gameImagePath,
+                    types: pokemon.types.map((type) => ({
+                        code: type.code
+                    }))
+                }));
+            })
+        };
+
+        const methods = {
+            async fetch(page: number, done?: () => void) {
+                const queryGame = route.query.game as LocationQueryValue;
+                const queryRegions = route.query.regions as LocationQueryValue[];
+
+                const game = queryGame || GAME;
+                const regions = (queryRegions && queryRegions.length
+                    ? queryRegions
+                    : REGIONS) as string[];
+                await store.action.fetchAll(LANGUAGE, game, regions, page);
+
+                done?.call(this);
+            }
+        };
+
+        watch(
+            () => route.query,
+            async () => methods.fetch(1)
+        );
+
+        await methods.fetch(1);
+
+        return {
+            ...methods,
+            ...computedMethods
+        };
     }
 });
 </script>

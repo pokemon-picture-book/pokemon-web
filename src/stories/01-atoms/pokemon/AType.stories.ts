@@ -1,12 +1,12 @@
-import AType from '@/components/01-atoms/pokemon/AType.vue';
-import { ATypeItem } from '@/types/components/01-atoms/pokemon/AType';
+import AColorLabel from '@/components/01-atoms/display/AColorLabel.vue';
+import { AColorLabelItem } from '@/types/components/01-atoms/display/AColorLabel';
 
 export default {
-    title: 'Atoms/a-type'
+    title: 'Atoms/a-color-label'
 };
 
 export const Simple = () => ({
-    components: { AType },
+    components: { AColorLabel },
     data: () => {
         return {
             items: [
@@ -28,14 +28,14 @@ export const Simple = () => ({
                 { code: 'dragon' },
                 { code: 'dark' },
                 { code: 'fairy' }
-            ] as ATypeItem[]
+            ] as AColorLabelItem[]
         };
     },
-    template: '<a-type :items="items" />'
+    template: '<a-color-label :items="items" />'
 });
 
 export const JapaneseLabel = () => ({
-    components: { AType },
+    components: { AColorLabel },
     data: () => {
         return {
             items: [
@@ -57,14 +57,14 @@ export const JapaneseLabel = () => ({
                 { code: 'dragon', label: 'ドラゴン' },
                 { code: 'dark', label: 'あく' },
                 { code: 'fairy', label: 'フェアリー' }
-            ] as ATypeItem[]
+            ] as AColorLabelItem[]
         };
     },
-    template: '<a-type :items="items" />'
+    template: '<a-color-label :items="items" />'
 });
 
 export const EnglishLabel = () => ({
-    components: { AType },
+    components: { AColorLabel },
     data: () => {
         return {
             items: [
@@ -86,8 +86,8 @@ export const EnglishLabel = () => ({
                 { code: 'dragon', label: 'Dragon' },
                 { code: 'dark', label: 'Dark' },
                 { code: 'fairy', label: 'Fairy' }
-            ] as ATypeItem[]
+            ] as AColorLabelItem[]
         };
     },
-    template: '<a-type :items="items" />'
+    template: '<a-color-label :items="items" />'
 });

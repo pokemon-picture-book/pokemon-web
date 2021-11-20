@@ -35,13 +35,13 @@ export default defineComponent({
         }
     },
     setup(props, { emit }: SetupContext) {
-        const method = {
+        const methods = {
             onChange: (event: any) => {
                 emit('change', props.option, event.target.checked);
             }
         };
 
-        const computedMethod = {
+        const computedMethods = {
             model: computed({
                 get: () => props.modelValue,
                 set: (newModelValue) => emit('update:modelValue', newModelValue)
@@ -49,8 +49,8 @@ export default defineComponent({
         };
 
         return {
-            ...method,
-            ...computedMethod
+            ...methods,
+            ...computedMethods
         };
     }
 });
@@ -60,11 +60,11 @@ export default defineComponent({
 @import '@/assets/style/color.scss';
 
 .a-checkbox {
+    $this: &;
+
     width: 50%;
 
     &__label {
-        $this: & !global;
-
         @include label-color;
 
         line-height: 1.5;
@@ -115,7 +115,7 @@ export default defineComponent({
     &__input {
         display: none;
 
-        &:checked + #{$this} {
+        &:checked + #{$this}__label {
             @include label-color($p-black-color, $p-primary-color, $p-primary-right-color);
 
             &::before {

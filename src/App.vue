@@ -12,7 +12,7 @@ export default defineComponent({});
 
 <style lang="scss">
 body {
-    font-size: 16px;
+    font-size: 1rem;
     -webkit-font-smoothing: none;
     font-family: 'pokemon-font', monospace;
     margin: 0;

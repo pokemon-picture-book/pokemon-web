@@ -26,13 +26,13 @@ export default defineComponent({
         }
     },
     setup(props, { emit }: SetupContext) {
-        const method = {
+        const methods = {
             onChange: (option: ARadioOption) => {
                 emit('change', option, props.options);
             }
         };
 
-        const computedMethod = {
+        const computedMethods = {
             model: computed({
                 get: () => props.modelValue,
                 set: (newModelValue) => emit('update:modelValue', newModelValue)
@@ -40,8 +40,8 @@ export default defineComponent({
         };
 
         return {
-            ...method,
-            ...computedMethod
+            ...methods,
+            ...computedMethods
         };
     }
 });

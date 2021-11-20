@@ -1,19 +1,21 @@
 <template>
     <div class="o-pokemon-filter-modal">
         <i class="ib ib-ri-search-eye-line ib-2x" @click="modalOpen"></i>
-        <m-modal :is-show="state.isShowModal" @close="modalClose">
+        <m-modal :is-show="state.isShowModal" @close="modalClose" class="modal">
             <template v-slot:header>
-                <div class="modal__title">
-                    <i class="ib ib-ri-search-eye-line ib-2x"></i>
-                    <span class="modal__title--text">条件を入力</span>
+                <div class="header modal__header">
+                    <div class="header__title">
+                        <i class="ib ib-ri-search-eye-line ib-2x"></i>
+                        <span class="header__title-text">条件を入力</span>
+                    </div>
                 </div>
             </template>
             <template v-slot:body>
-                <div class="modal-body">
-                    <div class="modal-body__game contains">
-                        <div class="contains__title">
+                <div class="body modal__body">
+                    <div class="body__contains">
+                        <div class="body__title">
                             <i class="ib ib-gg-pokemon ib-3x"></i>
-                            <span class="contains__title--text">ゲーム</span>
+                            <span class="body__title-text">ゲーム</span>
                         </div>
                         <m-radio-group
                             v-model="state.selectedGameVersionGroup"
@@ -21,11 +23,11 @@
                             @change="onGameChange"
                         ></m-radio-group>
                     </div>
-                    <div class="modal-body__region contains">
-                        <div class="contains__title">
+                    <div class="body__contains">
+                        <div class="body__title">
                             <i class="ib ib-ic-twotone-catching-pokemon ib-3x"></i>
-                            <span class="contains__title--text">地域</span>
-                            <span class="contains__title--description">
+                            <span class="body__title-text">地域</span>
+                            <span class="body__title-description">
                                 ※何も選択されていない場合は【Kanto/関東】地方が選択されます
                             </span>
                         </div>
@@ -37,9 +39,9 @@
                 </div>
             </template>
             <template v-slot:footer>
-                <div class="modal-footer">
-                    <a-button class="modal-footer__button" @click="modalClose">キャンセル</a-button>
-                    <a-button class="modal-footer__button" color="primary" @click="onClick"
+                <div class="footer modal__footer">
+                    <a-button class="footer__button" @click="modalClose">キャンセル</a-button>
+                    <a-button class="footer__button" color="primary" @click="onClick"
                         >検索する</a-button
                     >
                 </div>
@@ -49,8 +51,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, provide, reactive } from 'vue';
-import { LocationQueryValue, useRoute, useRouter } from 'vue-router';
+import { computed, defineComponent, PropType, provide, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 import {
     GameVersionGroupStateKey,
     gameVersionGroupState,
@@ -63,7 +65,10 @@ import MRadioGroup from '@/components/02-molecules/data-entry/MRadioGroup.vue';
 import AButton from '@/components/01-atoms/general/AButton.vue';
 import { ACheckboxOption } from '@/types/components/01-atoms/data-entry/ACheckbox';
 import { ARadioOption } from '@/types/components/01-atoms/data-entry/ARadio';
-import { OPokemonFilterModalState } from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
+import {
+    OPokemonFilterModalState,
+    SelectedParam
+} from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
 
 export default defineComponent({
     components: {
@@ -72,9 +77,14 @@ export default defineComponent({
         MCheckboxGroup,
         AButton
     },
-    setup() {
+    props: {
+        selectedParam: {
+            type: Object as PropType<SelectedParam>,
+            default: () => ({ regions: [], game: '' })
+        }
+    },
+    setup(props) {
         const router = useRouter();
-        const route = useRoute();
 
         const state = reactive<OPokemonFilterModalState>({
             isShowModal: false,
@@ -85,10 +95,9 @@ export default defineComponent({
         const gameVersionGroupStore = gameVersionGroupState();
         provide<GameVersionGroupStateType>(GameVersionGroupStateKey, gameVersionGroupStore);
         gameVersionGroupStore.action.fetchAll('ja-Hrkt', true).then(() => {
-            const queryGame = route.query.game as LocationQueryValue;
             // set first value
-            if (queryGame) {
-                state.selectedGameVersionGroup = queryGame;
+            if (props.selectedParam.game) {
+                state.selectedGameVersionGroup = props.selectedParam.game;
                 return;
             }
             state.selectedGameVersionGroup =
@@ -98,14 +107,9 @@ export default defineComponent({
         const regionStore = regionState();
         provide<RegionStateType>(RegionStateKey, regionStore);
         regionStore.action.fetchAll('ja-Hrkt').then(() => {
-            const queryRegions = route.query.regions;
             // set first value
-            if (Array.isArray(queryRegions)) {
-                state.selectedRegions = queryRegions as string[];
-                return;
-            }
-            if (queryRegions) {
-                state.selectedRegions = [queryRegions];
+            if (props.selectedParam.regions.length) {
+                state.selectedRegions = props.selectedParam.regions;
                 return;
             }
             state.selectedRegions = [regionStore.getter.regions.value[0].name];
@@ -115,7 +119,7 @@ export default defineComponent({
             throw new Error('inject failed.');
         }
 
-        const computedMethod = {
+        const computedMethods = {
             gameVersionGroups: computed<ARadioOption[]>(() => {
                 return gameVersionGroupStore.getter.gameVersionGroups.value.map(
                     (gameVersionGroup) => {
@@ -153,7 +157,7 @@ export default defineComponent({
             })
         };
 
-        const method = {
+        const methods = {
             modalOpen() {
                 state.isShowModal = true;
             },
@@ -196,8 +200,8 @@ export default defineComponent({
 
         return {
             state,
-            ...computedMethod,
-            ...method
+            ...computedMethods,
+            ...methods
         };
     }
 });
@@ -206,11 +210,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/index.scss';
 
-@mixin title($font-size: 16px) {
+@mixin title($font-size: 1rem) {
     display: flex;
     align-items: center;
 
-    &--text {
+    &-text {
         font-size: $font-size;
         padding: 0 8px;
     }
@@ -222,33 +226,33 @@ export default defineComponent({
     }
 
     .modal {
-        &__title {
-            @include title(24px);
+        .header {
+            &__title {
+                @include title(1.625rem);
+            }
         }
 
-        &-body {
-            .contains {
-                &__title {
-                    @include title();
+        .body {
+            &__title {
+                @include title();
 
-                    line-height: 1;
+                line-height: 1;
 
-                    &--text {
-                        font-weight: bold;
-                        display: block;
-                        position: relative;
-                        white-space: nowrap;
-                    }
+                &-text {
+                    font-weight: bold;
+                    display: block;
+                    position: relative;
+                    white-space: nowrap;
+                }
 
-                    &--description {
-                        color: $p-gray-color;
-                        padding-left: 8px;
-                    }
+                &-description {
+                    color: $p-gray-color;
+                    padding-left: 8px;
                 }
             }
         }
 
-        &-footer {
+        .footer {
             width: 100%;
             display: flex;
             justify-content: center;

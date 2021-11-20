@@ -1,25 +1,25 @@
 <template>
-    <div class="m-pokemon-type-and-name">
-        <a-type :items="typeItems" />
-        <div class="m-pokemon-type-and-name__name">{{ name }}</div>
+    <div class="m-color-label-group">
+        <a-color-label :items="typeItems" />
+        <div class="m-color-label-group__name">{{ name }}</div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import AType from '@/components/01-atoms/pokemon/AType.vue';
-import { ATypeItem } from '@/types/components/01-atoms/pokemon/AType';
+import AColorLabel from '@/components/01-atoms/display/AColorLabel.vue';
+import { AColorLabelItem } from '@/types/components/01-atoms/display/AColorLabel';
 
 /**
  * ポケモン名称.
  */
 export default defineComponent({
     components: {
-        AType
+        AColorLabel
     },
     props: {
         typeItems: {
-            type: Array as PropType<ATypeItem[]>,
+            type: Array as PropType<AColorLabelItem[]>,
             default: () => []
         },
         name: {
@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.m-pokemon-type-and-name {
+.m-color-label-group {
     display: flex;
     align-items: center;
     flex-direction: column;

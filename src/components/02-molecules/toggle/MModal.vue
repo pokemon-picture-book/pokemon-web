@@ -1,24 +1,21 @@
 <template>
     <transition name="m-modal">
-        <div v-if="isShow" class="m-modal-mask">
-            <div class="m-modal-wrapper">
-                <div class="m-modal-container">
-                    <div class="m-modal-container__header">
+        <div v-if="isShow" class="m-modal">
+            <div class="m-modal__container-wrapper">
+                <div class="m-modal__container">
+                    <div class="model-contents m-modal__header">
                         <slot name="header"> default header </slot>
 
-                        <div
-                            class="m-modal-container__header--close-button"
-                            @click="$emit('close')"
-                        >
+                        <div class="header__button" @click="$emit('close')">
                             <i class="ib fa-close"></i>
                         </div>
                     </div>
 
-                    <div class="m-modal-container__body">
+                    <div class="model-contents m-modal__body">
                         <slot name="body"></slot>
                     </div>
 
-                    <div class="m-modal-container__footer">
+                    <div class="model-contents m-modal__footer">
                         <slot name="footer"></slot>
                     </div>
                 </div>
@@ -44,57 +41,54 @@ export default defineComponent({
 @import '@/assets/style/index.scss';
 
 .m-modal {
-    &-mask {
-        position: fixed;
-        z-index: 9998;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: table;
-        transition: opacity 0.3s ease;
-    }
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
 
-    &-wrapper {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    &-container {
-        width: 50vw;
+    &__container {
+        width: 720px;
+        max-width: 100%;
         margin: 0 auto;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
 
-        &__header,
-        &__body,
-        &__footer {
-            padding: 16px;
+        &-wrapper {
+            display: table-cell;
+            vertical-align: middle;
         }
+    }
 
-        &__header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid;
-            font-weight: bold;
+    .model-contents {
+        padding: 16px;
+    }
 
-            &--close-button {
-                cursor: pointer;
-            }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid;
+        font-weight: bold;
+
+        &--close-button {
+            cursor: pointer;
         }
+    }
 
-        &__body {
-            max-height: calc(100vh - 15em);
-            overflow: auto;
-        }
+    &__body {
+        max-height: calc(100vh - 15em);
+        overflow: auto;
+    }
 
-        &__footer {
-            border-top: 1px solid;
-        }
+    &__footer {
+        border-top: 1px solid;
     }
 
     /*
