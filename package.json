@@ -44,7 +44,7 @@
         "@storybook/addon-knobs": "6.2.9",
         "@storybook/vue3": "6.3.0-alpha.38",
         "@types/axios": "0.14.0",
-        "@types/eslint": "7.28.0",
+        "@types/eslint": "8.2.0",
         "@types/jest": "27.0.2",
         "@types/prettier": "2.4.1",
         "@typescript-eslint/eslint-plugin": "^2.33.0",
