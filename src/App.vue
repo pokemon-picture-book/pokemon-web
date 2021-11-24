@@ -11,6 +11,8 @@ export default defineComponent({});
 </script>
 
 <style lang="scss">
+@import '@/assets/style/reset/index.scss';
+
 body {
     font-size: 1rem;
     -webkit-font-smoothing: none;
