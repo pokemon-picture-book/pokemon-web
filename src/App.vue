@@ -11,7 +11,7 @@ export default defineComponent({});
 </script>
 
 <style lang="scss">
-@import '@/assets/style/reset/index.scss';
+@import 'destyle.css/destyle.min.css';
 
 body {
     font-size: 1rem;
@@ -27,5 +27,10 @@ a {
     &:hover {
         color: #0090aa;
     }
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 </style>
