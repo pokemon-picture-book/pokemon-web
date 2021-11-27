@@ -1,3 +1,8 @@
+export declare type OPokemonData = {
+    hits: number;
+    items: OPokemonItem[];
+};
+
 export declare type OPokemonItem = {
     id: number;
     imageColor: string;
@@ -7,5 +12,5 @@ export declare type OPokemonItem = {
 };
 
 export declare type OPokemonState = {
-    page: number;
+    infiniteIndex: number;
 };

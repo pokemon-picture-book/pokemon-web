@@ -1,13 +1,15 @@
 <template>
-    <o-pokemon-list :items="items" @fetch="fetch" />
+    <o-spinner v-if="state.isLoading" mode="full-screen" />
+    <o-pokemon-list v-else :data="data" @fetch="fetch" />
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, provide, watch } from 'vue';
+import { computed, defineComponent, provide, reactive, watch } from 'vue';
 import { LocationQueryValue, useRoute } from 'vue-router';
-import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
 import OPokemonList from '@/components/03-organisms/pokemon/OPokemonList.vue';
-import { OPokemonItem } from '@/types/components/03-organisms/pokemon/OPokemonList';
+import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
+import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
+import { OPokemonData } from '@/types/components/03-organisms/pokemon/OPokemonList';
 
 // default parameter
 const LANGUAGE = 'ja-Hrkt';
@@ -16,24 +18,33 @@ const REGIONS = ['kanto'] as const;
 
 export default defineComponent({
     components: {
-        OPokemonList
+        OPokemonList,
+        OSpinner
     },
-    async setup() {
+    setup() {
         const route = useRoute();
         const store = pokemonState();
         provide<PokemonStateType>(PokemonStateKey, store);
 
+        const state = reactive({
+            isLoading: false
+        });
+
         const computedMethods = {
-            items: computed<OPokemonItem[]>(() => {
-                return store.getter.pokemons.value.map((pokemon) => ({
-                    id: pokemon.id,
-                    imageColor: pokemon.imageColor,
-                    name: pokemon.name,
-                    gameImagePath: pokemon.gameImagePath,
-                    types: pokemon.types.map((type) => ({
-                        code: type.code
+            data: computed<OPokemonData>(() => {
+                const { hits, pokemons } = store.getter;
+                return {
+                    hits: hits.value,
+                    items: pokemons.value.map((pokemon) => ({
+                        id: pokemon.id,
+                        imageColor: pokemon.imageColor,
+                        name: pokemon.name,
+                        gameImagePath: pokemon.gameImagePath,
+                        types: pokemon.types.map((type) => ({
+                            code: type.code
+                        }))
                     }))
-                }));
+                };
             })
         };
 
@@ -52,14 +63,23 @@ export default defineComponent({
             }
         };
 
+        const privateMethods = {
+            firstFetch: async () => {
+                state.isLoading = true;
+                await methods.fetch(1);
+                state.isLoading = false;
+            }
+        };
+
         watch(
             () => route.query,
-            async () => methods.fetch(1)
+            () => privateMethods.firstFetch()
         );
 
-        await methods.fetch(1);
+        privateMethods.firstFetch();
 
         return {
+            state,
             ...methods,
             ...computedMethods
         };
