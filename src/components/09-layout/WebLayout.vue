@@ -38,10 +38,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/index.scss';
+
 .main-content {
     padding: 16px;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: $mobile-border-width) {
         padding: 16px 8px;
     }
 }

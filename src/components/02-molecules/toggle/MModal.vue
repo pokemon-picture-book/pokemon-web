@@ -60,7 +60,7 @@ export default defineComponent({
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: $mobile-border-width) {
             width: 95vw;
         }
 

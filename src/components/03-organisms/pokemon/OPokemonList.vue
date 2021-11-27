@@ -108,7 +108,7 @@ export default defineComponent({
         margin: 0 0.5vw calc((100vw / 750) * 45) 0.5vw;
         font-size: calc((100vw / 750) * 18);
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: $mobile-border-width) {
             width: 15.5vw;
             font-size: calc((16 / 1280) * 100vw);
             margin: 0 0.25vw calc((30 / 1280) * 100vw) 0.25vw;
