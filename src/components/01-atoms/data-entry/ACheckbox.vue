@@ -64,6 +64,10 @@ export default defineComponent({
 
     width: 50%;
 
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
+
     &__label {
         @include label-color;
 

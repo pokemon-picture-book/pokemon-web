@@ -3,12 +3,12 @@
         <figure
             v-if="img"
             class="m-card__img-wrapper"
-            :class="{ 'm-card__img-border': img && img.borderLine }"
+            :class="{ 'm-card__img-full': img && img.isFull }"
         >
             <img class="m-card__img" :src="img.src" :alt="img.alt || 'card image'" />
         </figure>
 
-        <div class="m-card__body">
+        <div class="m-card__body" :class="{ 'm-card__body-with-img': img }">
             <slot></slot>
         </div>
 
@@ -62,6 +62,11 @@ export default defineComponent({
         &-wrapper {
             position: relative;
             padding-top: 65%;
+            margin: 16px 8px;
+        }
+
+        &-full {
+            margin: 0;
         }
 
         &-border {
@@ -73,6 +78,10 @@ export default defineComponent({
     &__body {
         margin: 0;
         padding: 16px;
+
+        &-with-img {
+            border-top: 1px solid $p-light-gray-line-color;
+        }
     }
 
     &__footer {

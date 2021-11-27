@@ -1,8 +1,8 @@
 <template>
+    <o-header :query-param="queryParam" />
     <Suspense>
         <template #default>
-            <div>
-                <o-header />
+            <div class="main-content">
                 <router-view />
             </div>
         </template>
@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
-import { LocationQueryValue, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 import OHeader from '@/components/03-organisms/global/OHeader.vue';
 import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
 
@@ -36,3 +36,13 @@ export default defineComponent({
     }
 });
 </script>
+
+<style lang="scss" scoped>
+.main-content {
+    padding: 16px;
+
+    @media only screen and (max-width: 768px) {
+        padding: 16px 8px;
+    }
+}
+</style>

@@ -52,13 +52,17 @@ export default defineComponent({
     transition: opacity 0.3s ease;
 
     &__container {
-        width: 720px;
+        width: 80vw;
         max-width: 100%;
         margin: 0 auto;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
+
+        @media only screen and (max-width: 768px) {
+            width: 95vw;
+        }
 
         &-wrapper {
             display: table-cell;

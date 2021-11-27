@@ -1,10 +1,10 @@
 <template>
     <header class="o-header">
-        <div class="o-header__title">
+        <div class="o-header__item o-header__title">
             <i class="ib ib-whh-pokemon ib-3x"></i>
             <h2 class="o-header__title-text">ポケモン図鑑</h2>
         </div>
-        <nav class="o-header__navigation gnav">
+        <nav class="o-header__item o-header__navigation gnav">
             <ul class="gnav__menu">
                 <!-- TODO: グローバル対応実施のタイミングで表示する -->
                 <li class="gnav__menu-item" style="display: none">
@@ -102,15 +102,14 @@ export default defineComponent({
     background: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 8px 16px;
+    align-items: center;
     position: fixed;
-    width: 98%;
+    width: 100%;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
     z-index: 100;
 
-    @media only screen and (max-width: 750px) {
-        flex-direction: column;
-        align-items: center;
+    &__item {
+        padding: 16px 24px;
     }
 
     &__title {
@@ -139,10 +138,6 @@ export default defineComponent({
 }
 
 .dummy-contains {
-    height: 100px;
-
-    @media only screen and (max-width: 750px) {
-        height: 160px;
-    }
+    height: 88px;
 }
 </style>
