@@ -19,23 +19,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/index.scss';
-
-.o-spinner {
-    &.full-screen {
-        width: 100vw;
-        height: 90vh;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &.full-width {
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
+@import './style.scss';
 </style>

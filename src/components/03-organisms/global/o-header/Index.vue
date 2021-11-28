@@ -97,47 +97,5 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@/assets/style/index.scss';
-
-.o-header {
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
-    z-index: 100;
-
-    &__item {
-        padding: 16px 24px;
-    }
-
-    &__title {
-        display: flex;
-        align-items: center;
-
-        &-text {
-            margin: 0 16px;
-        }
-    }
-
-    &__navigation {
-        & .gnav {
-            &__menu {
-                display: flex;
-                align-items: flex-end;
-                padding: 0;
-
-                &-item {
-                    margin: 0 8px;
-                    list-style: none;
-                }
-            }
-        }
-    }
-}
-
-.dummy-contains {
-    height: 88px;
-}
+@import './style.scss';
 </style>

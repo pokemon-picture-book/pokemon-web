@@ -15,8 +15,8 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
 import { useRoute } from 'vue-router';
-import OHeader from '@/components/03-organisms/global/OHeader.vue';
-import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
+import OHeader from '@/components/03-organisms/global/o-header/Index.vue';
+import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 
 export default defineComponent({
     components: {

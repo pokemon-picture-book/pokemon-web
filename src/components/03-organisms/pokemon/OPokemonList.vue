@@ -37,7 +37,7 @@ import { PokemonStateKey, PokemonStateType } from '@/stores/pokemon/pokemon';
 import { OPokemonData, OPokemonState } from '@/types/components/03-organisms/pokemon/OPokemonList';
 import MCard from '@/components/02-molecules/data-display/MCard.vue';
 import MColorLabelGroup from '@/components/02-molecules/data-display/MColorLabelGroup.vue';
-import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
+import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 
 export default defineComponent({
     components: {
