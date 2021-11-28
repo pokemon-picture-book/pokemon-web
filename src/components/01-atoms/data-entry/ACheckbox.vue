@@ -57,12 +57,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/color.scss';
+@import '@/assets/style/index.scss';
 
 .a-checkbox {
     $this: &;
 
     width: 50%;
+
+    @media only screen and (max-width: $mobile-border-width) {
+        width: 100%;
+    }
 
     &__label {
         @include label-color;

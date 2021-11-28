@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <router-view />
-    </div>
+    <router-view />
 </template>
 
 <script lang="ts">
@@ -11,6 +9,8 @@ export default defineComponent({});
 </script>
 
 <style lang="scss">
+@import 'destyle.css/destyle.min.css';
+
 body {
     font-size: 1rem;
     -webkit-font-smoothing: none;
@@ -25,5 +25,10 @@ a {
     &:hover {
         color: #0090aa;
     }
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 </style>

@@ -58,10 +58,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/color.scss';
+@import '@/assets/style/index.scss';
 
 .a-radio {
     width: 50%;
+
+    @media only screen and (max-width: $mobile-border-width) {
+        width: 100%;
+    }
 
     &__input {
         display: none;

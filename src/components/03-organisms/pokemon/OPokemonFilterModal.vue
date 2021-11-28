@@ -27,9 +27,12 @@
                         <div class="body__title">
                             <i class="ib ib-ic-twotone-catching-pokemon ib-3x"></i>
                             <span class="body__title-text">地域</span>
-                            <span class="body__title-description">
-                                ※何も選択されていない場合は【Kanto/関東】地方が選択されます
-                            </span>
+                            <div class="body__description">
+                                <span>※</span>
+                                <span
+                                    >何も選択されていない場合は【Kanto/関東】地方が選択されます</span
+                                >
+                            </div>
                         </div>
                         <m-checkbox-group
                             v-model="state.selectedRegions"
@@ -41,9 +44,9 @@
             <template v-slot:footer>
                 <div class="footer modal__footer">
                     <a-button class="footer__button" @click="modalClose">キャンセル</a-button>
-                    <a-button class="footer__button" color="primary" @click="onClick"
-                        >検索する</a-button
-                    >
+                    <a-button class="footer__button" color="primary" @click="onClick">
+                        検索する
+                    </a-button>
                 </div>
             </template>
         </m-modal>
@@ -244,11 +247,16 @@ export default defineComponent({
                     position: relative;
                     white-space: nowrap;
                 }
+            }
 
-                &-description {
-                    color: $p-gray-color;
-                    padding-left: 8px;
-                }
+            &__description {
+                display: flex;
+                color: $p-gray-color;
+                padding-left: 8px;
+            }
+
+            &__contains {
+                padding: 8px 0;
             }
         }
 

@@ -46,13 +46,12 @@ export default defineComponent({
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    display: table;
     transition: opacity 0.3s ease;
 
     &__container {
-        width: 720px;
+        width: 80vw;
         max-width: 100%;
         margin: 0 auto;
         background-color: #fff;
@@ -60,9 +59,12 @@ export default defineComponent({
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
 
+        @media only screen and (max-width: $mobile-border-width) {
+            width: 95vw;
+        }
+
         &-wrapper {
-            display: table-cell;
-            vertical-align: middle;
+            margin: 32px 0;
         }
     }
 
@@ -83,7 +85,7 @@ export default defineComponent({
     }
 
     &__body {
-        max-height: calc(100vh - 15em);
+        max-height: calc(100vh - 20em);
         overflow: auto;
     }
 

@@ -31,6 +31,7 @@ export default defineComponent({
     width: 160px;
     max-width: 100%;
     padding: 16px;
+    text-align: center;
     text-decoration: none;
     border-style: hidden;
     border-radius: 24px;

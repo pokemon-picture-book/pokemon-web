@@ -1,4 +1,4 @@
-import OSpinner from '@/components/03-organisms/global/OSpinner.vue';
+import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 
 export default {
     title: 'Organisms/Global/o-spinner'
