@@ -46,9 +46,8 @@ export default defineComponent({
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    display: table;
     transition: opacity 0.3s ease;
 
     &__container {
@@ -65,8 +64,7 @@ export default defineComponent({
         }
 
         &-wrapper {
-            display: table-cell;
-            vertical-align: middle;
+            margin: 32px 0;
         }
     }
 
@@ -87,7 +85,7 @@ export default defineComponent({
     }
 
     &__body {
-        max-height: calc(100vh - 15em);
+        max-height: calc(100vh - 20em);
         overflow: auto;
     }
 

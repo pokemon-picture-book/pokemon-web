@@ -12,7 +12,7 @@
             >
                 <m-color-label-group :name="item.name" :type-items="item.types" />
             </m-card>
-            <infinite-loading @infinite="infiniteHandler">
+            <infinite-loading class="o-pokemon-list__infinite-loading" @infinite="infiniteHandler">
                 <template v-slot:spinner>
                     <o-spinner mode="full-width" />
                 </template>
@@ -113,6 +113,10 @@ export default defineComponent({
             font-size: calc((16 / 1280) * 100vw);
             margin: 0 0.25vw calc((30 / 1280) * 100vw) 0.25vw;
         }
+    }
+
+    &__infinite-loading {
+        width: 100%;
     }
 }
 </style>
