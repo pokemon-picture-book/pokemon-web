@@ -213,12 +213,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/style/index.scss';
 
-@mixin title($font-size: 1rem) {
+@mixin title($font-size: 16) {
     display: flex;
     align-items: center;
 
     &-text {
-        font-size: $font-size;
+        @include font-size($font-size);
+
         padding: 0 8px;
     }
 }
@@ -231,13 +232,13 @@ export default defineComponent({
     .modal {
         .header {
             &__title {
-                @include title(1.625rem);
+                @include title(32);
             }
         }
 
         .body {
             &__title {
-                @include title();
+                @include title(24);
 
                 line-height: 1;
 

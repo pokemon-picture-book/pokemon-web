@@ -36,7 +36,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/color.scss';
+@import '@/assets/style/index.scss';
 
 .m-card {
     background: $p-white-color;
@@ -78,6 +78,10 @@ export default defineComponent({
     &__body {
         margin: 0;
         padding: 16px;
+
+        @media only screen and (max-width: $mobile-border-width) {
+            padding: 8px;
+        }
 
         &-with-img {
             border-top: 1px solid $p-light-gray-line-color;
