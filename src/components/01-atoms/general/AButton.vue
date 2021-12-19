@@ -23,9 +23,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/color.scss';
+@import '@/assets/style/index.scss';
 
 .a-button {
+    @include font-size;
+
     position: relative;
     display: inline-block;
     width: 160px;
@@ -36,7 +38,6 @@ export default defineComponent({
     border-style: hidden;
     border-radius: 24px;
     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 

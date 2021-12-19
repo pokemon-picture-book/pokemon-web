@@ -106,7 +106,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/color.scss';
+@import '@/assets/style/index.scss';
 
 .a-select {
     position: relative;
@@ -159,11 +159,12 @@ export default defineComponent({
     }
 
     &__label {
+        @include font-size;
+
         position: relative;
         display: flex;
         align-items: center;
         padding: 0 16px;
-        font-size: 16px;
         font-weight: 300;
         height: 32px;
         border-radius: 4px;

@@ -1,0 +1,20 @@
+@import './responsive.scss';
+
+$font-size-root: 16;
+$line-height-root: 16;
+
+@mixin font-size($font-size: $font-size-root, $line-height: null) {
+    font-size: calc((100vw / 768) * ($font-size));
+
+    @media screen and (min-width: $mobile-border-width) {
+        font-size: calc(($font-size/1280) * 90vw);
+    }
+
+    @if ($line-height == null) {
+        line-height: calc($line-height-root / $font-size-root);
+    }
+
+    @else {
+        line-height: calc($line-height / $font-size);
+    }
+}

@@ -33,7 +33,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/color.scss';
+@import '@/assets/style/index.scss';
 
 .a-color-label {
     display: flex;
@@ -41,13 +41,14 @@ export default defineComponent({
     margin: 8px;
 
     &__text {
+        @include font-size(8);
+
         min-height: 16px;
         min-width: 16px;
         border-radius: 16px;
         margin-right: 8px;
         padding: 8px;
         color: $p-white-color;
-        font-size: 8px;
         display: flex;
         justify-content: center;
         align-items: center;
