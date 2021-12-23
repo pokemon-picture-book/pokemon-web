@@ -33,7 +33,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/index.scss';
+@import '@/assets/style/components/index.scss';
 
 .a-color-label {
     display: flex;

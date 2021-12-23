@@ -36,7 +36,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/index.scss';
+@import '@/assets/style/components/index.scss';
 
 .m-card {
     background: $p-white-color;
@@ -91,7 +91,6 @@ export default defineComponent({
     &__footer {
         display: flex;
         justify-content: space-around;
-        border-top: 1px solid $p-light-gray-line-color;
         background: $p-light-gray-color;
         text-align: center;
 

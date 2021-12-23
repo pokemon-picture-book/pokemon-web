@@ -4,18 +4,18 @@
         <m-modal :is-show="state.isShowModal" @close="modalClose" class="modal">
             <template v-slot:header>
                 <div class="header modal__header">
-                    <div class="header__title">
+                    <div class="title header__title">
                         <i class="ib ib-ri-search-eye-line ib-2x"></i>
-                        <span class="header__title-text">条件を入力</span>
+                        <h2 class="title__text">条件を入力</h2>
                     </div>
                 </div>
             </template>
             <template v-slot:body>
                 <div class="body modal__body">
                     <div class="body__contains">
-                        <div class="body__title">
+                        <div class="title body__title">
                             <i class="ib ib-gg-pokemon ib-3x"></i>
-                            <span class="body__title-text">ゲーム</span>
+                            <h3 class="title__text">ゲーム</h3>
                         </div>
                         <m-radio-group
                             v-model="state.selectedGameVersionGroup"
@@ -24,9 +24,9 @@
                         ></m-radio-group>
                     </div>
                     <div class="body__contains">
-                        <div class="body__title">
+                        <div class="title body__title">
                             <i class="ib ib-ic-twotone-catching-pokemon ib-3x"></i>
-                            <span class="body__title-text">地域</span>
+                            <h3 class="title__text">地域</h3>
                             <div class="body__description">
                                 <span>※</span>
                                 <span
@@ -211,18 +211,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/index.scss';
+@import '@/assets/style/components/index.scss';
 
-@mixin title($font-size: 16) {
-    display: flex;
-    align-items: center;
+// @mixin title($font-size: 16) {
+//     display: flex;
+//     align-items: center;
 
-    &-text {
-        @include font-size($font-size);
+//     &-text {
+//         @include font-size($font-size);
 
-        padding: 0 8px;
-    }
-}
+//         padding: 0 8px;
+//     }
+// }
 
 .o-pokemon-filter-modal {
     & > i {
@@ -230,26 +230,18 @@ export default defineComponent({
     }
 
     .modal {
-        .header {
-            &__title {
-                @include title(32);
+        .title {
+            display: flex;
+            align-items: center;
+
+            &__text {
+                margin-left: 8px;
+                display: block;
+                white-space: nowrap;
             }
         }
 
         .body {
-            &__title {
-                @include title(24);
-
-                line-height: 1;
-
-                &-text {
-                    font-weight: bold;
-                    display: block;
-                    position: relative;
-                    white-space: nowrap;
-                }
-            }
-
             &__description {
                 display: flex;
                 color: $p-gray-color;

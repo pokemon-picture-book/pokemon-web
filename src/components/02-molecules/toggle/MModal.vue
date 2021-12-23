@@ -38,7 +38,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/index.scss';
+@import '@/assets/style/components/index.scss';
 
 .m-modal {
     position: fixed;

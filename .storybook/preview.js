@@ -1,4 +1,6 @@
-import 'pokemon-font/css/pokemon-font.css';
+// import style
+import '@/assets/style/plugins';
+import '@/assets/style/base.scss';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
