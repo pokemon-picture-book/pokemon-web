@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { OSpinnerMode } from '@/types/components/03-organisms/global/OSpinner';
+import { OSpinnerMode } from '@/components/03-organisms/global/o-spinner';
 
 export default defineComponent({
     props: {

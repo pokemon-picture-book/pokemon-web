@@ -22,11 +22,11 @@
 <script lang="ts">
 import { computed, defineComponent, PropType, provide } from 'vue';
 import { LocationQuery, LocationQueryValue } from 'vue-router';
-import ASelect from '@/components/01-atoms/data-entry/ASelect.vue';
-import OPokemonFilterModal from '@/components/03-organisms/pokemon/OPokemonFilterModal.vue';
+import ASelect from '@/components/01-atoms/data-entry/a-select/Index.vue';
+import OPokemonFilterModal from '@/components/03-organisms/pokemon/o-pokemon-filter-modal/Index.vue';
 import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/master/language';
-import { ASelectItem } from '@/types/components/01-atoms/data-entry/ASelect';
-import { SelectedParam } from '@/types/components/03-organisms/pokemon/OPokemonFilterModal';
+import { ASelectItem } from '@/components/01-atoms/data-entry/a-select';
+import { SelectedParam } from '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
 
 export default defineComponent({
     components: {

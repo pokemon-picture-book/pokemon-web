@@ -6,10 +6,10 @@
 <script lang="ts">
 import { computed, defineComponent, provide, reactive, watch } from 'vue';
 import { LocationQueryValue, useRoute } from 'vue-router';
-import OPokemonList from '@/components/03-organisms/pokemon/OPokemonList.vue';
+import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
-import { OPokemonData } from '@/types/components/03-organisms/pokemon/OPokemonList';
+import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
 
 // default parameter
 const LANGUAGE = 'ja-Hrkt';
