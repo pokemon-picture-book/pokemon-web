@@ -4,7 +4,7 @@ import config from '@/config';
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        component: () => import('../components/09-layout/WebLayout.vue'),
+        component: () => import('../components/09-layout/web-layout/Index.vue'),
         redirect: () => ({
             name: 'Home'
         }),
