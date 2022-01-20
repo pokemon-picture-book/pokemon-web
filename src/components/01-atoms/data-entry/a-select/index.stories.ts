@@ -1,10 +1,10 @@
-import { withKnobs, select } from '@storybook/addon-knobs';
+// import { withKnobs, select } from '@storybook/addon-knobs';
 import ASelect from '@/components/01-atoms/data-entry/a-select/Index.vue';
 import { ASelectItem } from '@/components/01-atoms/data-entry/a-select';
 
 export default {
-    title: 'Atoms/a-select',
-    decorators: [withKnobs]
+    title: 'Atoms/a-select'
+    // decorators: [withKnobs]
 };
 
 export const Knobs = () => ({
@@ -17,32 +17,33 @@ export const Knobs = () => ({
             ] as ASelectItem[]
         };
     },
-    props: {
-        color: {
-            default: select(
-                'Color',
-                {
-                    Primary: 'primary',
-                    Default: 'default'
-                },
-                'default'
-            )
-        },
-        size: {
-            default: select(
-                'Size',
-                {
-                    'X-Small': 'x-small',
-                    Small: 'small',
-                    Default: 'default',
-                    Large: 'large',
-                    'X-Large': 'x-large'
-                },
-                'default'
-            )
-        }
-    },
-    template: '<a-select :items="items" :size="size" :color="color" />'
+    // props: {
+    //     color: {
+    //         default: select(
+    //             'Color',
+    //             {
+    //                 Primary: 'primary',
+    //                 Default: 'default'
+    //             },
+    //             'default'
+    //         )
+    //     },
+    //     size: {
+    //         default: select(
+    //             'Size',
+    //             {
+    //                 'X-Small': 'x-small',
+    //                 Small: 'small',
+    //                 Default: 'default',
+    //                 Large: 'large',
+    //                 'X-Large': 'x-large'
+    //             },
+    //             'default'
+    //         )
+    //     }
+    // },
+    // template: '<a-select :items="items" :size="size" :color="color" />'
+    template: `<a-select :items="items" :size="'small'" :color="'primary'" />`
 });
 
 export const Simple = () => ({

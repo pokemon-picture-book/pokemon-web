@@ -1,6 +1,9 @@
 /* SCSS requires mixins and core styles from the icon-builder repo
  * https://github.com/icon-blender/icon-blender
  * https://www.npmjs.com/package/icon-blender
+ *
+ * LICENSES
+ * Grommet Icons: Apache 2.0
  */
 @import 'icon-blender/scss/icon-blender.scss';
 @import 'icon-blender/scss/icons/ri.scss';
@@ -12,6 +15,17 @@
 @import 'icon-blender/scss/icons/fe.scss';
 @import 'icon-blender/scss/icons/icomoon-free.scss';
 @import 'icon-blender/scss/icons/fa.scss';
+@import 'icon-blender/scss/icons/grommet-icons.scss';
+
+/* Html: <i class="ib grommet-icons-form-previous"></i> */
+.grommet-icons-form-previous {
+    @include iconUrl($icons-grommet-icons, 'form-previous');
+}
+
+/* Html: <i class="ib grommet-icons-form-next"></i> */
+.grommet-icons-form-next {
+    @include iconUrl($icons-grommet-icons, 'form-next');
+}
 
 /*
  * custom style

@@ -18,19 +18,19 @@ a {
 }
 
 h1 {
-    @include font-size(30);
+    @include font-size(30, 42);
 
     font-weight: bold;
 }
 
 h2 {
-    @include font-size(25);
+    @include font-size(25, 32.5);
 
     font-weight: bold;
 }
 
 h3 {
-    @include font-size(20);
+    @include font-size(20, 27);
 
     font-weight: bold;
 }

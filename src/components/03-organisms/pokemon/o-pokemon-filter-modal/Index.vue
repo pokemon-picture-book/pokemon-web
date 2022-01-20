@@ -44,7 +44,7 @@
             <template v-slot:footer>
                 <div class="footer modal__footer">
                     <a-button class="footer__button" @click="modalClose">キャンセル</a-button>
-                    <a-button class="footer__button" color="primary" @click="onClick">
+                    <a-button class="footer__button" type="primary" icon="search" @click="onClick">
                         検索する
                     </a-button>
                 </div>

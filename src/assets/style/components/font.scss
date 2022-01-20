@@ -10,11 +10,19 @@ $line-height-root: 16;
         font-size: calc($font-size / $font-size-root * 0.8rem);
     }
 
-    @if ($line-height == null) {
-        line-height: calc($line-height-root / $font-size-root);
+    @if ($line-height != null) {
+        line-height: calc($line-height / $font-size);
+
+        @media only screen and (max-width: $mobile-border-width) {
+            line-height: calc($line-height / ($font-size - 4));
+        }
     }
 
-    @else {
-        line-height: calc($line-height / $font-size);
-    }
+    // @if ($line-height == null) {
+    //     line-height: calc($line-height-root / $font-size-root);
+    // }
+
+    // @else {
+    //     line-height: calc($line-height / $font-size);
+    // }
 }
