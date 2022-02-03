@@ -1,7 +1,7 @@
 <template>
     <div class="o-pokemon-detail">
         <div class="o-pokemon-detail__aside aside">
-            <a-button class="aside__button" type="pager" icon="prev" />
+            <a-button class="aside__button" theme="pager" icon="prev" />
         </div>
 
         <section class="o-pokemon-detail__contents contents">
@@ -48,7 +48,7 @@
         </section>
 
         <div class="o-pokemon-detail__aside aside">
-            <a-button class="aside__button" type="pager" icon="next" />
+            <a-button class="aside__button" theme="pager" icon="next" />
         </div>
     </div>
 </template>

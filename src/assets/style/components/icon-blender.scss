@@ -17,6 +17,11 @@
 @import 'icon-blender/scss/icons/fa.scss';
 @import 'icon-blender/scss/icons/grommet-icons.scss';
 
+/* Html: <i class="ib ic-round-add"></i> */
+.ic-round-add {
+    @include iconUrl($icons-ic, 'round-add');
+}
+
 /* Html: <i class="ib grommet-icons-form-previous"></i> */
 .grommet-icons-form-previous {
     @include iconUrl($icons-grommet-icons, 'form-previous');

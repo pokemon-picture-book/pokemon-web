@@ -1,14 +1,15 @@
 <template>
     <button
-        type="button"
+        :type="type"
         class="a-button"
-        :class="[`a-button--type-${type}`, { disabled }]"
+        :class="[`a-button--theme-${theme}`, { disabled }]"
         @click="onClick"
     >
         <div class="a-button__contents">
             <!-- left side icon -->
             <search-eye-line-svg v-if="icon === 'search'" class="a-button__icon" />
             <form-previous-svg v-if="icon === 'prev'" class="a-button__icon" />
+            <round-add-svg v-if="icon === 'add'" class="a-button__icon" />
 
             <span v-if="hasSlot('default')" class="a-button__text">
                 <slot></slot>
@@ -22,21 +23,27 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ButtonType, ButtonIcon } from '@/components/01-atoms/general/a-button';
+import { ButtonType, ButtonTheme, ButtonIcon } from '@/components/01-atoms/general/a-button';
 import SearchEyeLineSvg from '@/assets/img/components/search-eye-line.svg?component';
 import FormNextSvg from '@/assets/img/components/form-next.svg?component';
 import FormPreviousSvg from '@/assets/img/components/form-previous.svg?component';
+import RoundAddSvg from '@/assets/img/components/round-add.svg?component';
 
 export default defineComponent({
     components: {
         SearchEyeLineSvg,
         FormNextSvg,
-        FormPreviousSvg
+        FormPreviousSvg,
+        RoundAddSvg
     },
     props: {
         type: {
             type: String as PropType<ButtonType>,
-            default: () => 'default' as ButtonType
+            default: () => 'button' as ButtonType
+        },
+        theme: {
+            type: String as PropType<ButtonTheme>,
+            default: () => 'default' as ButtonTheme
         },
         icon: {
             type: String as PropType<ButtonIcon>,
@@ -47,6 +54,8 @@ export default defineComponent({
             default: () => false
         }
     },
+    // 親コンポーネントで２重で呼ばれるのを防ぐ
+    emits: ['click'],
     setup(_, { emit, slots }) {
         const methods = {
             onClick() {
@@ -83,7 +92,7 @@ export default defineComponent({
     cursor: pointer;
     transition: 0.25s;
 
-    &--type {
+    &--theme {
         /** type default */
         &-default {
             color: $p-black-color;

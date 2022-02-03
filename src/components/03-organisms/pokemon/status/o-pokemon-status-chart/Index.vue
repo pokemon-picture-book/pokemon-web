@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { Chart, ChartData, registerables } from 'chart.js';
+import { Chart, ChartData, ChartOptions, registerables } from 'chart.js';
 import { computed, defineComponent, PropType } from 'vue';
 import { RadarChart, useRadarChart } from 'vue-chart-3';
 import { StyleWidth } from '@/types/common';
@@ -42,23 +42,34 @@ export default defineComponent({
                     label: dataset.label,
                     data: dataset.data,
                     backgroundColor: `rgba(${chartRgbaColors[i]}, 0.4)`,
-                    borderColor: `rgba(${chartRgbaColors[i]}, 0.6)`,
+                    borderColor: `rgba(${chartRgbaColors[i]})`,
                     borderWidth: 2,
                     fill: false
                 }))
             };
         });
-        // const options: ChartOptions<'radar'> = {
-        //     scales: {
-        //         r: {
-        //             min: 0,
-        //             max: 255
-        //         }
-        //     }
-        // };
+        const options: ChartOptions<'radar'> = {
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (item) => item.formattedValue
+                    }
+                }
+            }
+            // scales: {
+            //     r: {
+            //         min: 0,
+            //         max: 255
+            //     }
+            // }
+        };
 
         const { radarChartProps, radarChartRef } = useRadarChart({
-            chartData
+            chartData,
+            options
         });
 
         return { radarChartProps, radarChartRef };

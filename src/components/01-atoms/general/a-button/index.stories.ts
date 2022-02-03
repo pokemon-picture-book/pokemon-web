@@ -1,9 +1,10 @@
 import { Story } from '@storybook/vue3';
 import AButton from '@/components/01-atoms/general/a-button/Index.vue';
-import { ButtonType, ButtonIcon } from '@/components/01-atoms/general/a-button';
+import { ButtonTheme, ButtonIcon, ButtonType } from '@/components/01-atoms/general/a-button';
 
 type Props = {
     type: ButtonType;
+    theme: ButtonTheme;
     icon: ButtonIcon;
     disabled: boolean;
 };
@@ -17,11 +18,15 @@ export default {
         onClick: {},
         type: {
             control: { type: 'select' },
+            options: ['button', 'submit']
+        },
+        theme: {
+            control: { type: 'select' },
             options: ['primary', 'default', 'pager']
         },
         icon: {
             control: { type: 'select' },
-            options: ['none', 'prev', 'next', 'search']
+            options: ['none', 'prev', 'next', 'search', 'add']
         }
     }
 };
@@ -37,7 +42,8 @@ const Template: Story<Props> = (args) => ({
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-    type: 'primary',
+    type: 'button',
+    theme: 'primary',
     icon: 'none'
 };
 
@@ -56,6 +62,7 @@ const IconTemplate: Story<Props> = (args) => ({
 
 export const Icon = IconTemplate.bind({});
 Icon.args = {
-    type: 'primary',
+    type: 'button',
+    theme: 'primary',
     icon: 'search'
 };
