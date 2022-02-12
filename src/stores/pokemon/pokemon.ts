@@ -1,6 +1,7 @@
 import { computed, InjectionKey, reactive } from 'vue';
+import http from '@/plugins/http';
+import { PokemonResponse } from '@/types/plugins/http/api/pokemons';
 import { State, Getter, Action } from '@/types/stores/pokemon/pokemon';
-import repository from '@/plugins/http/api/pokemons';
 
 const LIMIT = 50;
 
@@ -17,13 +18,13 @@ export const pokemonState = () => {
 
     const action: Action = {
         fetchAll: async (lang: string, game: string, regions: string[], page: number) => {
-            const { data: fetchData } = await repository.findAllByLangAndGameAndRegions(
-                lang,
-                game,
-                regions,
-                (page - 1) * LIMIT + 1,
-                LIMIT
-            );
+            const { data: fetchData } = await http
+                .get<PokemonResponse>('pokemons', {
+                    params: { lang, game, regions, offset: (page - 1) * LIMIT + 1, limit: LIMIT }
+                })
+                .catch((err) => {
+                    throw err;
+                });
             state.hits = fetchData.hits;
             const pokemons = fetchData.data || [];
             state.pokemons = page === 1 ? pokemons : state.pokemons.concat(pokemons);

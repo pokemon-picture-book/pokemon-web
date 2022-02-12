@@ -1,6 +1,7 @@
 import { computed, InjectionKey, reactive } from 'vue';
+import http from '@/plugins/http';
+import { RegionResponse } from '@/types/plugins/http/api/regions';
 import { State, Getter, Action } from '@/types/stores/pokemon/region';
-import repository from '@/plugins/http/api/regions';
 
 export const regionState = () => {
     const state: State = reactive({
@@ -13,7 +14,11 @@ export const regionState = () => {
 
     const action: Action = {
         fetchAll: async (lang) => {
-            const { data } = await repository.findAll(lang);
+            const { data } = await http
+                .get<RegionResponse[]>('regions', { params: { lang } })
+                .catch((err) => {
+                    throw err;
+                });
             state.regions = data || [];
         }
     };
