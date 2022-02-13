@@ -1,6 +1,6 @@
 import { computed, provide } from 'vue';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
-import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
+import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/http/pokemons';
 import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
 
 export default {

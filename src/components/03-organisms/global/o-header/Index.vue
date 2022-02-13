@@ -24,7 +24,7 @@ import { computed, defineComponent, PropType, provide } from 'vue';
 import { LocationQuery, LocationQueryValue } from 'vue-router';
 import ASelect from '@/components/01-atoms/data-entry/a-select/Index.vue';
 import OPokemonFilterModal from '@/components/03-organisms/pokemon/o-pokemon-filter-modal/Index.vue';
-import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/master/language';
+import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/http/languages';
 import { ASelectItem } from '@/components/01-atoms/data-entry/a-select';
 import { SelectedParam } from '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
 

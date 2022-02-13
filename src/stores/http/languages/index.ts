@@ -1,7 +1,6 @@
 import { computed, InjectionKey, reactive } from 'vue';
 import http from '@/plugins/http';
-import { LanguageResponse } from '@/types/plugins/http/api/languages';
-import { State, Getter, Action } from '@/types/stores/master/language';
+import { LanguageResponse, State, Getter, Action } from '@/stores/http/languages/type';
 
 export const languageState = () => {
     const state: State = reactive({

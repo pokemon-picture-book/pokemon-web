@@ -8,7 +8,7 @@ import { computed, defineComponent, provide, reactive, watch } from 'vue';
 import { LocationQueryValue, useRoute } from 'vue-router';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
-import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
+import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/http/pokemons';
 import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
 
 // default parameter

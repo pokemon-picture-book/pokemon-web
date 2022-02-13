@@ -33,7 +33,7 @@
 import { defineComponent, inject, PropType, reactive } from 'vue';
 import { StateChanger } from 'vue-infinite-loading';
 import InfiniteLoading from 'infinite-loading-vue3-ts';
-import { PokemonStateKey, PokemonStateType } from '@/stores/pokemon/pokemon';
+import { PokemonStateKey, PokemonStateType } from '@/stores/http/pokemons';
 import { OPokemonData, OPokemonState } from '@/components/03-organisms/pokemon/o-pokemon-list';
 import MCard from '@/components/02-molecules/data-display/m-card/Index.vue';
 import MColorLabelGroup from '@/components/02-molecules/data-display/m-color-label-group/Index.vue';

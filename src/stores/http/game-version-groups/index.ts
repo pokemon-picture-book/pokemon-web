@@ -1,7 +1,11 @@
 import { computed, InjectionKey, reactive } from 'vue';
 import http from '@/plugins/http';
-import { GameVersionGroupResponse } from '@/types/plugins/http/api/game-version-groups';
-import { State, Getter, Action } from '@/types/stores/pokemon/game-version-group';
+import {
+    GameVersionGroupResponse,
+    State,
+    Getter,
+    Action
+} from '@/stores/http/game-version-groups/type';
 
 export const gameVersionGroupState = () => {
     const state: State = reactive({

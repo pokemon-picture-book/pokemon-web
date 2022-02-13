@@ -60,8 +60,8 @@ import {
     GameVersionGroupStateKey,
     gameVersionGroupState,
     GameVersionGroupStateType
-} from '@/stores/pokemon/game-version-group';
-import { RegionStateKey, regionState, RegionStateType } from '@/stores/pokemon/region';
+} from '@/stores/http/game-version-groups';
+import { RegionStateKey, regionState, RegionStateType } from '@/stores/http/regions';
 import MModal from '@/components/02-molecules/toggle/m-modal/Index.vue';
 import MCheckboxGroup from '@/components/02-molecules/data-entry/m-checkbox-group/Index.vue';
 import MRadioGroup from '@/components/02-molecules/data-entry/m-radio-group/Index.vue';

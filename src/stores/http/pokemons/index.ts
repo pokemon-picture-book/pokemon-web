@@ -1,7 +1,6 @@
 import { computed, InjectionKey, reactive } from 'vue';
 import http from '@/plugins/http';
-import { PokemonResponse } from '@/types/plugins/http/api/pokemons';
-import { State, Getter, Action } from '@/types/stores/pokemon/pokemon';
+import { PokemonResponse, State, Getter, Action } from '@/stores/http/pokemons/type';
 
 const LIMIT = 50;
 

@@ -1,7 +1,6 @@
 import { computed, InjectionKey, reactive } from 'vue';
 import http from '@/plugins/http';
-import { RegionResponse } from '@/types/plugins/http/api/regions';
-import { State, Getter, Action } from '@/types/stores/pokemon/region';
+import { RegionResponse, State, Getter, Action } from '@/stores/http/regions/type';
 
 export const regionState = () => {
     const state: State = reactive({

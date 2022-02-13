@@ -1,12 +1,8 @@
-import '@/types/plugins/http/api/regions/index.d';
-import '@/types/plugins/http/api/game-version-groups/index.d';
-import '@/types/plugins/http/api/languages/index.d';
-import '@/types/plugins/http/api/pokemons/index.d';
 import '@/types/env.d';
-import '@/types/stores/pokemon/game-version-group.d';
-import '@/types/stores/pokemon/pokemon.d';
-import '@/types/stores/pokemon/region.d';
-import '@/types/stores/master/language.d';
+import '@/stores/http/game-version-groups/type';
+import '@/stores/http/pokemons/type';
+import '@/stores/http/regions/type';
+import '@/stores/http/languages/language';
 import '@/components/03-organisms/pokemon/o-pokemon-list';
 import '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
 import '@/components/03-organisms/global/o-spinner';
