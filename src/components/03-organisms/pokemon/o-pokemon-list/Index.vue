@@ -30,10 +30,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, PropType, reactive } from 'vue';
+import { defineComponent, PropType, reactive } from 'vue';
 import { StateChanger } from 'vue-infinite-loading';
 import InfiniteLoading from 'infinite-loading-vue3-ts';
-import { PokemonStateKey, PokemonStateType } from '@/stores/http/pokemons';
 import { OPokemonData, OPokemonState } from '@/components/03-organisms/pokemon/o-pokemon-list';
 import MCard from '@/components/02-molecules/data-display/m-card/Index.vue';
 import MColorLabelGroup from '@/components/02-molecules/data-display/m-color-label-group/Index.vue';
@@ -53,12 +52,6 @@ export default defineComponent({
         }
     },
     setup(props, { emit }) {
-        const store = inject<PokemonStateType>(PokemonStateKey);
-
-        if (!store) {
-            throw new Error('Inject failed.');
-        }
-
         const state = reactive<OPokemonState>({
             infiniteIndex: 1
         });

@@ -22,15 +22,18 @@ export default {
             defaultValue: [
                 {
                     label: 'フシギダネ',
-                    data: [45, 49, 65, 45, 65, 49]
+                    data: [45, 49, 65, 45, 65, 49],
+                    rgbaColor: '255, 0, 0'
                 },
                 {
                     label: 'フシギソウ',
-                    data: [60, 62, 80, 60, 80, 63]
+                    data: [60, 62, 80, 60, 80, 63],
+                    rgbaColor: '0, 255, 0'
                 },
                 {
                     label: 'フシギバナ',
-                    data: [80, 82, 100, 80, 100, 83]
+                    data: [80, 82, 100, 80, 100, 83],
+                    rgbaColor: '0, 0, 255'
                 }
             ],
             description: 'input dataset'

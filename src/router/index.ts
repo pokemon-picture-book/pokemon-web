@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import config from '@/config';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -19,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(config.APP_BASE_URL),
+    history: createWebHistory(import.meta.env.VITE_APP_BASE_URL),
     routes
 });
 

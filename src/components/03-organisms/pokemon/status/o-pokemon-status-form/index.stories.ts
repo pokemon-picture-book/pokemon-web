@@ -169,8 +169,8 @@ export default {
             ] as AutoCompleteItem[],
             description: 'autocomplete items'
         },
-        defaultItems: {
-            name: 'defaultItems',
+        items: {
+            name: 'items',
             type: { name: 'array', required: false },
             defaultValue: [
                 { id: 1, name: 'フシギダネ', canDelete: false, color: 'red' }

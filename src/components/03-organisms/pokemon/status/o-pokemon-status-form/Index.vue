@@ -1,32 +1,32 @@
 <template>
     <section class="o-pokemon-status-form">
-        <h2>ポケモンとひかくする</h2>
+        <h2>ステータスをひかくする</h2>
         <div class="o-pokemon-status-form__form form">
             <m-input-text
                 v-model="state.inputTerm"
                 placeholder="ポケモンのなまえ"
-                :is-error="state.isError"
+                :is-error="isError"
                 :auto-complete-items="autoCompleteItems"
                 :button-param="{
                     icon: 'add',
                     theme: 'primary'
                 }"
-                @selected-item="onAddItem"
+                @selected-item="$emit('select', $event)"
             />
-            <p v-if="state.isError" class="form__error">
+            <p v-if="isError" class="form__error">
                 せんたくできるポケモンのじょうげんにたっしました
             </p>
         </div>
         <div class="o-pokemon-status-form__label-list label-list">
             <h3 class="label-list__title">ひかくするポケモン</h3>
-            <div class="label-list__container" v-if="state.selectedItems.length">
+            <div class="label-list__container" v-if="items.length">
                 <a-label
-                    v-for="(selectedItem, index) in state.selectedItems"
+                    v-for="(selectedItem, index) in items"
                     class="label-list__item"
                     :key="selectedItem.id"
                     :color="selectedItem.color"
                     :can-delete="selectedItem.canDelete"
-                    @close="removeSelectedItem(index)"
+                    @close="$emit('remove', index)"
                 >
                     {{ selectedItem.name }}
                 </a-label>
@@ -40,7 +40,6 @@
 import { computed, defineComponent, PropType, reactive } from '@vue/runtime-core';
 import MInputText from '@/components/02-molecules/data-entry/m-input-text/Index.vue';
 import ALabel from '@/components/01-atoms/display/a-label/Index.vue';
-import { LabelColor } from '@/components/01-atoms/display/a-label';
 import { kanaToHira } from '@/module/character';
 import {
     AutoCompleteItem,
@@ -53,22 +52,22 @@ export default defineComponent({
             type: Array as PropType<AutoCompleteItem[]>,
             default: () => []
         },
-        defaultItems: {
+        items: {
             type: Array as PropType<SelectedItem[]>,
             default: () => []
+        },
+        isError: {
+            type: Boolean,
+            default: () => false
         }
     },
     components: {
         MInputText,
         ALabel
     },
-    setup(props, { emit }) {
-        const LABEL_COLORS: LabelColor[] = ['red', 'green', 'blue'];
-
+    setup(props) {
         const state = reactive({
-            isError: false,
-            inputTerm: '',
-            selectedItems: [...props.defaultItems] as SelectedItem[]
+            inputTerm: ''
         });
 
         const computedMethods = {
@@ -78,48 +77,17 @@ export default defineComponent({
                         const itemName = kanaToHira(autoCompleteItem.name).toLowerCase();
                         const inputTerm = kanaToHira(state.inputTerm).toLowerCase();
                         return !(
-                            state.selectedItems.some(
-                                (selectedItem) => selectedItem.id === autoCompleteItem.id
-                            ) || itemName.indexOf(inputTerm)
+                            props.items.some((item) => item.id === autoCompleteItem.id) ||
+                            itemName.indexOf(inputTerm)
                         );
                     })
                     .slice(0, 10);
             })
         };
 
-        const privateMethods = {
-            addSelectedItems(selectedItem: AutoCompleteItem) {
-                if (state.selectedItems.length < LABEL_COLORS.length) {
-                    const usedColors = state.selectedItems.map((item) => item.color);
-                    const unusedColor = LABEL_COLORS.filter((lc) => !usedColors.includes(lc))[0];
-                    state.selectedItems.push({
-                        ...selectedItem,
-                        canDelete: true,
-                        color: unusedColor
-                    });
-                    emit('selected-items', state.selectedItems);
-
-                    if (state.selectedItems.length >= LABEL_COLORS.length) {
-                        state.isError = true;
-                    }
-                }
-            }
-        };
-
-        const methods = {
-            onAddItem(selectedItem: AutoCompleteItem) {
-                privateMethods.addSelectedItems(selectedItem);
-            },
-            removeSelectedItem(index: number) {
-                state.selectedItems.splice(index, 1);
-                state.isError = false;
-            }
-        };
-
         return {
             state,
-            ...computedMethods,
-            ...methods
+            ...computedMethods
         };
     }
 });
@@ -146,14 +114,16 @@ $input-width: 240px;
 
         &__container {
             display: flex;
-            margin-top: 24px;
+            flex-wrap: wrap;
+            margin-top: 8px;
         }
 
         &__item {
-            margin-left: 16px;
+            margin-right: 16px;
+            margin-top: 16px;
 
-            &:first-child {
-                margin-left: 0;
+            &:last-child {
+                margin-right: 0;
             }
         }
     }

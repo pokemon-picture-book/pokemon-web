@@ -1,43 +1,45 @@
 <template>
     <div class="m-input-text">
-        <input
-            type="text"
-            class="m-input-text__input-field"
-            :class="{
-                'm-input-text__input-field--error': isError,
-                'm-input-text__input-field--in-button': !!buttonParam
-            }"
-            :placeholder="placeholder"
-            v-model="model"
-            @click="onInputClick"
-            @input="onInputText"
-            @keydown.prevent.down="moveNext"
-            @keydown.prevent.up="movePrev"
-            @keydown.esc="onEsc"
-            @keydown.enter="onSelect"
-        />
-        <ul
-            class="m-input-text__autocomplete autocomplete"
-            v-if="model && state.isShowAutoComplete && autoCompleteItems.length"
-        >
-            <li
-                v-for="(autoCompleteItem, index) in autoCompleteItems"
-                :key="autoCompleteItem.id"
-                :class="AUTOCOMPLETE_ITEM_CLASS_NAME"
-                v-on:mouseover="mouseOverAction(index)"
-                @click="onClick(autoCompleteItem)"
-            >
-                {{ autoCompleteItem.name }}
-            </li>
-        </ul>
-        <template v-if="buttonParam">
-            <a-button
-                :icon="buttonParam.icon || 'none'"
-                :theme="buttonParam.theme || 'default'"
-                class="m-input-text__input-button"
-                @click="onSelect"
+        <div class="m-input-text__container">
+            <input
+                type="text"
+                class="m-input-text__input-field"
+                :class="{
+                    'm-input-text__input-field--error': isError,
+                    'm-input-text__input-field--in-button': !!buttonParam
+                }"
+                :placeholder="placeholder"
+                v-model="model"
+                @click="onInputClick"
+                @input="onInputText"
+                @keydown.prevent.down="moveNext"
+                @keydown.prevent.up="movePrev"
+                @keydown.esc="onEsc"
+                @keydown.enter="onSelect"
             />
-        </template>
+            <ul
+                class="m-input-text__autocomplete autocomplete"
+                v-if="model && state.isShowAutoComplete && autoCompleteItems.length"
+            >
+                <li
+                    v-for="(autoCompleteItem, index) in autoCompleteItems"
+                    :key="autoCompleteItem.id"
+                    :class="AUTOCOMPLETE_ITEM_CLASS_NAME"
+                    v-on:mouseover="mouseOverAction(index)"
+                    @click="onClick(autoCompleteItem)"
+                >
+                    {{ autoCompleteItem.name }}
+                </li>
+            </ul>
+            <template v-if="buttonParam">
+                <a-button
+                    :icon="buttonParam.icon || 'none'"
+                    :theme="buttonParam.theme || 'default'"
+                    class="m-input-text__input-button"
+                    @click="onSelect"
+                />
+            </template>
+        </div>
     </div>
 </template>
 
@@ -227,8 +229,13 @@ export default defineComponent({
 $input-width: 240px;
 
 .m-input-text {
-    display: flex;
-    justify-content: flex-start;
+    position: relative;
+    display: inline-block;
+
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+    }
 
     &__input {
         &-field {
@@ -239,6 +246,10 @@ $input-width: 240px;
             border-radius: 4px;
             border: 1px solid $p-gray-color;
             transition: all 0.3s;
+
+            @media only screen and (max-width: $mobile-border-width) {
+                width: 100%;
+            }
 
             &:focus,
             &:hover {
@@ -270,14 +281,18 @@ $input-width: 240px;
 
     .autocomplete {
         position: absolute;
-        top: 136px;
-        left: 16px;
+        top: 48px;
+        left: 0;
         border: 1px solid $p-gray-color;
         border-radius: 4px;
         width: $input-width;
         z-index: 2;
         background: $p-white-color;
         cursor: pointer;
+
+        @media only screen and (max-width: $mobile-border-width) {
+            width: 100%;
+        }
 
         &__item {
             padding: 16px;
