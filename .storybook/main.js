@@ -15,6 +15,7 @@ module.exports = {
 
         return mergeConfig(config, {
             ...userConfig,
+            mode: 'storybook',
             // manually specify plugins to avoid conflict
             plugins: userConfig.plugins.filter((plugin) => plugin.name !== 'vite:vue')
         });

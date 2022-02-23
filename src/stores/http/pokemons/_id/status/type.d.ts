@@ -1,7 +1,7 @@
 import { ComputedRef } from 'vue';
 
 export declare type PokemonStatusResponse = {
-    id: 10;
+    id: number;
     name: string;
     status: {
         hp: number;
