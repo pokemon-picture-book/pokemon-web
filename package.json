@@ -45,7 +45,7 @@
         "@storybook/addon-links": "^6.5.0-alpha.17",
         "@storybook/vue3": "^6.5.0-alpha.17",
         "@types/axios": "0.14.0",
-        "@types/eslint": "7.28.0",
+        "@types/eslint": "8.4.1",
         "@types/jest": "27.0.2",
         "@types/prettier": "2.4.1",
         "@typescript-eslint/eslint-plugin": "^2.33.0",
