@@ -177,6 +177,12 @@ export default {
                 status: [45, 49, 65, 45, 65, 49]
             } as PokemonStatusDetail,
             description: 'pokemon detail'
+        },
+        contentsAlign: {
+            name: 'contentsAlign',
+            type: { name: 'string' },
+            defaultValue: 'left',
+            description: 'pokemon status contents align'
         }
     }
 };

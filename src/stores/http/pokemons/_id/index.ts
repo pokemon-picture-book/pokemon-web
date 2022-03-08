@@ -4,23 +4,32 @@ import { PokemonDetailResponse, State, Getter, Action } from '@/stores/http/poke
 
 export const pokemonDetailState = () => {
     const state: State = reactive({
+        prevId: 0,
+        nextId: 0,
         pokemonDetail: null
     });
 
     const getter: Getter = {
+        prevId: computed(() => state.prevId),
+        nextId: computed(() => state.nextId),
         pokemonDetail: computed(() => state.pokemonDetail)
     };
 
     const action: Action = {
-        fetchAll: async (id, lang, game) => {
+        fetch: async (id, lang, game, regions: string[]) => {
             const { data } = await http
                 .get<PokemonDetailResponse>(`pokemons/${id}`, {
-                    params: { lang, game }
+                    params: { lang, game, regions }
                 })
                 .catch((err) => {
                     throw err;
                 });
-            state.pokemonDetail = data;
+            state.prevId = data.prevId;
+            state.nextId = data.nextId;
+            state.pokemonDetail = data.data;
+        },
+        reset: () => {
+            state.pokemonDetail = null;
         }
     };
 

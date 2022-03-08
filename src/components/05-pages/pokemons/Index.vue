@@ -1,11 +1,11 @@
 <template>
     <o-spinner v-if="state.isLoading" mode="full-screen" />
-    <o-pokemon-list v-else :data="data" @fetch="fetch" />
+    <o-pokemon-list v-else :data="data" @fetch="fetch" @to-pokemon-detail="toPokemonDetail" />
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, provide, reactive, watch } from 'vue';
-import { LocationQueryValue, useRoute } from 'vue-router';
+import { LocationQueryValue, useRoute, useRouter } from 'vue-router';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/http/pokemons';
@@ -23,6 +23,22 @@ export default defineComponent({
     },
     setup() {
         const route = useRoute();
+        const router = useRouter();
+
+        const queryGame = route.query.game as LocationQueryValue;
+        const queryRegions = route.query.regions as LocationQueryValue[];
+        if (!queryGame || !queryRegions || (queryRegions && !queryRegions.length)) {
+            router.push({
+                path: '/pokemons',
+                query: {
+                    game: queryGame || GAME,
+                    regions: (queryRegions && queryRegions.length
+                        ? queryRegions
+                        : REGIONS) as string[]
+                }
+            });
+        }
+
         const store = pokemonState();
         provide<PokemonStateType>(PokemonStateKey, store);
 
@@ -50,16 +66,19 @@ export default defineComponent({
 
         const methods = {
             async fetch(page: number, done?: () => void) {
-                const queryGame = route.query.game as LocationQueryValue;
-                const queryRegions = route.query.regions as LocationQueryValue[];
-
-                const game = queryGame || GAME;
-                const regions = (queryRegions && queryRegions.length
-                    ? queryRegions
-                    : REGIONS) as string[];
-                await store.action.fetchAll(LANGUAGE, game, regions, page);
+                const queryGame = route.query.game as string;
+                const queryRegions = route.query.regions as string[];
+                await store.action.fetchAll(LANGUAGE, queryGame, queryRegions, page);
 
                 done?.call(this);
+            },
+            toPokemonDetail(pokemonId: number) {
+                router.push({
+                    path: `/pokemons/${pokemonId}`,
+                    query: {
+                        ...route.query
+                    }
+                });
             }
         };
 

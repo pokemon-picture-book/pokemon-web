@@ -81,3 +81,14 @@ export const MultiEvolution = () => ({
     },
     template: '<o-pokemon-evolution :data="data" :target-id="targetId" />'
 });
+
+export const NoEvolution = () => ({
+    components: { OPokemonEvolution },
+    data: () => {
+        return {
+            targetId: 1,
+            data: []
+        };
+    },
+    template: '<o-pokemon-evolution :data="data" :target-id="targetId" />'
+});

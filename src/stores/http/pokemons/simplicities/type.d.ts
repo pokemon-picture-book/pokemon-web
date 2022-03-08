@@ -11,11 +11,11 @@ export declare type PokemonSimplicityResponse = {
 };
 
 export declare type State = {
-    pokemonSimplicities: PokemonSimplicityResponse[];
+    pokemonSimplicities: PokemonSimplicityResponse;
 };
 
 export declare type Getter = {
-    pokemonSimplicities: ComputedRef<PokemonSimplicityResponse[]>;
+    pokemonSimplicities: ComputedRef<PokemonSimplicityResponse>;
 };
 
 export declare type Action = {

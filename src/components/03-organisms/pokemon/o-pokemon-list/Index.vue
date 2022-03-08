@@ -9,6 +9,7 @@
                     src: item.gameImagePath,
                     alt: item.name
                 }"
+                @click="toDetail(item.id)"
             >
                 <m-color-label-group :name="item.name" :type-items="item.types" />
             </m-card>
@@ -37,6 +38,7 @@ import { OPokemonData, OPokemonState } from '@/components/03-organisms/pokemon/o
 import MCard from '@/components/02-molecules/data-display/m-card/Index.vue';
 import MColorLabelGroup from '@/components/02-molecules/data-display/m-color-label-group/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
+import { useRoute, useRouter } from 'vue-router';
 
 export default defineComponent({
     components: {
@@ -66,6 +68,9 @@ export default defineComponent({
                     return;
                 }
                 $state.complete();
+            },
+            toDetail(pokemonId: number) {
+                emit('to-pokemon-detail', pokemonId);
             }
         };
 

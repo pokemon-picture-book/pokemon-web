@@ -1,43 +1,70 @@
 <template>
-    <section class="o-pokemon-evolution" v-if="data.length">
+    <section class="o-pokemon-evolution">
+        <div class="o-pokemon-evolution__title">
+            <i class="ib ib-ic-twotone-catching-pokemon ib-3x"></i>
+            <h2>しんか</h2>
+        </div>
         <div
-            v-for="pokemon in data"
-            :key="pokemon.id"
-            class="o-pokemon-evolution__container"
-            :class="{ 'o-pokemon-evolution__multi-detail-container': Array.isArray(pokemon) }"
+            class="o-pokemon-evolution__contents"
+            :class="[`o-pokemon-evolution__contents-${contentsAlign}`]"
+            v-if="data.length"
         >
-            <template v-if="Array.isArray(pokemon)">
+            <div
+                v-for="pokemon in data"
+                :key="pokemon.id"
+                class="o-pokemon-evolution__container"
+                :class="{ 'o-pokemon-evolution__multi-detail-container': Array.isArray(pokemon) }"
+            >
+                <template v-if="Array.isArray(pokemon)">
+                    <div
+                        v-for="p in pokemon"
+                        :key="p.id"
+                        class="o-pokemon-evolution__detail"
+                        :class="[
+                            p.id === targetId
+                                ? 'o-pokemon-evolution__spotlight'
+                                : 'o-pokemon-evolution__no-spotlight'
+                        ]"
+                        @click="toPokemonDetail(p)"
+                    >
+                        <figure class="o-pokemon-evolution__img-wrapper">
+                            <img
+                                :src="p.gameImagePath"
+                                :alt="p.pokemonName"
+                                class="o-pokemon-evolution__img"
+                            />
+                        </figure>
+                        <m-color-label-group :type-items="p.types" :name="p.pokemonName" />
+                    </div>
+                </template>
+
                 <div
-                    v-for="p in pokemon"
-                    :key="p.id"
+                    v-else
                     class="o-pokemon-evolution__detail"
-                    :class="{ 'o-pokemon-evolution__spotlight': p.id === targetId }"
+                    :class="[
+                        pokemon.id === targetId
+                            ? 'o-pokemon-evolution__spotlight'
+                            : 'o-pokemon-evolution__no-spotlight'
+                    ]"
+                    @click="toPokemonDetail(pokemon)"
                 >
                     <figure class="o-pokemon-evolution__img-wrapper">
                         <img
-                            :src="p.gameImagePath"
-                            :alt="p.pokemonName"
+                            :src="pokemon.gameImagePath"
+                            :alt="pokemon.pokemonName"
                             class="o-pokemon-evolution__img"
                         />
                     </figure>
-                    <m-color-label-group :type-items="p.types" :name="p.pokemonName" />
+                    <m-color-label-group :type-items="pokemon.types" :name="pokemon.pokemonName" />
                 </div>
-            </template>
-
-            <div
-                v-else
-                class="o-pokemon-evolution__detail"
-                :class="{ 'o-pokemon-evolution__spotlight': pokemon.id === targetId }"
-            >
-                <figure class="o-pokemon-evolution__img-wrapper">
-                    <img
-                        :src="pokemon.gameImagePath"
-                        :alt="pokemon.pokemonName"
-                        class="o-pokemon-evolution__img"
-                    />
-                </figure>
-                <m-color-label-group :type-items="pokemon.types" :name="pokemon.pokemonName" />
             </div>
+        </div>
+        <div
+            v-else
+            class="o-pokemon-evolution__contents o-pokemon-evolution__contents-no-item"
+            :class="[`o-pokemon-evolution__contents-${contentsAlign}`]"
+        >
+            このポケモンはしんかしません
         </div>
     </section>
 </template>
@@ -58,9 +85,25 @@ export default defineComponent({
         },
         targetId: {
             type: Number
+        },
+        contentsAlign: {
+            type: String as PropType<'center' | 'left' | 'right'>,
+            default: () => 'left'
         }
     },
-    setup() {}
+    setup(props, { emit }) {
+        const methods = {
+            toPokemonDetail(item: OPokemonEvolutionItem) {
+                if (item.id !== props.targetId) {
+                    emit('to-pokemon-detail', item.id);
+                }
+            }
+        };
+
+        return {
+            ...methods
+        };
+    }
 });
 </script>
 
@@ -70,7 +113,35 @@ export default defineComponent({
 .o-pokemon-evolution {
     $this: &;
 
-    display: flex;
+    &__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        :not(:first-child) {
+            margin-left: 16px;
+        }
+    }
+
+    &__contents {
+        display: flex;
+
+        &-center {
+            justify-content: center;
+        }
+
+        &-left {
+            justify-content: flex-start;
+        }
+
+        &-right {
+            justify-content: flex-end;
+        }
+
+        &-no-item {
+            margin-bottom: 24px;
+        }
+    }
 
     &__multi-detail-container {
         display: flex;
@@ -115,6 +186,15 @@ export default defineComponent({
 
     &__spotlight {
         background: $p-signpost-hover-color;
+    }
+
+    &__no-spotlight {
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            background: $p-light-gray-color;
+        }
     }
 
     &__img {

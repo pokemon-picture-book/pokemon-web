@@ -1,6 +1,6 @@
 <template>
     <header class="o-header">
-        <div class="o-header__item o-header__title">
+        <div class="o-header__item o-header__title" @click="$emit('to-home')">
             <i class="ib ib-whh-pokemon ib-3x"></i>
             <h2 class="o-header__title-text">ポケモン図鑑</h2>
         </div>
@@ -38,6 +38,7 @@ export default defineComponent({
             type: Object as PropType<LocationQuery>
         }
     },
+    emits: ['to-home'],
     setup(props) {
         const store = languageState();
         provide<LanguageStateType>(LanguageStateKey, store);

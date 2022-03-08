@@ -1,18 +1,27 @@
 <template>
     <section class="o-pokemon-status">
-        <o-pokemon-status-chart
-            class="o-pokemon-status__chart"
-            width="400px"
-            :datasets="datasets"
-        />
-        <o-pokemon-status-form
-            class="o-pokemon-status__form"
-            :auto-complete-items="autoCompleteItems"
-            :items="items"
-            :is-error="state.isError"
-            @select="selectedItem"
-            @remove="removeItem"
-        />
+        <div class="o-pokemon-status__title">
+            <i class="ib ib-ic-twotone-catching-pokemon ib-3x"></i>
+            <h2>ステータス</h2>
+        </div>
+        <div
+            class="o-pokemon-status__contents"
+            :class="[`o-pokemon-status__contents-${contentsAlign}`]"
+        >
+            <o-pokemon-status-chart
+                class="o-pokemon-status__chart"
+                width="400px"
+                :datasets="datasets"
+            />
+            <o-pokemon-status-form
+                class="o-pokemon-status__form"
+                :auto-complete-items="autoCompleteItems"
+                :items="items"
+                :is-error="state.isError"
+                @select="selectedItem"
+                @remove="removeItem"
+            />
+        </div>
     </section>
 </template>
 
@@ -64,6 +73,10 @@ export default defineComponent({
         pokemonDetail: {
             type: Object as PropType<PokemonStatusDetail>,
             required: true
+        },
+        contentsAlign: {
+            type: String as PropType<'center' | 'left' | 'right'>,
+            default: () => 'left'
         }
     },
     setup(props) {
@@ -162,13 +175,30 @@ export default defineComponent({
 @import '@/assets/style/components/index.scss';
 
 .o-pokemon-status {
-    display: flex;
-    justify-content: center;
-    padding: 24px;
+    &__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
 
-    @media only screen and (max-width: $mobile-border-width) {
-        justify-content: unset;
-        flex-direction: column;
+        :not(:first-child) {
+            margin-left: 16px;
+        }
+    }
+
+    &__contents {
+        display: flex;
+
+        &-center {
+            justify-content: center;
+        }
+
+        &-left {
+            justify-content: flex-start;
+        }
+
+        &-right {
+            justify-content: flex-end;
+        }
     }
 
     &__chart {
@@ -176,17 +206,17 @@ export default defineComponent({
 
         @media only screen and (max-width: $mobile-border-width) {
             width: auto !important;
-            margin: 0;
+            margin: 0 16px;
         }
     }
 
     &__form {
-        margin: 24px;
         width: 400px;
+        margin: 24px;
 
         @media only screen and (max-width: $mobile-border-width) {
             width: auto;
-            margin: 16px 0;
+            margin: 16px;
         }
     }
 }

@@ -55,8 +55,8 @@ export default defineComponent({
             },
             scales: {
                 r: {
-                    min: 0
-                    // max: 255
+                    min: 0,
+                    max: 255
                 }
             }
         };

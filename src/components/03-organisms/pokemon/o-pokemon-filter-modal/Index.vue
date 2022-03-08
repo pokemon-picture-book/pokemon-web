@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, provide, reactive } from 'vue';
+import { computed, defineComponent, PropType, provide, reactive, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import {
     GameVersionGroupStateKey,
@@ -97,6 +97,13 @@ export default defineComponent({
 
         const gameVersionGroupStore = gameVersionGroupState();
         provide<GameVersionGroupStateType>(GameVersionGroupStateKey, gameVersionGroupStore);
+        const regionStore = regionState();
+        provide<RegionStateType>(RegionStateKey, regionStore);
+
+        if (!(gameVersionGroupStore && regionStore)) {
+            throw new Error('inject failed.');
+        }
+
         gameVersionGroupStore.action.fetchAll('ja-Hrkt', true).then(() => {
             // set first value
             if (props.selectedParam.game) {
@@ -107,8 +114,6 @@ export default defineComponent({
                 gameVersionGroupStore.getter.gameVersionGroups.value[0].alias;
         });
 
-        const regionStore = regionState();
-        provide<RegionStateType>(RegionStateKey, regionStore);
         regionStore.action.fetchAll('ja-Hrkt').then(() => {
             // set first value
             if (props.selectedParam.regions.length) {
@@ -117,10 +122,6 @@ export default defineComponent({
             }
             state.selectedRegions = [regionStore.getter.regions.value[0].name];
         });
-
-        if (!(gameVersionGroupStore && regionStore)) {
-            throw new Error('inject failed.');
-        }
 
         const computedMethods = {
             gameVersionGroups: computed<ARadioOption[]>(() => {
@@ -190,7 +191,7 @@ export default defineComponent({
                 }
 
                 router.push({
-                    path: '/home',
+                    path: '/pokemons',
                     query: {
                         game: state.selectedGameVersionGroup,
                         regions: state.selectedRegions
@@ -200,6 +201,23 @@ export default defineComponent({
                 state.isShowModal = false;
             }
         };
+
+        watch(
+            () => props.selectedParam.game,
+            (game) => {
+                if (game) {
+                    state.selectedGameVersionGroup = game;
+                }
+            }
+        );
+        watch(
+            () => props.selectedParam.regions,
+            (regions) => {
+                if (regions.length) {
+                    state.selectedRegions = regions;
+                }
+            }
+        );
 
         return {
             state,

@@ -1,7 +1,12 @@
 <template>
     <div class="o-pokemon-detail">
         <div class="o-pokemon-detail__aside aside">
-            <a-button class="aside__button" theme="pager" icon="prev" />
+            <a-button
+                class="aside__button"
+                theme="pager"
+                icon="prev"
+                @click="$emit('to-pokemon-detail', prevId)"
+            />
         </div>
 
         <section class="o-pokemon-detail__contents contents">
@@ -10,7 +15,12 @@
                     <img class="main-img" :src="data.mainImage.src" :alt="data.mainImage.alt" />
                 </figure>
                 <figure class="sub-img-wrapper img-wrapper">
-                    <img class="sub-img" :src="data.subImage.src" :alt="data.subImage.alt" />
+                    <img
+                        class="sub-img"
+                        v-if="data.subImage.src"
+                        :src="data.subImage.src"
+                        :alt="data.subImage.alt"
+                    />
                 </figure>
             </div>
             <div class="contents__container info">
@@ -48,7 +58,12 @@
         </section>
 
         <div class="o-pokemon-detail__aside aside">
-            <a-button class="aside__button" theme="pager" icon="next" />
+            <a-button
+                class="aside__button"
+                theme="pager"
+                icon="next"
+                @click="$emit('to-pokemon-detail', nextId)"
+            />
         </div>
     </div>
 </template>
@@ -67,6 +82,14 @@ export default defineComponent({
     props: {
         data: {
             type: Object as PropType<OPokemonDetailData>
+        },
+        prevId: {
+            type: Number,
+            default: () => 0
+        },
+        nextId: {
+            type: Number,
+            default: () => 0
         }
     },
     setup() {}
@@ -121,9 +144,11 @@ export default defineComponent({
 
             .sub-img {
                 padding: 24px;
-                width: 80px;
+                width: 100%;
 
                 &-wrapper {
+                    width: 80px;
+                    height: 80px;
                     border: 1px solid $p-black-color;
                     border-radius: 50%;
                     background-color: $p-white-color;

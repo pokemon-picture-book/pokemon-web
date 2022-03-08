@@ -36,7 +36,7 @@ type DetailTwo = {
     needs_overworld_rain?: boolean;
 };
 
-export declare type PokemonDetailResponse = {
+export declare type PokemonDetailResponseData = {
     id: number;
     height: number;
     weight: number;
@@ -69,14 +69,25 @@ export declare type PokemonDetailResponse = {
     };
 };
 
+export declare type PokemonDetailResponse = {
+    prevId: number;
+    nextId: number;
+    data: PokemonDetailResponseData;
+};
+
 export declare type State = {
-    pokemonDetail: PokemonDetailResponse | null;
+    prevId: number;
+    nextId: number;
+    pokemonDetail: PokemonDetailResponseData | null;
 };
 
 export declare type Getter = {
-    pokemonDetail: ComputedRef<PokemonDetailResponse | null>;
+    prevId: ComputedRef<number>;
+    nextId: ComputedRef<number>;
+    pokemonDetail: ComputedRef<PokemonDetailResponseData | null>;
 };
 
 export declare type Action = {
-    fetchAll: (id: number, lang: string, game: string) => Promise<void>;
+    fetch: (id: number, lang: string, game: string, regions: string[]) => Promise<void>;
+    reset: () => void;
 };
