@@ -1,5 +1,5 @@
 <template>
-    <o-header :query-param="queryParam" />
+    <o-header :query-param="queryParam" @to-home="toHome" />
     <Suspense>
         <template #default>
             <div class="main-content">
@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import OHeader from '@/components/03-organisms/global/o-header/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 
@@ -24,14 +24,27 @@ export default defineComponent({
         OSpinner
     },
     setup() {
+        const router = useRouter();
         const route = useRoute();
 
         const computedMethods = {
             queryParam: computed(() => route.query)
         };
 
+        const methods = {
+            toHome() {
+                router.push({
+                    path: '/pokemons',
+                    query: {
+                        ...route.query
+                    }
+                });
+            }
+        };
+
         return {
-            ...computedMethods
+            ...computedMethods,
+            ...methods
         };
     }
 });

@@ -38,7 +38,6 @@ export default defineComponent({
 .a-color-label {
     display: flex;
     flex-wrap: wrap;
-    margin: 8px;
 
     &__text {
         @include font-size(8);
@@ -47,7 +46,7 @@ export default defineComponent({
         min-width: 16px;
         border-radius: 16px;
         margin-right: 8px;
-        padding: 8px;
+        padding: 8px 16px;
         color: $p-white-color;
         display: flex;
         justify-content: center;

@@ -1,6 +1,6 @@
 <template>
     <header class="o-header">
-        <div class="o-header__item o-header__title">
+        <div class="o-header__item o-header__title" @click="$emit('to-home')">
             <i class="ib ib-whh-pokemon ib-3x"></i>
             <h2 class="o-header__title-text">ポケモン図鑑</h2>
         </div>
@@ -24,7 +24,7 @@ import { computed, defineComponent, PropType, provide } from 'vue';
 import { LocationQuery, LocationQueryValue } from 'vue-router';
 import ASelect from '@/components/01-atoms/data-entry/a-select/Index.vue';
 import OPokemonFilterModal from '@/components/03-organisms/pokemon/o-pokemon-filter-modal/Index.vue';
-import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/master/language';
+import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/http/languages';
 import { ASelectItem } from '@/components/01-atoms/data-entry/a-select';
 import { SelectedParam } from '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
 
@@ -38,6 +38,7 @@ export default defineComponent({
             type: Object as PropType<LocationQuery>
         }
     },
+    emits: ['to-home'],
     setup(props) {
         const store = languageState();
         provide<LanguageStateType>(LanguageStateKey, store);

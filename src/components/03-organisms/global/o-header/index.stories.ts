@@ -3,6 +3,9 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/vue3';
 import { RouteLocationNormalized } from 'vue-router';
 import OHeader from '@/components/03-organisms/global/o-header/Index.vue';
+import languageData from '@/stores/http/languages/msw';
+import regionData from '@/stores/http/regions/msw';
+import gameVersionGroupData from '@/stores/http/game-version-groups/msw';
 
 export default {
     title: 'Organisms/Global/o-header'
@@ -20,3 +23,8 @@ Simple.decorators = [
         action('ROUTE CHANGED')({ to: to, from: from })
     )
 ];
+Simple.parameters = {
+    msw: {
+        handlers: [languageData, regionData, gameVersionGroupData]
+    }
+};

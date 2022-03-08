@@ -1,43 +1,68 @@
-import { action } from '@storybook/addon-actions';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { Story } from '@storybook/vue3';
 import AButton from '@/components/01-atoms/general/a-button/Index.vue';
+import { ButtonTheme, ButtonIcon, ButtonType } from '@/components/01-atoms/general/a-button';
 
-export default {
-    title: 'Atoms/a-button',
-    decorators: [withKnobs]
+type Props = {
+    type: ButtonType;
+    theme: ButtonTheme;
+    icon: ButtonIcon;
+    disabled: boolean;
 };
 
-export const Simple = () => ({
-    components: { AButton },
-    props: {
-        color: {
-            default: select(
-                'Color',
-                {
-                    Primary: 'primary',
-                    Default: 'default'
-                },
-                'default'
-            )
+// More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
+export default {
+    title: 'Atoms/a-button',
+    component: AButton,
+    // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
+    argTypes: {
+        onClick: {},
+        type: {
+            control: { type: 'select' },
+            options: ['button', 'submit']
         },
-        disabled: {
-            default: select(
-                'Disabled',
-                {
-                    True: true,
-                    False: false
-                },
-                false
-            )
+        theme: {
+            control: { type: 'select' },
+            options: ['primary', 'default', 'pager']
+        },
+        icon: {
+            control: { type: 'select' },
+            options: ['none', 'prev', 'next', 'search', 'add']
         }
+    }
+};
+
+const Template: Story<Props> = (args) => ({
+    components: { AButton },
+    setup() {
+        return { args };
     },
-    methods: {
-        onClick: action('click')
-    },
-    template: '<a-button :color="color" :disabled="disabled" @click="onClick" />'
+    template: '<a-button v-bind="args">Button</a-button>'
 });
 
-export const Disabled = () => ({
+export const Primary = Template.bind({});
+// More on args: https://storybook.js.org/docs/vue/writing-stories/args
+Primary.args = {
+    type: 'button',
+    theme: 'primary',
+    icon: 'none'
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    disabled: true
+};
+
+const IconTemplate: Story<Props> = (args) => ({
     components: { AButton },
-    template: '<a-button :disabled="true" />'
+    setup() {
+        return { args };
+    },
+    template: `<a-button v-bind="args" style="{ width: 'auto' }" />`
 });
+
+export const Icon = IconTemplate.bind({});
+Icon.args = {
+    type: 'button',
+    theme: 'primary',
+    icon: 'search'
+};

@@ -1,7 +1,8 @@
 import { computed, provide } from 'vue';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
-import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/pokemon/pokemon';
+import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/http/pokemons';
 import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
+import { commonData } from '@/stores/http/pokemons/msw';
 
 export default {
     title: 'Organisms/Pokemon/o-pokemon-list'
@@ -11,21 +12,16 @@ export const Simple = () => ({
     components: { OPokemonList },
     template: '<o-pokemon-list :data="data" />',
     setup() {
-        const store = pokemonState();
-        provide<PokemonStateType>(PokemonStateKey, store);
-
-        store.action.fetchAll('lang', 'game', ['region1'], 1);
-
         const computedMethods = {
             data: computed<OPokemonData>(() => {
-                const { hits, pokemons } = store.getter;
+                const { hits, data } = commonData;
                 return {
-                    hits: hits.value,
-                    items: pokemons.value.map((pokemon) => ({
+                    hits,
+                    items: data.map((pokemon) => ({
                         id: pokemon.id,
                         imageColor: pokemon.imageColor,
                         name: pokemon.name,
-                        gameImagePath: '/img/pokemon.jpg',
+                        gameImagePath: '/img/sample/pokemon.jpg',
                         types: pokemon.types.map((type) => ({
                             code: type.code
                         }))
