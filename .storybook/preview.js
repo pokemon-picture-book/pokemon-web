@@ -4,7 +4,9 @@ import '@/assets/style/plugins';
 import '@/assets/style/base.scss';
 
 // Initialize MSW
-initialize();
+initialize({
+    onUnhandledRequest: 'bypass'
+});
 
 // Provide the MSW addon decorator globally
 export const decorators = [mswDecorator];
