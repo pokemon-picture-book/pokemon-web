@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-    build:
+    vrt:
         docker:
             - image: regviz/node-xcb
 
