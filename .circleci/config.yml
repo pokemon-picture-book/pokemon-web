@@ -1,25 +1,27 @@
 version: 2
 
 jobs:
-    build:
-        docker:
-            - image: regviz/node-xcb
-
-        working_directory: ~/repo
-
+    visual_regression:
         steps:
             - checkout
             - restore_cache:
+                  name: Restore node_modules
                   keys:
-                      - v1-dependencies-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
-                      - v1-dependencies-
-
-            - run: npm ci
-
+                      - v1-npm-deps-{{ checksum "package-lock.json" }}
+                      - v1-npm-deps-
+            - run:
+                  name: Install dependencies
+                  command: npm ci
             - save_cache:
+                  name: Cache node_modules
+                  keys:
+                      - v1-npm-deps-{{ checksum "package-lock.json" }}
+                      - v1-npm-deps-
                   paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
-
-            - run: npm run screenshot
-            - run: npm run regression
+                      - ~/workspace/node_modules
+            - run:
+                  name: screenshots
+                  command: npm run screenshot
+            - run:
+                  name: regression
+                  command: npm run regression -- --quiet
