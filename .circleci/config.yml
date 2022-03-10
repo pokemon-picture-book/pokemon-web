@@ -2,24 +2,24 @@ version: 2
 
 jobs:
     build:
+        docker:
+            - image: regviz/node-xcb
+
+        working_directory: ~/repo
+
         steps:
             - checkout
             - restore_cache:
-                  name: Restore node_modules
                   keys:
                       - v1-npm-deps-{{ checksum "package-lock.json" }}
                       - v1-npm-deps-
-            - run:
-                  name: Install dependencies
-                  command: npm ci
+
+            - run: npm ci
+
             - save_cache:
-                  name: Cache node_modules
-                  key: v1-npm-deps-{{ checksum "package-lock.json" }}
                   paths:
-                      - ~/workspace/node_modules
-            - run:
-                  name: screenshots
-                  command: npm run screenshot
-            - run:
-                  name: regression
-                  command: npm run regression -- --quiet
+                      - node_modules
+                  key: v1-npm-deps-{{ checksum "package-lock.json" }}
+
+            - run: npm run screenshot
+            - run: npm run regression
