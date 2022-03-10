@@ -17,7 +17,7 @@
         "style-format": "stylelint --ignore-path .gitignore '**/*.{vue,css,scss}' --fix",
         "storybook": "start-storybook -s ./src/assets -p 6006 --no-open",
         "build-storybook": "build-storybook -s src/assets",
-        "screenshot": "storycap -C puppeteer --serverCmd \"start-storybook -s ./src/assets -p 6006 --no-open\" http://localhost:6006 --serverTimeout 60000",
+        "screenshot": "storycap -C puppeteer --serverCmd \"start-storybook -p 6006\" http://localhost:6006 --serverTimeout 60000",
         "regression": "reg-suit run",
         "sonar:scan": "sonar-scanner",
         "sonar": "run-s test:unit:sonar lint:sonar sonar:scan",
