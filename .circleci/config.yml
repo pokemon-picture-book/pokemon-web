@@ -1,0 +1,27 @@
+version: 2
+
+jobs:
+    visual_regression:
+        steps:
+            - checkout
+            - restore_cache:
+                  name: Restore node_modules
+                  keys:
+                      - v1-npm-deps-{{ checksum "package-lock.json" }}
+                      - v1-npm-deps-
+            - run:
+                  name: Install dependencies
+                  command: npm ci
+            - save_cache:
+                  name: Cache node_modules
+                  keys:
+                      - v1-npm-deps-{{ checksum "package-lock.json" }}
+                      - v1-npm-deps-
+                  paths:
+                      - ~/workspace/node_modules
+            - run:
+                  name: screenshots
+                  command: npm run screenshot
+            - run:
+                  name: regression
+                  command: npm run regression -- --quiet
