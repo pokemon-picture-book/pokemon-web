@@ -34,3 +34,7 @@ storybook-static
 
 # ESLint
 lint-report.json
+
+# screenshots
+__screenshots__
+.reg
