@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-    visual_regression:
+    build:
         steps:
             - checkout
             - restore_cache:
