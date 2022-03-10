@@ -20,7 +20,7 @@ export const Simple = () => ({
                     items: data.map((pokemon) => ({
                         id: pokemon.id,
                         imageColor: pokemon.imageColor,
-                        name: pokemon.name,
+                        name: 'フシギダネ',
                         gameImagePath: '/img/sample/pokemon.jpg',
                         types: pokemon.types.map((type) => ({
                             code: type.code

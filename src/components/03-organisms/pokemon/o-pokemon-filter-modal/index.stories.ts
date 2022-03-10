@@ -25,5 +25,12 @@ Simple.decorators = [
 Simple.parameters = {
     msw: {
         handlers: [regionData, gameVersionGroupData]
+    },
+    screenshot: {
+        variants: {
+            openModal: {
+                click: '.o-pokemon-filter-modal > i'
+            }
+        }
     }
 };
