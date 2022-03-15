@@ -201,5 +201,8 @@ Simple.args = {};
 Simple.parameters = {
     msw: {
         handlers: [statusData]
+    },
+    screenshot: {
+        delay: 1000
     }
 };

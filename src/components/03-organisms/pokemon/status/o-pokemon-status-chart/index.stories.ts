@@ -52,3 +52,8 @@ const Template: Story<any> = (args) => ({
 export const Simple = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Simple.args = {};
+Simple.parameters = {
+    screenshot: {
+        delay: 1000
+    }
+};
