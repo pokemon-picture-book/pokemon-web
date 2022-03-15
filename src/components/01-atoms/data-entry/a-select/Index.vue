@@ -162,7 +162,7 @@ export default defineComponent({
         align-items: center;
         padding: 0 16px;
         font-weight: 300;
-        height: 32px;
+        height: 64px;
         border-radius: 4px;
         cursor: pointer;
         border: solid 1px;
