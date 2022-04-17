@@ -8,7 +8,7 @@ import { computed, defineComponent, provide, reactive, watch } from 'vue';
 import { LocationQueryValue, useRoute, useRouter } from 'vue-router';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
-import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/http/pokemons';
+import { usePokemonStore } from '@/stores/http/pokemon-api/v1/pokemons';
 import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
 
 // default parameter
@@ -39,8 +39,7 @@ export default defineComponent({
             });
         }
 
-        const store = pokemonState();
-        provide<PokemonStateType>(PokemonStateKey, store);
+        const store = usePokemonStore();
 
         const state = reactive({
             isLoading: false
@@ -48,10 +47,10 @@ export default defineComponent({
 
         const computedMethods = {
             data: computed<OPokemonData>(() => {
-                const { hits, pokemons } = store.getter;
+                const { hits, data } = store;
                 return {
-                    hits: hits.value,
-                    items: pokemons.value.map((pokemon) => ({
+                    hits: hits,
+                    items: data.map((pokemon) => ({
                         id: pokemon.id,
                         imageColor: pokemon.imageColor,
                         name: pokemon.name,
@@ -68,7 +67,7 @@ export default defineComponent({
             async fetch(page: number, done?: () => void) {
                 const queryGame = route.query.game as string;
                 const queryRegions = route.query.regions as string[];
-                await store.action.fetchAll(LANGUAGE, queryGame, queryRegions, page);
+                await store.fetchAll(LANGUAGE, queryGame, queryRegions, page);
 
                 done?.call(this);
             },

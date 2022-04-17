@@ -56,12 +56,8 @@
 <script lang="ts">
 import { computed, defineComponent, PropType, provide, reactive, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import {
-    GameVersionGroupStateKey,
-    gameVersionGroupState,
-    GameVersionGroupStateType
-} from '@/stores/http/game-version-groups';
-import { RegionStateKey, regionState, RegionStateType } from '@/stores/http/regions';
+import { useGameVersionGroupStore } from '@/stores/http/pokemon-api/v1/game-version-groups';
+import { useRegionStore } from '@/stores/http/pokemon-api/v1/regions';
 import MModal from '@/components/02-molecules/toggle/m-modal/Index.vue';
 import MCheckboxGroup from '@/components/02-molecules/data-entry/m-checkbox-group/Index.vue';
 import MRadioGroup from '@/components/02-molecules/data-entry/m-radio-group/Index.vue';
@@ -95,56 +91,51 @@ export default defineComponent({
             selectedRegions: []
         });
 
-        const gameVersionGroupStore = gameVersionGroupState();
-        provide<GameVersionGroupStateType>(GameVersionGroupStateKey, gameVersionGroupStore);
-        const regionStore = regionState();
-        provide<RegionStateType>(RegionStateKey, regionStore);
+        const gameVersionGroupStore = useGameVersionGroupStore();
+        const regionStore = useRegionStore();
 
         if (!(gameVersionGroupStore && regionStore)) {
             throw new Error('inject failed.');
         }
 
-        gameVersionGroupStore.action.fetchAll('ja-Hrkt', true).then(() => {
+        gameVersionGroupStore.fetchAll('ja-Hrkt', true).then(() => {
             // set first value
             if (props.selectedParam.game) {
                 state.selectedGameVersionGroup = props.selectedParam.game;
                 return;
             }
-            state.selectedGameVersionGroup =
-                gameVersionGroupStore.getter.gameVersionGroups.value[0].alias;
+            state.selectedGameVersionGroup = gameVersionGroupStore.data[0].alias;
         });
 
-        regionStore.action.fetchAll('ja-Hrkt').then(() => {
+        regionStore.fetchAll('ja-Hrkt').then(() => {
             // set first value
             if (props.selectedParam.regions.length) {
                 state.selectedRegions = props.selectedParam.regions;
                 return;
             }
-            state.selectedRegions = [regionStore.getter.regions.value[0].name];
+            state.selectedRegions = [regionStore.data[0].name];
         });
 
         const computedMethods = {
             gameVersionGroups: computed<ARadioOption[]>(() => {
-                return gameVersionGroupStore.getter.gameVersionGroups.value.map(
-                    (gameVersionGroup) => {
-                        const regionNames = gameVersionGroup.relatedRegions.map(
-                            (relatedRegion) => relatedRegion.name
-                        );
-                        return {
-                            index: gameVersionGroup.id,
-                            label: gameVersionGroup.name,
-                            value: gameVersionGroup.alias,
-                            disabled: state.selectedRegions.length
-                                ? !regionNames.some((regionName) =>
-                                      state.selectedRegions.includes(regionName)
-                                  )
-                                : false
-                        };
-                    }
-                );
+                return gameVersionGroupStore.data.map((gameVersionGroup) => {
+                    const regionNames = gameVersionGroup.relatedRegions.map(
+                        (relatedRegion) => relatedRegion.name
+                    );
+                    return {
+                        index: gameVersionGroup.id,
+                        label: gameVersionGroup.name,
+                        value: gameVersionGroup.alias,
+                        disabled: state.selectedRegions.length
+                            ? !regionNames.some((regionName) =>
+                                  state.selectedRegions.includes(regionName)
+                              )
+                            : false
+                    };
+                });
             }),
             regions: computed<ACheckboxOption[]>(() => {
-                return regionStore.getter.regions.value.map((region) => {
+                return regionStore.data.map((region) => {
                     const gameVersionGroupNames = region.relatedGameVersionGroups.map(
                         (relatedGameVersionGroup) => relatedGameVersionGroup.alias
                     );
@@ -170,13 +161,9 @@ export default defineComponent({
             },
             onGameChange() {
                 // 選択されたゲームに関連する地域内のデータにフィルターする
-                const {
-                    relatedRegions
-                } = gameVersionGroupStore.getter.gameVersionGroups.value.find(
-                    (gameVersionGroup) => {
-                        return gameVersionGroup.alias === state.selectedGameVersionGroup;
-                    }
-                )!;
+                const { relatedRegions } = gameVersionGroupStore.data.find((gameVersionGroup) => {
+                    return gameVersionGroup.alias === state.selectedGameVersionGroup;
+                })!;
                 const relatedRegionNames = relatedRegions.map(
                     (relatedRegion) => relatedRegion.name
                 );
@@ -187,7 +174,7 @@ export default defineComponent({
             /** 選択された条件を query parameter にセットし、検索を実行して、モーダルを閉じる */
             onClick() {
                 if (!state.selectedRegions.length) {
-                    state.selectedRegions = [regionStore.getter.regions.value[0].name];
+                    state.selectedRegions = [regionStore.data[0].name];
                 }
 
                 router.push({

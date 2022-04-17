@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { LanguageResponse } from '@/stores/http/languages/type';
+import { LanguageResponse } from '@/stores/http/pokemon-api/v1/languages/type';
 
 export const ENDPOINT = 'http://localhost/pokemon-api/v1/languages';
 

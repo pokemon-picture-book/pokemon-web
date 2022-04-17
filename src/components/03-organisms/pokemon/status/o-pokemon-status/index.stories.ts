@@ -2,7 +2,7 @@ import { Story } from '@storybook/vue3';
 import OPokemonStatus from '@/components/03-organisms/pokemon/status/o-pokemon-status/Index.vue';
 import { AutoCompleteItem } from '@/components/03-organisms/pokemon/status/o-pokemon-status-form';
 import { PokemonStatusDetail } from '@/components/03-organisms/pokemon/status/o-pokemon-status';
-import statusData from '@/stores/http/pokemons/_id/status/msw';
+import statusData from '@/stores/http/pokemon-api/v1/pokemons/_id/status/msw';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {

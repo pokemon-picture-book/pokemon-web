@@ -34,11 +34,7 @@ import {
     SelectedItem
 } from '@/components/03-organisms/pokemon/status/o-pokemon-status-form';
 import { StatusChartDataset } from '@/components/03-organisms/pokemon/status/o-pokemon-status-chart';
-import {
-    PokemonStatusStateKey,
-    pokemonStatusState,
-    PokemonStatusStateType
-} from '@/stores/http/pokemons/_id/status';
+import { usePokemonStatusStore } from '@/stores/http/pokemon-api/v1/pokemons/_id/status';
 import { PokemonStatusDetail } from '@/components/03-organisms/pokemon/status/o-pokemon-status';
 
 // default parameter
@@ -80,8 +76,7 @@ export default defineComponent({
         }
     },
     setup(props) {
-        const store = pokemonStatusState();
-        provide<PokemonStatusStateType>(PokemonStatusStateKey, store);
+        const store = usePokemonStatusStore();
 
         const state = reactive({
             data: [
@@ -120,7 +115,7 @@ export default defineComponent({
             async selectedItem(selectedItem: AutoCompleteItem) {
                 if (state.data.length < COLORS.length) {
                     // status 取得の API を dispatch
-                    await store.action.fetchAll(selectedItem.id, LANGUAGE).catch((err) => {
+                    await store.fetch(selectedItem.id, LANGUAGE).catch((err) => {
                         /* TODO: redirect 404 page */
                         throw err;
                     });
@@ -137,7 +132,7 @@ export default defineComponent({
                         specialAttack,
                         specialDefense,
                         speed
-                    } = store.getter.pokemonStatus.value!.status;
+                    } = store.data!.status;
                     state.data.push({
                         color: unusedColor,
                         dataset: {

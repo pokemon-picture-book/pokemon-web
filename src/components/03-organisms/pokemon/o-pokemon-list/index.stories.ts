@@ -1,8 +1,8 @@
 import { computed, provide } from 'vue';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
-import { PokemonStateKey, pokemonState, PokemonStateType } from '@/stores/http/pokemons';
+import { usePokemonStore } from '@/stores/http/pokemon-api/v1/pokemons';
 import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
-import { commonData } from '@/stores/http/pokemons/msw';
+import { commonData } from '@/stores/http/pokemon-api/v1/pokemons/msw';
 
 export default {
     title: 'Organisms/Pokemon/o-pokemon-list'
@@ -38,9 +38,5 @@ export const Simple = () => ({
 
 export const NoData = () => ({
     components: { OPokemonList },
-    template: '<o-pokemon-list />',
-    setup() {
-        const store = pokemonState();
-        provide<PokemonStateType>(PokemonStateKey, store);
-    }
+    template: '<o-pokemon-list />'
 });

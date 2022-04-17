@@ -3,9 +3,9 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/vue3';
 import { RouteLocationNormalized } from 'vue-router';
 import OHeader from '@/components/03-organisms/global/o-header/Index.vue';
-import languageData from '@/stores/http/languages/msw';
-import regionData from '@/stores/http/regions/msw';
-import gameVersionGroupData from '@/stores/http/game-version-groups/msw';
+import languageData from '@/stores/http/pokemon-api/v1/game-version-groups/msw';
+import regionData from '@/stores/http/pokemon-api/v1/regions/msw';
+import gameVersionGroupData from '@/stores/http/pokemon-api/v1/game-version-groups/msw';
 
 export default {
     title: 'Organisms/Global/o-header'
