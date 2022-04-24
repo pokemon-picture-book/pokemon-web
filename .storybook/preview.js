@@ -1,5 +1,7 @@
+import { app } from '@storybook/vue3';
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 import { withScreenshot } from 'storycap';
+import { createPinia } from 'pinia';
 // import style
 import '@/assets/style/plugins';
 import '@/assets/style/base.scss';
@@ -8,6 +10,8 @@ import '@/assets/style/base.scss';
 initialize({
     onUnhandledRequest: 'bypass'
 });
+
+app.use(createPinia());
 
 // Provide the MSW addon decorator globally
 export const decorators = [mswDecorator, withScreenshot];
