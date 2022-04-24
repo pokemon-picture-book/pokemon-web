@@ -54,6 +54,6 @@ export const Simple = Template.bind({});
 Simple.args = {};
 Simple.parameters = {
     screenshot: {
-        delay: 1000
+        delay: 2000
     }
 };

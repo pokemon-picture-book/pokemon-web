@@ -203,6 +203,6 @@ Simple.parameters = {
         handlers: [statusData]
     },
     screenshot: {
-        delay: 1000
+        delay: 2000
     }
 };
