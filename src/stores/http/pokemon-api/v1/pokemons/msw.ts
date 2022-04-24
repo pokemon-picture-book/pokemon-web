@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { PokemonResponse } from '@/stores/http/pokemons/type';
+import { PokemonResponse } from '@/stores/http/pokemon-api/v1/pokemons/type';
 
 export const ENDPOINT = 'http://localhost/pokemon-api/v1/pokemons';
 

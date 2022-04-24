@@ -35,21 +35,13 @@ import OPokemonDetail from '@/components/03-organisms/pokemon/o-pokemon-detail/I
 import OPokemonStatus from '@/components/03-organisms/pokemon/status/o-pokemon-status/Index.vue';
 import OPokemonEvolution from '@/components/03-organisms/pokemon/o-pokemon-evolution/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
-import {
-    PokemonDetailStateKey,
-    pokemonDetailState,
-    PokemonDetailStateType
-} from '@/stores/http/pokemons/_id';
-import {
-    PokemonSimplicityStateKey,
-    pokemonSimplicityState,
-    PokemonSimplicityStateType
-} from '@/stores/http/pokemons/simplicities';
+import { usePokemonDetailStore } from '@/stores/http/pokemon-api/v1/pokemons/_id';
+import { usePokemonSimplicityStore } from '@/stores/http/pokemon-api/v1/pokemons/simplicities';
 import { OPokemonDetailData } from '@/components/03-organisms/pokemon/o-pokemon-detail';
 import { PokemonStatusDetail } from '@/components/03-organisms/pokemon/status/o-pokemon-status';
 import { AutoCompleteItem } from '@/components/03-organisms/pokemon/status/o-pokemon-status-form';
 import { OPokemonEvolutionItem } from 'src/components/03-organisms/pokemon/o-pokemon-evolution';
-import { EvolutionPokemonDetail } from '@/stores/http/pokemons/_id/type';
+import { EvolutionPokemonDetail } from '@/stores/http/pokemon-api/v1/pokemons/_id/type';
 
 const LANGUAGE = 'ja-Hrkt';
 
@@ -64,10 +56,8 @@ export default defineComponent({
         const router = useRouter();
         const route = useRoute();
 
-        const store = pokemonDetailState();
-        provide<PokemonDetailStateType>(PokemonDetailStateKey, store);
-        const simplicityStore = pokemonSimplicityState();
-        provide<PokemonSimplicityStateType>(PokemonSimplicityStateKey, simplicityStore);
+        const store = usePokemonDetailStore();
+        const simplicityStore = usePokemonSimplicityStore();
 
         const state = reactive({
             isLoading: false
@@ -86,19 +76,19 @@ export default defineComponent({
             },
             async fetchPokemonDetail() {
                 this.checkParam();
-                store.action.reset();
+                store.reset();
 
                 const { id } = route.params;
                 const queryGame = route.query.game as string;
                 const queryRegions = route.query.regions as string[];
 
                 state.isLoading = true;
-                await store.action.fetch(Number(id), LANGUAGE, queryGame, queryRegions);
+                await store.fetch(Number(id), LANGUAGE, queryGame, queryRegions);
                 state.isLoading = false;
             },
             async fetchSimplicity() {
                 state.isLoading = true;
-                await simplicityStore.action.fetchAll(LANGUAGE);
+                await simplicityStore.fetchAll(LANGUAGE);
                 state.isLoading = false;
             },
             toPokemonEvolutionItem(evolutionPokemonDetail: EvolutionPokemonDetail) {
@@ -119,13 +109,13 @@ export default defineComponent({
 
         const computedMethods = {
             detail: computed<OPokemonDetailData | null>(() => {
-                const pokemonDetail = store.getter.pokemonDetail.value;
+                const pokemonDetail = store.data;
                 if (!pokemonDetail) {
                     return null;
                 }
                 return {
-                    prevId: store.getter.prevId.value,
-                    nextId: store.getter.nextId.value,
+                    prevId: store.prevId,
+                    nextId: store.nextId,
                     data: {
                         no: pokemonDetail.id,
                         name: pokemonDetail.pokemonName,
@@ -153,7 +143,7 @@ export default defineComponent({
                 };
             }),
             statusPokemonDetail: computed<PokemonStatusDetail | null>(() => {
-                const pokemonDetail = store.getter.pokemonDetail.value;
+                const pokemonDetail = store.data;
                 if (!pokemonDetail) {
                     return null;
                 }
@@ -172,13 +162,13 @@ export default defineComponent({
                 };
             }),
             autoCompleteItems: computed<AutoCompleteItem[]>(() => {
-                return simplicityStore.getter.pokemonSimplicities.value.data || [];
+                return simplicityStore.data.data || [];
             }),
             evolutionData: computed<{
                 targetId: number;
                 data: (OPokemonEvolutionItem | OPokemonEvolutionItem[])[];
             } | null>(() => {
-                const pokemonDetail = store.getter.pokemonDetail.value;
+                const pokemonDetail = store.data;
                 if (!pokemonDetail) {
                     return null;
                 }

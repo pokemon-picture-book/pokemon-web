@@ -24,7 +24,7 @@ import { computed, defineComponent, PropType, provide } from 'vue';
 import { LocationQuery, LocationQueryValue } from 'vue-router';
 import ASelect from '@/components/01-atoms/data-entry/a-select/Index.vue';
 import OPokemonFilterModal from '@/components/03-organisms/pokemon/o-pokemon-filter-modal/Index.vue';
-import { LanguageStateKey, languageState, LanguageStateType } from '@/stores/http/languages';
+import { useLanguageStore } from '@/stores/http/pokemon-api/v1/languages';
 import { ASelectItem } from '@/components/01-atoms/data-entry/a-select';
 import { SelectedParam } from '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
 
@@ -40,14 +40,13 @@ export default defineComponent({
     },
     emits: ['to-home'],
     setup(props) {
-        const store = languageState();
-        provide<LanguageStateType>(LanguageStateKey, store);
+        const store = useLanguageStore();
 
-        store.action.fetchAll();
+        store.fetchAll();
 
         const computedMethods = {
             languageItems: computed<ASelectItem[]>(() => {
-                return store.getter.languages.value.map((language) => ({
+                return store.data.map((language) => ({
                     id: language.id,
                     label: language.labelName,
                     value: language.name

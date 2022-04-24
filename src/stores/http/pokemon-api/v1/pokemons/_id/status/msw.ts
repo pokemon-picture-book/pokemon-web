@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { PokemonStatusResponse } from '@/stores/http/pokemons/_id/status/type';
+import { PokemonStatusResponse } from '@/stores/http/pokemon-api/v1/pokemons/_id/status/type';
 
 export const ENDPOINT = 'http://localhost/pokemon-api/v1/pokemons/:id/status';
 

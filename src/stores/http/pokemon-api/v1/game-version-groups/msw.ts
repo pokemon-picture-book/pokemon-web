@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { GameVersionGroupResponse } from '@/stores/http/game-version-groups/type';
+import { GameVersionGroupResponse } from '@/stores/http/pokemon-api/v1/game-version-groups/type';
 
 export const ENDPOINT = 'http://localhost/pokemon-api/v1/game-version-groups';
 

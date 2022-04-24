@@ -1,4 +1,5 @@
-import { ComputedRef } from 'vue';
+import { AppGetterTree, PiniaCustomStateProperties } from 'pinia';
+import { UnwrapRef } from 'vue';
 
 export declare type PokemonResponseData = {
     id: number;
@@ -13,16 +14,16 @@ export declare type PokemonResponse = {
     data: PokemonResponseData[];
 };
 
-export declare type State = {
-    hits: number;
-    pokemons: PokemonResponse['data'];
+export declare type PokemonState = {
+    _hits: number;
+    _data: PokemonResponse['data'];
 };
 
-export declare type Getter = {
-    hits: ComputedRef<number>;
-    pokemons: ComputedRef<PokemonResponse['data']>;
-};
+export declare type PokemonGetter = AppGetterTree<
+    PokemonState,
+    { hits: number; data: PokemonResponse['data'] }
+>;
 
-export declare type Action = {
+export declare type PokemonAction = {
     fetchAll: (lang: string, game: string, regions: string[], page: number) => Promise<void>;
 };

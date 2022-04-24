@@ -3,8 +3,8 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/vue3';
 import { RouteLocationNormalized } from 'vue-router';
 import OPokemonFilterModal from '@/components/03-organisms/pokemon/o-pokemon-filter-modal/Index.vue';
-import regionData from '@/stores/http/regions/msw';
-import gameVersionGroupData from '@/stores/http/game-version-groups/msw';
+import regionData from '@/stores/http/pokemon-api/v1/regions/msw';
+import gameVersionGroupData from '@/stores/http/pokemon-api/v1/game-version-groups/msw';
 
 export default {
     title: 'Organisms/Pokemon/o-pokemon-filter-modal'

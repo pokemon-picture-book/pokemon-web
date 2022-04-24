@@ -1,8 +1,8 @@
 import '@/types/env.d';
-import '@/stores/http/game-version-groups/type';
-import '@/stores/http/pokemons/type';
-import '@/stores/http/regions/type';
-import '@/stores/http/languages/language';
+import '@/stores/http/pokemon-api/v1/game-version-groups/type';
+import '@/stores/http/pokemon-api/v1/pokemons/type';
+import '@/stores/http/pokemon-api/v1/regions/type';
+import '@/stores/http/pokemon-api/v1/languages/language';
 import '@/components/03-organisms/pokemon/o-pokemon-list';
 import '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
 import '@/components/03-organisms/global/o-spinner';
@@ -16,3 +16,4 @@ import '@/components/02-molecules/data-entry/m-checkbox-group';
 import '@/types/common/index.d';
 import '@/types/index.d';
 import '@/types/shims-vue.d';
+import '@/types/shims-pinia.d';
