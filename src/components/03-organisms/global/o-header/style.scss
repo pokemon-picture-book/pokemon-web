@@ -18,16 +18,18 @@ $header-height: 80px;
     z-index: 100;
 
     &__item {
-        margin: 16px 24px;
+        margin: 8px 24px;
     }
 
     &__title {
-        display: flex;
-        align-items: center;
         cursor: pointer;
+    }
 
-        &-text {
-            margin: 0 16px;
+    &__icon {
+        width: 320px;
+
+        @media only screen and (max-width: $mobile-border-width) {
+            width: 240px;
         }
     }
 

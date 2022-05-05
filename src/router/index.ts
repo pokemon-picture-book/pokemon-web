@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw, RouterScrollBehavior } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -24,7 +24,8 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.VITE_APP_BASE_URL),
-    routes
+    routes,
+    scrollBehavior: (_, __, savedPosition) => (savedPosition ? savedPosition : { left: 0, top: 0 })
 });
 
 export default router;

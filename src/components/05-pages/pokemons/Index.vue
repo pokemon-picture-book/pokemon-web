@@ -4,17 +4,13 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, provide, reactive, watch } from 'vue';
+import { computed, defineComponent, reactive, watch } from 'vue';
 import { LocationQueryValue, useRoute, useRouter } from 'vue-router';
 import OPokemonList from '@/components/03-organisms/pokemon/o-pokemon-list/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
 import { usePokemonStore } from '@/stores/http/pokemon-api/v1/pokemons';
+import { useSearchPokemonParamStore } from '@/stores/search/pokemon-param';
 import { OPokemonData } from '@/components/03-organisms/pokemon/o-pokemon-list';
-
-// default parameter
-const LANGUAGE = 'ja-Hrkt';
-const GAME = 'rgby';
-const REGIONS = ['kanto'] as const;
 
 export default defineComponent({
     components: {
@@ -25,21 +21,24 @@ export default defineComponent({
         const route = useRoute();
         const router = useRouter();
 
-        const queryGame = route.query.game as LocationQueryValue;
-        const queryRegions = route.query.regions as LocationQueryValue[];
-        if (!queryGame || !queryRegions || (queryRegions && !queryRegions.length)) {
-            router.push({
-                path: '/pokemons',
-                query: {
-                    game: queryGame || GAME,
-                    regions: (queryRegions && queryRegions.length
-                        ? queryRegions
-                        : REGIONS) as string[]
-                }
-            });
-        }
+        const pokemonStore = usePokemonStore();
+        const searchParamStore = useSearchPokemonParamStore();
 
-        const store = usePokemonStore();
+        {
+            const queryGame = route.query.game as LocationQueryValue;
+            const queryRegions = route.query.regions as LocationQueryValue[];
+            if (!queryGame || !queryRegions || (queryRegions && !queryRegions.length)) {
+                searchParamStore.setGame(queryGame);
+                searchParamStore.setRegions(queryRegions as string[]);
+                router.push({
+                    path: '/pokemons',
+                    query: {
+                        game: searchParamStore.game,
+                        regions: searchParamStore.regions
+                    }
+                });
+            }
+        }
 
         const state = reactive({
             isLoading: false
@@ -47,7 +46,7 @@ export default defineComponent({
 
         const computedMethods = {
             data: computed<OPokemonData>(() => {
-                const { hits, data } = store;
+                const { hits, data } = pokemonStore;
                 return {
                     hits: hits,
                     items: data.map((pokemon) => ({
@@ -65,9 +64,15 @@ export default defineComponent({
 
         const methods = {
             async fetch(page: number, done?: () => void) {
-                const queryGame = route.query.game as string;
-                const queryRegions = route.query.regions as string[];
-                await store.fetchAll(LANGUAGE, queryGame, queryRegions, page);
+                searchParamStore.setGame(route.query.game as string);
+                searchParamStore.setRegions(route.query.regions as string[]);
+                searchParamStore.setInfiniteIndex(page);
+                await pokemonStore.fetchAll(
+                    searchParamStore.language,
+                    searchParamStore.game,
+                    searchParamStore.regions,
+                    searchParamStore.infiniteIndex
+                );
 
                 done?.call(this);
             },
@@ -91,10 +96,25 @@ export default defineComponent({
 
         watch(
             () => route.query,
-            () => privateMethods.firstFetch()
+            (newQuery, oldQuery) => {
+                const isMatched = Object.keys(newQuery).every((key) => {
+                    if (Array.isArray(newQuery[key]) && Array.isArray(oldQuery[key])) {
+                        return (
+                            (newQuery[key] as LocationQueryValue[]).sort().toString() ===
+                            (oldQuery[key] as LocationQueryValue[]).sort().toString()
+                        );
+                    }
+                    return newQuery[key] === oldQuery[key];
+                });
+                if (Object.keys(newQuery).length !== Object.keys(oldQuery).length || !isMatched) {
+                    privateMethods.firstFetch();
+                }
+            }
         );
 
-        privateMethods.firstFetch();
+        if (!pokemonStore.data.length) {
+            privateMethods.firstFetch();
+        }
 
         return {
             state,

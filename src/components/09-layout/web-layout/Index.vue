@@ -17,6 +17,8 @@ import { computed, defineComponent } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import OHeader from '@/components/03-organisms/global/o-header/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
+import { usePokemonStore } from '@/stores/http/pokemon-api/v1/pokemons';
+import { useSearchPokemonParamStore } from '@/stores/search/pokemon-param';
 
 export default defineComponent({
     components: {
@@ -26,6 +28,8 @@ export default defineComponent({
     setup() {
         const router = useRouter();
         const route = useRoute();
+        const pokemonStore = usePokemonStore();
+        const searchParamStore = useSearchPokemonParamStore();
 
         const computedMethods = {
             queryParam: computed(() => route.query)
@@ -33,12 +37,21 @@ export default defineComponent({
 
         const methods = {
             toHome() {
-                router.push({
-                    path: '/pokemons',
-                    query: {
-                        ...route.query
-                    }
-                });
+                searchParamStore.setGame(route.query.game as string);
+                searchParamStore.setRegions(route.query.regions as string[]);
+                searchParamStore.setInfiniteIndex(1);
+
+                if (route.path !== '/pokemons') {
+                    pokemonStore.reset();
+
+                    router.push({
+                        path: '/pokemons',
+                        query: {
+                            game: searchParamStore.game,
+                            regions: searchParamStore.regions
+                        }
+                    });
+                }
             }
         };
 

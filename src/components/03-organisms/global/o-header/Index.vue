@@ -1,8 +1,11 @@
 <template>
     <header class="o-header">
         <div class="o-header__item o-header__title" @click="$emit('to-home')">
-            <i class="ib ib-whh-pokemon ib-3x"></i>
-            <h2 class="o-header__title-text">ポケモン図鑑</h2>
+            <img
+                src="@/assets/img/components/pokemon.png"
+                alt="Look POKEMON"
+                class="o-header__icon"
+            />
         </div>
         <nav class="o-header__item o-header__navigation gnav">
             <ul class="gnav__menu">
@@ -20,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, provide } from 'vue';
+import { computed, defineComponent, PropType } from 'vue';
 import { LocationQuery, LocationQueryValue } from 'vue-router';
 import ASelect from '@/components/01-atoms/data-entry/a-select/Index.vue';
 import OPokemonFilterModal from '@/components/03-organisms/pokemon/o-pokemon-filter-modal/Index.vue';
