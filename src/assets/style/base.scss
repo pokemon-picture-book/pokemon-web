@@ -4,7 +4,16 @@ body {
     @include font-size;
 
     -webkit-font-smoothing: none;
-    font-family: 'pokemon-font', monospace;
+    font-family:
+        Helvetica,
+        Arial,
+        Doroid Sans,
+        'メイリオ',
+        Meiryo,
+        'ヒラギノ角ゴ Pro W3',
+        'Hiragino Kaku Gothic Pro',
+        sans-serif;
+    color: $p-font-black-color;
     margin: 0;
 }
 
