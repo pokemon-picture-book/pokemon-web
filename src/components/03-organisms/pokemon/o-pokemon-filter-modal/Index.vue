@@ -44,7 +44,7 @@
             <template v-slot:footer>
                 <div class="footer modal__footer">
                     <a-button class="footer__button" @click="modalClose">キャンセル</a-button>
-                    <a-button class="footer__button" theme="primary" icon="search" @click="onClick">
+                    <a-button class="footer__button" theme="primary" icon="search" @click="onExec">
                         検索する
                     </a-button>
                 </div>
@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, provide, reactive, watch } from 'vue';
+import { computed, defineComponent, PropType, reactive, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useGameVersionGroupStore } from '@/stores/http/pokemon-api/v1/game-version-groups';
 import { useRegionStore } from '@/stores/http/pokemon-api/v1/regions';
@@ -68,6 +68,8 @@ import {
     OPokemonFilterModalState,
     SelectedParam
 } from '@/components/03-organisms/pokemon/o-pokemon-filter-modal';
+import { usePokemonStore } from '@/stores/http/pokemon-api/v1/pokemons';
+import { useSearchPokemonParamStore } from '@/stores/search/pokemon-param';
 
 export default defineComponent({
     components: {
@@ -84,19 +86,19 @@ export default defineComponent({
     },
     setup(props) {
         const router = useRouter();
+        const pokemonStore = usePokemonStore();
+        const searchParamStore = useSearchPokemonParamStore();
 
         const state = reactive<OPokemonFilterModalState>({
             isShowModal: false,
             selectedGameVersionGroup: '',
-            selectedRegions: []
+            selectedRegions: [],
+            execGameVersionGroup: props.selectedParam.game,
+            execRegions: props.selectedParam.regions
         });
 
         const gameVersionGroupStore = useGameVersionGroupStore();
         const regionStore = useRegionStore();
-
-        if (!(gameVersionGroupStore && regionStore)) {
-            throw new Error('inject failed.');
-        }
 
         gameVersionGroupStore.fetchAll('ja-Hrkt', true).then(() => {
             // set first value
@@ -171,19 +173,32 @@ export default defineComponent({
                     relatedRegionNames.includes(selectedRegion)
                 );
             },
-            /** 選択された条件を query parameter にセットし、検索を実行して、モーダルを閉じる */
-            onClick() {
-                if (!state.selectedRegions.length) {
-                    state.selectedRegions = [regionStore.data[0].name];
-                }
-
-                router.push({
-                    path: '/pokemons',
-                    query: {
-                        game: state.selectedGameVersionGroup,
-                        regions: state.selectedRegions
+            /** 選択された条件でポケモン一覧へリダイレクトし、モーダルを閉じる */
+            onExec() {
+                if (
+                    state.selectedGameVersionGroup !== state.execGameVersionGroup ||
+                    state.selectedRegions.sort().toString() !== state.execRegions.sort().toString()
+                ) {
+                    if (!state.selectedRegions.length) {
+                        state.selectedRegions = [regionStore.data[0].name];
                     }
-                });
+
+                    state.execGameVersionGroup = state.selectedGameVersionGroup;
+                    state.execRegions = state.selectedRegions;
+
+                    searchParamStore.setGame(state.selectedGameVersionGroup);
+                    searchParamStore.setRegions(state.selectedRegions);
+                    searchParamStore.setInfiniteIndex(1);
+
+                    pokemonStore.reset();
+                    router.push({
+                        path: '/pokemons',
+                        query: {
+                            game: state.selectedGameVersionGroup,
+                            regions: state.selectedRegions
+                        }
+                    });
+                }
 
                 state.isShowModal = false;
             }

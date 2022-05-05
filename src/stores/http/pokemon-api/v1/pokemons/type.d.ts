@@ -26,4 +26,5 @@ export declare type PokemonGetter = AppGetterTree<
 
 export declare type PokemonAction = {
     fetchAll: (lang: string, game: string, regions: string[], page: number) => Promise<void>;
+    reset: () => void;
 };

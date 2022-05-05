@@ -43,6 +43,10 @@ export const usePokemonStore = defineStore<string, PokemonState, PokemonGetter, 
             this._hits = fetchData.hits;
             const pokemons = fetchData.data || [];
             this._data = page === 1 ? pokemons : this._data.concat(pokemons);
+        },
+        reset() {
+            this._hits = 0;
+            this._data = [];
         }
     }
 });

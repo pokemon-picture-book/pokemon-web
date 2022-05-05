@@ -38,7 +38,7 @@ import { OPokemonData, OPokemonState } from '@/components/03-organisms/pokemon/o
 import MCard from '@/components/02-molecules/data-display/m-card/Index.vue';
 import MColorLabelGroup from '@/components/02-molecules/data-display/m-color-label-group/Index.vue';
 import OSpinner from '@/components/03-organisms/global/o-spinner/Index.vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useSearchPokemonParamStore } from '@/stores/search/pokemon-param';
 
 export default defineComponent({
     components: {
@@ -54,15 +54,18 @@ export default defineComponent({
         }
     },
     setup(props, { emit }) {
+        const searchParamStore = useSearchPokemonParamStore();
+
         const state = reactive<OPokemonState>({
-            infiniteIndex: 1
+            infiniteIndex: searchParamStore.infiniteIndex
         });
 
         const methods = {
-            infiniteHandler: async ($state: StateChanger) => {
+            infiniteHandler: ($state: StateChanger) => {
                 const { hits, items } = props.data;
+                searchParamStore.setInfiniteIndex(++state.infiniteIndex);
                 if (hits > items.length) {
-                    emit('fetch', ++state.infiniteIndex, () => {
+                    emit('fetch', state.infiniteIndex, () => {
                         $state.loaded();
                     });
                     return;
@@ -75,7 +78,6 @@ export default defineComponent({
         };
 
         return {
-            state,
             ...methods
         };
     }
